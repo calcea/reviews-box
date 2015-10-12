@@ -1,0 +1,3 @@
+tutorials_base_homepage:
+    path:     /
+    defaults: { _controller: TutorialsBaseBundle:Default:index }
