@@ -2,13 +2,55 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-        {% endblock %}
-    </body>
+        <title>{% block title %}Videos Website Template | Home :: W3layouts{% endblock %}</title>
+        <link href="{{ asset('bundles/tutorialsbase/css/style.css') }}" rel="stylesheet" type="text/css"  media="all" />
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+    {% block header %}
+        <div class="header">
+            <div class="wrap">
+                <!---start-logo---->
+                <div class="logo">
+                    <a href="index.html"><img src="{{ asset('bundles/tutorialsbase/images/logo.png') }}" title="logo" /></a>
+                </div>
+                <!---End-logo---->
+                <!---start-top-menu-search---->
+                <div class="top-menu">
+                    <div class="top-nav">
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Videos</a></li>
+                            <li><a href="categories.html">Categories</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="search">
+                        <form>
+                            <input type="text" class="textbox" value="Search:" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                        this.value = 'Search';
+                                    }">
+                            <input type="submit" value=" " />
+                        </form>
+                    </div>
+                    <div class="clear"> </div>
+                </div>
+                <div class="clear"> </div>
+                <!---End-top-menu-search---->
+            </div>
+            <!---End-header---->
+        </div>
+        <div class="clear"> </div>
+    {% endblock %}
+    {% block body %}
+    {% endblock %}
+    {% block fos_user_content %}
+    {% endblock %}
+    {% block javascripts %}
+    {% endblock %}
+    <div class="copy-right">
+        <p>Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+    </div>
+</body>
 </html>

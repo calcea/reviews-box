@@ -4,6 +4,15 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    app.form.registration:
+           class: Tutorials\BaseBundle\Form\Registration
+           tags:
+               - { name: form.type, alias: tutorials_user_registration }
+    app.form.profile.edit.profile:
+           class: Tutorials\BaseBundle\Form\EditProfileType
+           tags:
+               - { name: form.type, alias: tutorials_user_edit_profile }
+    app.form.user.resetting:
+           class: Tutorials\BaseBundle\Form\ResettingPasswordType
+           tags:
+               - { name: form.type, alias: tutorials_user_resetting }
