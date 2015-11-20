@@ -1,0 +1,41 @@
+Tutorials\BaseBundle\Entity\News:
+    type: entity
+    table: null
+    repositoryClass: Tutorials\BaseBundle\Entity\NewsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+        user:
+            type: string
+            length: '100'
+        isDeleted:
+            type: boolean
+            column: is_deleted
+        mediaId:
+            type: integer
+            column: media_id
+        isApproved:
+            type: boolean
+            column: is_approved
+        likes:
+            type: integer
+        shares:
+            type: integer
+    lifecycleCallbacks: {  }
+    oneToOne:
+      media:
+        targetEntity: Application\Sonata\MediaBundle\Entity\Media
+        joinColumn:
+          name: media_id
+          referencedColumnName: id
+          cascade: ["persist"]

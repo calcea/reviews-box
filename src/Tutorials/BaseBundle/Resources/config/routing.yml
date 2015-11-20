@@ -1,3 +1,9 @@
 tutorials_base_homepage:
     path:     /
     defaults: { _controller: TutorialsBaseBundle:Default:index }
+tutorials_base_news_index:
+    path:     /news/
+    defaults: { _controller: TutorialsBaseBundle:News:index }
+tutorials_base_news_add:
+    path:     /news/add
+    defaults: { _controller: TutorialsBaseBundle:News:add }
