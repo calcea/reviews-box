@@ -1,0 +1,4 @@
+services:
+#    reviews_default.example:
+#        class: Reviews\DefaultBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

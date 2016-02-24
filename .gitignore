@@ -10,3 +10,10 @@
 /vendor/
 /web/bundles/
 /nbproject/*
+/.vagrant
+/Vagrantfile
+/.idea/.name
+/.idea/codeStyleSettings.xml
+/.idea/modules.xml
+/.idea/reviews-box.iml
+/.idea/workspace.xml

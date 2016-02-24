@@ -1,0 +1,3 @@
+reviews_similarity_homepage:
+    path:     /similarity
+    defaults: { _controller: ReviewsSimilarityBundle:Default:index }

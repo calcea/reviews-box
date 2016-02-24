@@ -1,0 +1,74 @@
+Reviews\DefaultBundle\Entity\Products:
+    type: entity
+    table: products
+    indexes:
+        fk_manufacturer_id:
+            columns:
+                - manufacturer_id
+    id:
+        productId:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+            id: true
+            column: product_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        code:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        name:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        description:
+            type: string
+            nullable: true
+            length: 2048
+            options:
+                fixed: false
+        class1:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        class2:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        class3:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        added:
+            type: datetime
+            nullable: true
+            options:
+                default: CURRENT_TIMESTAMP
+        deleted:
+            type: boolean
+            nullable: true
+            options:
+                default: '0'
+    manyToOne:
+        manufacturer:
+            targetEntity: Manufacturers
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                manufacturer_id:
+                    referencedColumnName: manufacturer_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

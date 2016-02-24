@@ -1,0 +1,10 @@
+SVM:
+    directory: "%s/Resources/data/classifier-models/"
+    filename: "model-svm.svm"
+
+Bayes:
+    directory: "%s/Resources/data/classifier-models/"
+    filename: "model-bayes.txt"
+
+Stemmer:
+    language: "romanian"

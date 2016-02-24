@@ -74,10 +74,11 @@ doctrine:
                 mappings:
                     ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
-                    FOSUserBundle: ~  
+                    FOSUserBundle: ~
                     SonataMediaBundle: ~
                     ApplicationSonataMediaBundle: ~
-                    TutorialsBaseBundle: ~
+                    ReviewsDefaultBundle: ~
+
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -98,17 +99,17 @@ sonata_block:
 sonata_user:
     security_acl: true
     manager_type: orm # can be orm or mongodb
-    profile:
-        # Profile show page is a dashboard as in SonataAdminBundle
-        dashboard:
-            blocks:
-                - { position: left, type: sonata.block.service.text, settings: { content: "<h2>Welcome!</h2> This is a sample user profile dashboard, feel free to override it in the configuration! Want to make this text dynamic? For instance display the user's name? Create a dedicated block and edit the configuration!"} }
-        menu:
-            - { route: 'sonata_user_profile_show', label: 'sonata_profile_title', domain: 'SonataUserBundle'}
-            - { route: 'sonata_user_profile_edit', label: 'link_edit_profile', domain: 'SonataUserBundle'}
-            - { route: 'sonata_user_profile_edit_authentication', label: 'link_edit_authentication', domain: 'SonataUserBundle'}
-        form:
-            type: tutorials_user_edit_profile
+#    profile:
+#        # Profile show page is a dashboard as in SonataAdminBundle
+#        dashboard:
+#            blocks:
+#                - { position: left, type: sonata.block.service.text, settings: { content: "<h2>Welcome!</h2> This is a sample user profile dashboard, feel free to override it in the configuration! Want to make this text dynamic? For instance display the user's name? Create a dedicated block and edit the configuration!"} }
+#        menu:
+#            - { route: 'sonata_user_profile_show', label: 'sonata_profile_title', domain: 'SonataUserBundle'}
+#            - { route: 'sonata_user_profile_edit', label: 'link_edit_profile', domain: 'SonataUserBundle'}
+#            - { route: 'sonata_user_profile_edit_authentication', label: 'link_edit_authentication', domain: 'SonataUserBundle'}
+#        form:
+#            type: tutorials_user_edit_profile
 sonata_media:
     # if you don't use default namespace configuration
     class:
@@ -275,18 +276,18 @@ fos_user:
     group:
         group_class:   Application\Sonata\UserBundle\Entity\Group
         group_manager: sonata.user.orm.group_manager 
-    profile:
-        # Authentication Form
-        form:
-            type:               fos_user_profile
-            handler:            fos_user.profile.form.handler.default
-            name:               fos_user_profile_form
-            validation_groups:  [Profile]
-    registration:
-        form:
-            type: tutorials_user_registration
-    resetting:
-        form:
-            type: tutorials_user_resetting
+#    profile:
+#        # Authentication Form
+#        form:
+#            type:               fos_user_profile
+#            handler:            fos_user.profile.form.handler.default
+#            name:               fos_user_profile_form
+#            validation_groups:  [Profile]
+#    registration:
+#        form:
+#            type: tutorials_user_registration
+#    resetting:
+#        form:
+#            type: tutorials_user_resetting
     service:
         user_manager: sonata.user.orm.user_manager 

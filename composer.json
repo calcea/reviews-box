@@ -26,7 +26,12 @@
         "mopa/bootstrap-bundle": "v2.3.1",
         "twbs/bootstrap": "~3.3.0",
         "jms/serializer-bundle": "^1.0",
-        "sonata-project/media-bundle": "^2.3"
+        "sonata-project/media-bundle": "^2.3",
+        "camspiers/statistical-classifier": "^0.8.0",
+        "maximebf/cachecache": "^1.0",
+        "tga/simhash-php": "^2.0",
+        "cocur/slugify": "^1.4",
+        "webmozart/assert": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

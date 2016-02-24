@@ -1,0 +1,9 @@
+reviews_predict_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ReviewsPredictBundle:Default:index }
+reviews_predict_train:
+    path:     /train
+    defaults: { _controller: ReviewsPredictBundle:Predict:train }
+reviews_predict_classyfy:
+    path:     /classify
+    defaults: { _controller: ReviewsPredictBundle:Predict:classify }

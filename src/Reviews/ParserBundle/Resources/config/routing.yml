@@ -1,0 +1,3 @@
+reviews_parser_homepage:
+    path:     parser/
+    defaults: { _controller: ReviewsParserBundle:Default:index }

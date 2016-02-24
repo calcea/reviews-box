@@ -1,6 +1,20 @@
-tutorials_base:
-    resource: "@TutorialsBaseBundle/Resources/config/routing.yml"
+reviews_similarity:
+    resource: "@ReviewsSimilarityBundle/Resources/config/routing.yml"
     prefix:   /
+
+reviews_predict:
+    resource: "@ReviewsPredictBundle/Resources/config/routing.yml"
+    prefix:   /
+
+reviews_default:
+    resource: "@ReviewsDefaultBundle/Resources/config/routing.yml"
+    prefix:   /
+
+reviews_parser:
+    resource: "@ReviewsParserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
 
 #app:
 #    resource: "@AppBundle/Controller/"

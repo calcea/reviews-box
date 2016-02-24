@@ -31,8 +31,11 @@ class AppKernel extends Kernel {
             /* ---------My Bundles------------------------------- */
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
-            new Tutorials\BaseBundle\TutorialsBaseBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            new Reviews\ParserBundle\ReviewsParserBundle(),
+            new Reviews\DefaultBundle\ReviewsDefaultBundle(),
+            new Reviews\PredictBundle\ReviewsPredictBundle(),
+            new Reviews\SimilarityBundle\ReviewsSimilarityBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

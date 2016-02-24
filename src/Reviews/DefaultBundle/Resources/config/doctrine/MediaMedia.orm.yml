@@ -1,0 +1,122 @@
+Reviews\DefaultBundle\Entity\MediaMedia:
+    type: entity
+    table: media__media
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        description:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        enabled:
+            type: boolean
+            nullable: false
+        providerName:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: provider_name
+        providerStatus:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: provider_status
+        providerReference:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: provider_reference
+        providerMetadata:
+            type: json
+            nullable: true
+            column: provider_metadata
+        width:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        height:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        length:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 0
+        contentType:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: content_type
+        contentSize:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: content_size
+        copyright:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        authorName:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: author_name
+        context:
+            type: string
+            nullable: true
+            length: 64
+            options:
+                fixed: false
+        cdnIsFlushable:
+            type: boolean
+            nullable: true
+            column: cdn_is_flushable
+        cdnFlushAt:
+            type: datetime
+            nullable: true
+            column: cdn_flush_at
+        cdnStatus:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: cdn_status
+        updatedAt:
+            type: datetime
+            nullable: false
+            column: updated_at
+        createdAt:
+            type: datetime
+            nullable: false
+            column: created_at
+    lifecycleCallbacks: {  }

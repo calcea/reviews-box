@@ -1,4 +1,0 @@
-services:
-#    tutorials_base.example:
-#        class: Tutorials\BaseBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,42 @@
+Reviews\DefaultBundle\Entity\ProductsProperties:
+    type: entity
+    table: products_properties
+    indexes:
+        fk_product_id:
+            columns:
+                - product_id
+    id:
+        propertyId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: property_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        value:
+            type: string
+            nullable: true
+            length: 500
+            options:
+                fixed: false
+    manyToOne:
+        product:
+            targetEntity: Products
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                product_id:
+                    referencedColumnName: product_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

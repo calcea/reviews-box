@@ -1,0 +1,4 @@
+services:
+#    reviews_parser.example:
+#        class: Reviews\ParserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
