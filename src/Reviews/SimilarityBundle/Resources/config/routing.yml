@@ -1,3 +1,6 @@
 reviews_similarity_homepage:
     path:     /similarity
     defaults: { _controller: ReviewsSimilarityBundle:Default:index }
+reviews_similarity_update-database:
+    path:     /update-database
+    defaults: { _controller: ReviewsSimilarityBundle:Default:updateDatabase }

@@ -81,4 +81,3 @@ class AclSecurityIdentities
         return $this->username;
     }
 }
-

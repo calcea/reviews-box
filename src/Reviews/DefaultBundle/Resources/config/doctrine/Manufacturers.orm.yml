@@ -15,14 +15,17 @@ Reviews\DefaultBundle\Entity\Manufacturers:
     fields:
         name:
             type: string
-            nullable: true
-            length: 255
+            nullable: false
+            length: 100
             options:
                 fixed: false
-        description:
-            type: string
-            nullable: true
-            length: 255
-            options:
-                fixed: false
+    manyToMany:
+        site:
+            targetEntity: Sites
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: manufacturer
+            inversedBy: null
+            joinTable: null
+            orderBy: null
     lifecycleCallbacks: {  }

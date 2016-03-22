@@ -28,21 +28,6 @@ class Products
     private $description;
 
     /**
-     * @var integer
-     */
-    private $class1;
-
-    /**
-     * @var integer
-     */
-    private $class2;
-
-    /**
-     * @var integer
-     */
-    private $class3;
-
-    /**
      * @var \DateTime
      */
     private $added = 'CURRENT_TIMESTAMP';
@@ -50,13 +35,45 @@ class Products
     /**
      * @var boolean
      */
-    private $deleted = '0';
+    private $deleted;
+
+    /**
+     * @var integer
+     */
+    private $similarityHash = '0';
+
+    /**
+     * @var \Reviews\DefaultBundle\Entity\Categories
+     */
+    private $class1;
+
+    /**
+     * @var \Reviews\DefaultBundle\Entity\Categories
+     */
+    private $class2;
+
+    /**
+     * @var \Reviews\DefaultBundle\Entity\Categories
+     */
+    private $class3;
 
     /**
      * @var \Reviews\DefaultBundle\Entity\Manufacturers
      */
     private $manufacturer;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $site;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->site = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get productId
@@ -141,78 +158,6 @@ class Products
     }
 
     /**
-     * Set class1
-     *
-     * @param integer $class1
-     *
-     * @return Products
-     */
-    public function setClass1($class1)
-    {
-        $this->class1 = $class1;
-
-        return $this;
-    }
-
-    /**
-     * Get class1
-     *
-     * @return integer
-     */
-    public function getClass1()
-    {
-        return $this->class1;
-    }
-
-    /**
-     * Set class2
-     *
-     * @param integer $class2
-     *
-     * @return Products
-     */
-    public function setClass2($class2)
-    {
-        $this->class2 = $class2;
-
-        return $this;
-    }
-
-    /**
-     * Get class2
-     *
-     * @return integer
-     */
-    public function getClass2()
-    {
-        return $this->class2;
-    }
-
-    /**
-     * Set class3
-     *
-     * @param integer $class3
-     *
-     * @return Products
-     */
-    public function setClass3($class3)
-    {
-        $this->class3 = $class3;
-
-        return $this;
-    }
-
-    /**
-     * Get class3
-     *
-     * @return integer
-     */
-    public function getClass3()
-    {
-        return $this->class3;
-    }
-
-    /**
      * Set added
      *
      * @param \DateTime $added
@@ -261,6 +206,102 @@ class Products
     }
 
     /**
+     * Set similarityHash
+     *
+     * @param integer $similarityHash
+     *
+     * @return Products
+     */
+    public function setSimilarityHash($similarityHash)
+    {
+        $this->similarityHash = $similarityHash;
+
+        return $this;
+    }
+
+    /**
+     * Get similarityHash
+     *
+     * @return integer
+     */
+    public function getSimilarityHash()
+    {
+        return $this->similarityHash;
+    }
+
+    /**
+     * Set class1
+     *
+     * @param \Reviews\DefaultBundle\Entity\Categories $class1
+     *
+     * @return Products
+     */
+    public function setClass1(\Reviews\DefaultBundle\Entity\Categories $class1 = null)
+    {
+        $this->class1 = $class1;
+
+        return $this;
+    }
+
+    /**
+     * Get class1
+     *
+     * @return \Reviews\DefaultBundle\Entity\Categories
+     */
+    public function getClass1()
+    {
+        return $this->class1;
+    }
+
+    /**
+     * Set class2
+     *
+     * @param \Reviews\DefaultBundle\Entity\Categories $class2
+     *
+     * @return Products
+     */
+    public function setClass2(\Reviews\DefaultBundle\Entity\Categories $class2 = null)
+    {
+        $this->class2 = $class2;
+
+        return $this;
+    }
+
+    /**
+     * Get class2
+     *
+     * @return \Reviews\DefaultBundle\Entity\Categories
+     */
+    public function getClass2()
+    {
+        return $this->class2;
+    }
+
+    /**
+     * Set class3
+     *
+     * @param \Reviews\DefaultBundle\Entity\Categories $class3
+     *
+     * @return Products
+     */
+    public function setClass3(\Reviews\DefaultBundle\Entity\Categories $class3 = null)
+    {
+        $this->class3 = $class3;
+
+        return $this;
+    }
+
+    /**
+     * Get class3
+     *
+     * @return \Reviews\DefaultBundle\Entity\Categories
+     */
+    public function getClass3()
+    {
+        return $this->class3;
+    }
+
+    /**
      * Set manufacturer
      *
      * @param \Reviews\DefaultBundle\Entity\Manufacturers $manufacturer
@@ -282,6 +323,40 @@ class Products
     public function getManufacturer()
     {
         return $this->manufacturer;
+    }
+
+    /**
+     * Add site
+     *
+     * @param \Reviews\DefaultBundle\Entity\Sites $site
+     *
+     * @return Products
+     */
+    public function addSite(\Reviews\DefaultBundle\Entity\Sites $site)
+    {
+        $this->site[] = $site;
+
+        return $this;
+    }
+
+    /**
+     * Remove site
+     *
+     * @param \Reviews\DefaultBundle\Entity\Sites $site
+     */
+    public function removeSite(\Reviews\DefaultBundle\Entity\Sites $site)
+    {
+        $this->site->removeElement($site);
+    }
+
+    /**
+     * Get site
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSite()
+    {
+        return $this->site;
     }
 }
 

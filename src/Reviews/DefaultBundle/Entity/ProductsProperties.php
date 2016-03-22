@@ -109,5 +109,33 @@ class ProductsProperties
     {
         return $this->product;
     }
-}
+    /**
+     * @var \Reviews\DefaultBundle\Entity\PropertiesCategories
+     */
+    private $propertyCategory;
 
+
+    /**
+     * Set propertyCategory
+     *
+     * @param \Reviews\DefaultBundle\Entity\PropertiesCategories $propertyCategory
+     *
+     * @return ProductsProperties
+     */
+    public function setPropertyCategory(\Reviews\DefaultBundle\Entity\PropertiesCategories $propertyCategory = null)
+    {
+        $this->propertyCategory = $propertyCategory;
+
+        return $this;
+    }
+
+    /**
+     * Get propertyCategory
+     *
+     * @return \Reviews\DefaultBundle\Entity\PropertiesCategories
+     */
+    public function getPropertyCategory()
+    {
+        return $this->propertyCategory;
+    }
+}

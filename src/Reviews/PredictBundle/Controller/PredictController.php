@@ -9,32 +9,27 @@
 namespace Reviews\PredictBundle\Controller;
 
 
-use Reviews\PredictBundle\Services\Train\BayesAlgorithm;
-use Reviews\PredictBundle\Services\Train\SvmAlgorithm;
+use Reviews\PredictBundle\Services\SVM\Classify;
+use Reviews\PredictBundle\Services\SVM\Model;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class PredictController extends Controller
 {
 
-    public function trainAction()
+    public function classifyAction($text)
     {
         set_time_limit(0);
-        ini_set("memory_limit", '512M');
-        $doctrineContainer = $this->getDoctrine();
-        $svmAlgorithm = new SvmAlgorithm($doctrineContainer);
-        $svmAlgorithm->train();
-//        $bayesAlgorithm = new BayesAlgorithm($doctrineContainer);
-//        $bayesAlgorithm->train();
-        return $this->render('ReviewsDefaultBundle:Default:index.html.twig', array('name' => "asd"));
-    }
-
-    public function classifyAction(){
-        set_time_limit(0);
-        ini_set("memory_limit", '512M');
-        $doctrineContainer = $this->getDoctrine();
-        $svmAlgorithm = new \Reviews\PredictBundle\Services\Classify\SvmAlgorithm($doctrineContainer);
-        $svmAlgorithm->classify('Bitdefender Total Security 2015, Retail Renewal, 1 an, 1 utilizator');
-        return $this->render('ReviewsDefaultBundle:Default:index.html.twig', array('name' => "asd"));
+        ini_set("memory_limit", '2524M');
+        try {
+            $doctrineContainer = $this->getDoctrine();
+            $svmAlgorithm = new Classify(new Model($doctrineContainer, $this->get('cache')));
+            $category = $svmAlgorithm->classify($text);
+        } catch (Exception $e) {
+            dump($e);
+            die;
+        }
+        return new JsonResponse(array('category' => $category));
     }
 
 }

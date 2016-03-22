@@ -52,4 +52,3 @@ class AclClasses
         return $this->classType;
     }
 }
-

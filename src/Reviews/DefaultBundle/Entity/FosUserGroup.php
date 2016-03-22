@@ -127,4 +127,3 @@ class FosUserGroup
         return $this->user;
     }
 }
-

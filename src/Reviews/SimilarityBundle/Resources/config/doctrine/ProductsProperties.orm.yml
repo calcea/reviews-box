@@ -1,0 +1,56 @@
+Reviews\SimilarityBundle\Entity\ProductsProperties:
+    type: entity
+    table: products_properties
+    indexes:
+        products_FK_idx:
+            columns:
+                - product_id
+        properties_categories_FK_idx:
+            columns:
+                - property_category
+    id:
+        propertyId:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: true
+            id: true
+            column: property_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        value:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+    manyToOne:
+        product:
+            targetEntity: Products
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                product_id:
+                    referencedColumnName: product_id
+            orphanRemoval: false
+        propertyCategory:
+            targetEntity: PropertiesCategories
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                property_category:
+                    referencedColumnName: property_category_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

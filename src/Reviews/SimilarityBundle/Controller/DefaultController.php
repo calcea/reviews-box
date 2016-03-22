@@ -4,7 +4,9 @@ namespace Reviews\SimilarityBundle\Controller;
 
 use Reviews\SimilarityBundle\Services\SimHash\Comparator\SimpleComparator;
 use Reviews\SimilarityBundle\Services\SimHash\TextExtractor;
+use Reviews\SimilarityBundle\Services\UpdateDatabaseSimHash;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Tga\SimHash\SimHash;
 
@@ -88,10 +90,10 @@ Divertisment integrat:  puteti sa vizionati DVD-uri, sa inscriptionati CD-uri sa
 //average of 69.86. He was chosen as one of the Wisden Cricketers of the Year.
 //EOT;
 
-        $text1 = preg_replace("/[\n\r]/","",$text1);
-        $text2 = preg_replace("/[\n\r]/","",$text2);
-        $text1 = preg_replace('/[0-9]*/','', $text1);
-        $text2 = preg_replace('/[0-9]*/','', $text2);
+        $text1 = preg_replace("/[\n\r]/", "", $text1);
+        $text2 = preg_replace("/[\n\r]/", "", $text2);
+        $text1 = preg_replace('/[0-9]*/', '', $text1);
+        $text2 = preg_replace('/[0-9]*/', '', $text2);
         dump($text1);
         dump($text2);
         similar_text(strtolower($text1), strtolower($text2), $percent);
@@ -99,10 +101,11 @@ Divertisment integrat:  puteti sa vizionati DVD-uri, sa inscriptionati CD-uri sa
         $similarity = new SimHash();
         $extractor = new TextExtractor();
         $comparator = new SimpleComparator();
-dump($this->compareStrings(implode(' ',$extractor->extract($text1)), implode(' ',$extractor->extract($text2))));
+        dump($this->compareStrings(implode(' ', $extractor->extract($text1)),
+            implode(' ', $extractor->extract($text2))));
 
-        $fp1 = $similarity->hash($extractor->extract($text1), \Tga\SimHash\SimHash::SIMHASH_64);
-        $fp2 = $similarity->hash($extractor->extract($text2), \Tga\SimHash\SimHash::SIMHASH_64);
+        $fp1 = $similarity->hash($extractor->extract('MOUSE ZALMAN ZM-M100'), \Tga\SimHash\SimHash::SIMHASH_64);
+        $fp2 = $similarity->hash($extractor->extract('AL IPAD AIR 2 WI-FI 128GB SPACE GRAY'), \Tga\SimHash\SimHash::SIMHASH_64);
 
         dump($fp1->getBinary());
         dump($fp2->getBinary());
@@ -162,5 +165,16 @@ dump($this->compareStrings(implode(' ',$extractor->extract($text1)), implode(' '
         }
 
         return ($matches / $maxwords) * 100;
+    }
+
+    public function updateDatabaseAction()
+    {
+        set_time_limit(0);
+        ini_set("memory_limit", '2524M');
+        $doctrineContainer = $this->getDoctrine();
+        $updateService = new UpdateDatabaseSimHash($doctrineContainer);
+        $updateService->updateSimHash();
+
+        return new JsonResponse();
     }
 }

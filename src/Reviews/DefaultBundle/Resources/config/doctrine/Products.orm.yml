@@ -2,7 +2,16 @@ Reviews\DefaultBundle\Entity\Products:
     type: entity
     table: products
     indexes:
-        fk_manufacturer_id:
+        class1_FK_idx:
+            columns:
+                - class1
+        class2_FK_idx:
+            columns:
+                - class2
+        class3_FK_idx:
+            columns:
+                - class3
+        manufacturers_FK_idx:
             columns:
                 - manufacturer_id
     id:
@@ -11,7 +20,7 @@ Reviews\DefaultBundle\Entity\Products:
             nullable: false
             length: 32
             options:
-                fixed: false
+                fixed: true
             id: true
             column: product_id
             generator:
@@ -19,8 +28,8 @@ Reviews\DefaultBundle\Entity\Products:
     fields:
         code:
             type: string
-            nullable: true
-            length: 255
+            nullable: false
+            length: 150
             options:
                 fixed: false
         name:
@@ -30,37 +39,57 @@ Reviews\DefaultBundle\Entity\Products:
             options:
                 fixed: false
         description:
-            type: string
+            type: text
             nullable: true
-            length: 2048
+            length: 65535
             options:
                 fixed: false
-        class1:
-            type: integer
-            nullable: true
-            options:
-                unsigned: false
-        class2:
-            type: integer
-            nullable: true
-            options:
-                unsigned: false
-        class3:
-            type: integer
-            nullable: true
-            options:
-                unsigned: false
         added:
             type: datetime
-            nullable: true
+            nullable: false
             options:
                 default: CURRENT_TIMESTAMP
         deleted:
             type: boolean
-            nullable: true
+            nullable: false
+        similarityHash:
+            type: bigint
+            nullable: false
             options:
+                unsigned: false
                 default: '0'
+            column: similarity_hash
     manyToOne:
+        class1:
+            targetEntity: Categories
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                class1:
+                    referencedColumnName: category_id
+            orphanRemoval: false
+        class2:
+            targetEntity: Categories
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                class2:
+                    referencedColumnName: category_id
+            orphanRemoval: false
+        class3:
+            targetEntity: Categories
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                class3:
+                    referencedColumnName: category_id
+            orphanRemoval: false
         manufacturer:
             targetEntity: Manufacturers
             cascade: {  }
@@ -71,4 +100,22 @@ Reviews\DefaultBundle\Entity\Products:
                 manufacturer_id:
                     referencedColumnName: manufacturer_id
             orphanRemoval: false
+    manyToMany:
+        site:
+            targetEntity: Sites
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: product
+            joinTable:
+                name: sites_products
+                joinColumns:
+                    -
+                        name: product_id
+                        referencedColumnName: product_id
+                inverseJoinColumns:
+                    -
+                        name: site_id
+                        referencedColumnName: site_id
+            orderBy: null
     lifecycleCallbacks: {  }

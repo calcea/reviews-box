@@ -5,5 +5,5 @@ reviews_predict_train:
     path:     /train
     defaults: { _controller: ReviewsPredictBundle:Predict:train }
 reviews_predict_classyfy:
-    path:     /classify
+    path:     /classify/{text}
     defaults: { _controller: ReviewsPredictBundle:Predict:classify }

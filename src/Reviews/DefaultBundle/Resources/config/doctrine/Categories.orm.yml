@@ -15,7 +15,7 @@ Reviews\DefaultBundle\Entity\Categories:
         name:
             type: string
             nullable: true
-            length: 255
+            length: 100
             options:
                 fixed: false
         parentId:

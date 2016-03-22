@@ -1,0 +1,28 @@
+Reviews\SimilarityBundle\Entity\Categories:
+    type: entity
+    table: categories
+    id:
+        categoryId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: category_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        parentId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+            column: parent_id
+    lifecycleCallbacks: {  }

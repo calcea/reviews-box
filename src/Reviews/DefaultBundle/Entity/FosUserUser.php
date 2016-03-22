@@ -1171,4 +1171,3 @@ class FosUserUser
         return $this->group;
     }
 }
-

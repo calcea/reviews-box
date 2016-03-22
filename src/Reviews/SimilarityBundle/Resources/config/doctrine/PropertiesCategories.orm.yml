@@ -1,0 +1,21 @@
+Reviews\SimilarityBundle\Entity\PropertiesCategories:
+    type: entity
+    table: properties_categories
+    id:
+        propertyCategoryId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: property_category_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

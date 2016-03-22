@@ -2,6 +2,7 @@
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Debug\Debug;
 
+
 // If you don't want to setup permissions the proper way, just uncomment the following PHP line
 // read http://symfony.com/doc/current/book/installation.html#checking-symfony-application-configuration-and-setup
 // for more information
@@ -16,7 +17,7 @@ use Symfony\Component\Debug\Debug;
 //    header('HTTP/1.0 403 Forbidden');
 //    exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 //}
-
+set_time_limit(0);
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 Debug::enable();
 

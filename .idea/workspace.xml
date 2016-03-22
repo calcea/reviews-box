@@ -2,111 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fba7970-0cfe-4e69-b4ab-4785992ae1ae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vagrant.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Services/TrainSvm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Controller/DefaultController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Controller/PredictController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/routing.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/services.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/views/Default/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/ReviewsPredictBundle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/BayesAlgorithm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/ClassifyAbstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/SvmAlgorithm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Configs.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/BayesAlgorithm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/SvmAlgorithm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/TrainAbstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/TrainInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Controller/DefaultController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/DependencyInjection/Configuration.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/DependencyInjection/ReviewsSimilarityExtension.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/config/routing.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/config/services.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/doc/index.rst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/translations/messages.fr.xlf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/views/Default/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/ReviewsSimilarityBundle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/SimHash/Comparator/SimpleComparator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/SimHash/TextExtractor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/Remove.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/RepositoryAbstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/RomanianRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Tests/Controller/DefaultControllerTest.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Controller/DefaultController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Controller/NewsController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Entity/News.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Entity/NewsRepository.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Form/EditAuthenticationType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Form/EditProfileType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Form/NewsType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Form/Registration.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Form/ResettingPasswordType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/config/doctrine/News.orm.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/config/routing.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/config/services.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/allbum.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/b11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/f1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/facebook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/google+.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/gridallbum9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/header-border.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/in.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/likes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/marker2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/pintrest.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/play_overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/re.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/rss.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/s1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/search-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/social-icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/star.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/sub.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/t1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/twiter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/images/views.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/public/js/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/views/Default/index.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/views/News/index.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/views/base.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/TutorialsBaseBundle.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/tutorials.iml" afterPath="$PROJECT_DIR$/.idea/reviews-box.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/DependencyInjection/Configuration.php" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/DependencyInjection/Configuration.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/DependencyInjection/TutorialsBaseExtension.php" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/DependencyInjection/ReviewsPredictExtension.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/doc/index.rst" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/doc/index.rst" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/translations/messages.fr.xlf" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/translations/messages.fr.xlf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Resources/views/News/add.html.twig" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/parameters.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Tutorials/BaseBundle/Tests/Controller/DefaultControllerTest.php" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Tests/Controller/DefaultControllerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/SVM/Classify.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/SVM/Model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Repositories/AbstractRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Repositories/SimHashStrings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/CalculateSimhash.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/UpdateDatabaseSimHash.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/AclClasses.orm.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/AclEntries.orm.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/AclObjectIdentities.orm.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/AclSecurityIdentities.orm.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/FosUserGroup.orm.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/FosUserUser.orm.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/MediaGallery.orm.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/MediaGalleryMedia.orm.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/MediaMedia.orm.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/data/classifier-models/cf96fcd0c1ccba4f1172b240a55630b6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/data/classifier-models/model-svm.svm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/BayesAlgorithm.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/ClassifyAbstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/SvmAlgorithm.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/BayesAlgorithm.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/SvmAlgorithm.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/TrainAbstract.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/TrainInterface.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SymfonyRequirements.php" afterPath="$PROJECT_DIR$/app/SymfonyRequirements.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/check.php" afterPath="$PROJECT_DIR$/app/check.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/AclClasses.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/AclClasses.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/AclEntries.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/AclEntries.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/AclObjectIdentities.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/AclObjectIdentities.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/AclSecurityIdentities.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/AclSecurityIdentities.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/Categories.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/Categories.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/FosUserGroup.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/FosUserGroup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/FosUserUser.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/FosUserUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/Manufacturers.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/Manufacturers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/MediaGallery.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/MediaGallery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/MediaGalleryMedia.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/MediaGalleryMedia.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/MediaMedia.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/MediaMedia.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/Products.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/Products.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/ProductsProperties.php" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/ProductsProperties.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/Categories.orm.yml" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/Categories.orm.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/Manufacturers.orm.yml" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/Manufacturers.orm.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/Products.orm.yml" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/Products.orm.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/ProductsProperties.orm.yml" afterPath="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/ProductsProperties.orm.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Controller/PredictController.php" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Controller/PredictController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/services.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app_dev.php" afterPath="$PROJECT_DIR$/web/app_dev.php" />
     </list>
     <ignored path="tutorials.iws" />
@@ -136,93 +80,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SvmAlgorithm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/SvmAlgorithm.php">
+      <file leaf-file-name="TFIDF.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Transform/TFIDF.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538">
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            <state vertical-scroll-proportion="-6.3846154">
+              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PredictController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Controller/PredictController.php">
+      <file leaf-file-name="SimHash.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/SimHash.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.846153">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimHashStrings.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Repositories/SimHashStrings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.5">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Controller/DefaultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.576923">
+              <caret line="174" column="45" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleComparator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/SimHash/Comparator/SimpleComparator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.961538">
+              <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fingerprint.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/Fingerprint.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.26923">
+              <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateDatabaseSimHash.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/UpdateDatabaseSimHash.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.423077">
+              <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
               <folding>
-                <element signature="e#1214#1260#0#PHP" expanded="true" />
+                <element signature="e#138#182#0#PHP" expanded="true" />
+                <element signature="e#968#999#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="Products.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/Products.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42805755">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SvmAlgorithm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/SvmAlgorithm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.307693">
-              <caret line="50" column="95" selection-start-line="50" selection-start-column="95" selection-end-line="50" selection-end-column="95" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SVM.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/SVM.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.730769">
-              <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Classifier.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/Classifier.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8076925">
-              <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cache.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/maximebf/cachecache/src/CacheCache/Cache.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077">
-              <caret line="188" column="24" selection-start-line="188" selection-start-column="24" selection-end-line="188" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="File.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/maximebf/cachecache/src/CacheCache/Backends/File.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="15.692307">
-              <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SVMCachedModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Model/SVMCachedModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1153846">
-              <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+            <state vertical-scroll-proportion="-57.155174">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -247,27 +182,25 @@
       <command text="php app/console bundle:generate" />
       <command text="php app/console generate:bundle" />
       <command text="composer require webmozart/assert:~1.0" />
+      <command text="dir" />
+      <command text="php app/console doctrine:generate:entities ReviewsPredictBundle" />
+      <command text="php app/console doctrine" />
+      <command text="php app/console doctrine:generate:entities" />
+      <command text="php app/console doctrine:generate:entities ReviewsDefaultBundle" />
+      <command text="php app/console doctrine:mapping:import --force ReviewsDefaultBundle yml" />
+      <command text="php app/console doctrine:generate:entities ReviewsDefaultBundle" />
+      <command text="git status" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/b2b-wrapper/bootstrap.php" />
-        <option value="$PROJECT_DIR$/src/Reviews/ParserBundle/Services/Import/FromB2b.php" />
-        <option value="$PROJECT_DIR$/src/Reviews/ParserBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/Reviews/ParserBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/Vagrantfile" />
-        <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/web/app_dev.php" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Transform/DocumentLength.php" />
-        <option value="$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/SVM.php" />
         <option value="$PROJECT_DIR$/src/Reviews/DefaultBundle/Services/TrainSvm.php" />
         <option value="$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Normalizer/Token/PhpStemmer.php" />
         <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/TrainBayes.php" />
@@ -279,17 +212,14 @@
         <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/Svm.php" />
         <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/TrainBayes.php" />
         <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/TrainInterface.php" />
-        <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/TrainAbstract.php" />
         <option value="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Reviews/DefaultBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/ComplementNaiveBayes.php" />
         <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/BayesAlgorithm.php" />
         <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/BayesAlgorithm.php" />
-        <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/ClassifyAbstract.php" />
         <option value="$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/Classifier.php" />
         <option value="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/Categories.orm.yml" />
-        <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/RemoveInterface.php" />
         <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/RomanianRepository.php" />
         <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/RemoveAbstract.php" />
@@ -297,15 +227,31 @@
         <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/RepositoryAbstract.php" />
         <option value="$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/Comparator/GaussianComparator.php" />
         <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/SimHash/Comparator/SimpleComparator.php" />
-        <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/SimHash/TextExtractor.php" />
         <option value="$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Model/SVMCachedModel.php" />
         <option value="$PROJECT_DIR$/vendor/maximebf/cachecache/src/CacheCache/Cache.php" />
         <option value="$PROJECT_DIR$/vendor/maximebf/cachecache/src/CacheCache/Backends/File.php" />
         <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/SvmAlgorithm.php" />
         <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/SvmAlgorithm.php" />
-        <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Controller/PredictController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/TrainAbstract.php" />
+        <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/SVM/Classify.php" />
+        <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/Products.orm.yml" />
+        <option value="$PROJECT_DIR$/web/app_dev.php" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Controller/PredictController.php" />
+        <option value="$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Transform/DocumentLength.php" />
+        <option value="$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Transform/TFIDF.php" />
+        <option value="$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/SVM.php" />
+        <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Repositories/SimHashStrings.php" />
+        <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Repositories/AbstractRepository.php" />
+        <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/Reviews/PredictBundle/Services/SVM/Model.php" />
+        <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/CalculateSimhash.php" />
+        <option value="$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/UpdateDatabaseSimHash.php" />
       </list>
     </option>
   </component>
@@ -314,6 +260,7 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
+  <component name="PhpDebugGeneral" ignore_connections_through_unregistered_servers="true" />
   <component name="PhpServers">
     <servers />
   </component>
@@ -349,6 +296,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -367,32 +315,371 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimilarityBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimilarityBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimilarityBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimilarityBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimilarityBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Repositories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimilarityBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PredictBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PredictBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PredictBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SVM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PredictBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DefaultBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reviews-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DefaultBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../symfony" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\reviews-box\src\Reviews\PredictBundle\Services\Train" />
+      <recent name="C:\xampp\htdocs\reviews-box\vendor" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\reviews-box\src\Reviews\PredictBundle\Services" />
       <recent name="C:\xampp\htdocs\reviews-box\src\Reviews\DefaultBundle\Resources" />
       <recent name="C:\xampp\htdocs\reviews-box\vendor\b2b-wrapper" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\reviews-box\src\Reviews\PredictBundle\Services\Train" />
-      <recent name="C:\xampp\htdocs\reviews-box\vendor" />
-    </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.localhost">
-    <configuration default="false" name="localhost" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" uri="http://localhost">
+    <configuration default="false" name="localhost" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" uri="http://reviews-box.dev/">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -447,26 +734,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30635402" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26626325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.81669396" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="494" y="0" width="787" height="721" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="281" y="-28" width="803" height="760" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30605564" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21293375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21176471" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -482,190 +769,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/ComplementNaiveBayes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9413793">
-          <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/BayesAlgorithm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46896553">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/BayesAlgorithm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05862069">
-          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22442244">
-          <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/examples/basic_svm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Model/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/Sonata/AdminBundle/Resources/views/Core/add_block.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30520648">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/Categories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54937166">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/DefaultBundle/Resources/config/doctrine/Categories.orm.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4373928">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/ClassifyAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36624774">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/DefaultBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7558348">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/doc/examples/simple_html.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8716216">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/doc/examples/basic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.14864865">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/doc/examples/simple_text.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.206081">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34829444">
-          <caret line="327" column="9" selection-start-line="327" selection-start-column="9" selection-end-line="327" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/Extractor/SimpleTextExtractor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="34" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/cocur/slugify/src/Slugify.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34829444">
-          <caret line="783" column="20" selection-start-line="783" selection-start-column="20" selection-end-line="783" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/webmozart/assert/src/Assert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24057451">
-          <caret line="794" column="31" selection-start-line="794" selection-start-column="31" selection-end-line="794" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/Comparator/ComparatorInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3967684">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/SimHash/Comparator/SimpleComparator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27468583">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="e#157#204#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/Extractor/HtmlExtractor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1454219">
-          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/Tokenizer/String128Tokenizer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3357271">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/Tokenizer/String32Tokenizer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3357271">
@@ -680,71 +788,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/RomanianRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5483871">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/RepositoryAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9390681">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/Remove.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4516129">
-          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/SimHash.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03046595">
-          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
-          <folding>
-            <element signature="e#55#129#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/SimHash/TextExtractor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5035842">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="e#61#87#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/TrainAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.76923">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/DataSource/Json.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -760,15 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8689407">
           <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Normalizer/Token/PhpStemmer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,7 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.1903052">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,7 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3967684">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,31 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34829444">
           <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/Classifier.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8076925">
-          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/SVM.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.730769">
-          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Model/SVMCachedModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1153846">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,64 +834,321 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26704547">
           <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/maximebf/cachecache/src/CacheCache/Cache.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077">
-          <caret line="188" column="24" selection-start-line="188" selection-start-column="24" selection-end-line="188" selection-end-column="24" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/parameters.yml">
+    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Normalizer/Token/PhpStemmer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02915952">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="52" />
-          <folding />
+        <state vertical-scroll-proportion="0.6344086">
+          <caret line="65" column="34" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Model/SVMCachedModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30520648">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/maximebf/cachecache/src/CacheCache/Backends/File.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="15.692307">
+        <state vertical-scroll-proportion="0.9389587">
           <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/maximebf/cachecache/src/CacheCache/Cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030520646">
+          <caret line="188" column="24" selection-start-line="188" selection-start-column="24" selection-end-line="188" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/RepositoryAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29802513">
+          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/RomanianRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54937166">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/StopWords/Remove.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6032316">
+          <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ApcCache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5798923">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1457976">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/config/doctrine/Categories.orm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/SitesProductsDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Train/SvmAlgorithm.php">
+    <entry file="file://$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/Categories.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.307693">
-          <caret line="50" column="95" selection-start-line="50" selection-start-column="95" selection-end-line="50" selection-end-column="95" />
+        <state vertical-scroll-proportion="-0.54937166">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Services/Classify/SvmAlgorithm.php">
+    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/DataSource/DataArray.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.34829444">
+          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05831904">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/SVM.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8076925">
+          <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Transform/DocumentLength.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0">
+          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/ReviewsSimilarityBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Translation/Extractor/ExtractorInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5888689">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/Extractor/ExtractorInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Classifier/Classifier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11490126">
+          <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/camspiers/statistical-classifier/src/Camspiers/StatisticalClassifier/Transform/TFIDF.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.3846154">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/SimHash/TextExtractor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34829444">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23327616">
+          <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Controller/PredictController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.846153">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3967684">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Repositories/AbstractRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30520648">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Repositories/SimHashStrings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Services/SVM/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6535009">
+          <caret line="40" column="69" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
           <folding>
-            <element signature="e#1214#1260#0#PHP" expanded="true" />
+            <element signature="e#139#168#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/SimHash.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42805755">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/doctrine-bundle/Registry.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34829444">
+          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/AbstractManagerRegistry.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14901257">
+          <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1457976">
+          <caret line="5" column="75" selection-start-line="5" selection-start-column="75" selection-end-line="5" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/SimHash/Comparator/SimpleComparator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.961538">
+          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/tga/simhash-php/lib/Tga/SimHash/Fingerprint.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.26923">
+          <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.576923">
+          <caret line="174" column="45" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/CalculateSimhash.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6032316">
+          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+          <folding>
+            <element signature="e#137#198#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/PredictBundle/Services/SVM/Classify.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61041296">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/SimilarityBundle/Services/UpdateDatabaseSimHash.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.423077">
+          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+          <folding>
+            <element signature="e#138#182#0#PHP" expanded="true" />
+            <element signature="e#968#999#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reviews/DefaultBundle/Entity/Products.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-57.155174">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

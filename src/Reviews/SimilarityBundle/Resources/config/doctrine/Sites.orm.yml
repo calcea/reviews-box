@@ -1,0 +1,54 @@
+Reviews\SimilarityBundle\Entity\Sites:
+    type: entity
+    table: sites
+    id:
+        siteId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: site_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        baseUrl:
+            type: string
+            nullable: false
+            length: 150
+            options:
+                fixed: false
+            column: base_url
+        name:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+    manyToMany:
+        manufacturer:
+            targetEntity: Manufacturers
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: site
+            joinTable:
+                name: sites_manufacturers
+                joinColumns:
+                    -
+                        name: site_id
+                        referencedColumnName: site_id
+                inverseJoinColumns:
+                    -
+                        name: manufacturer_id
+                        referencedColumnName: manufacturer_id
+            orderBy: null
+        product:
+            targetEntity: Products
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: site
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

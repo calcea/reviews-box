@@ -1,0 +1,74 @@
+Reviews\DefaultBundle\Entity\SitesProductsDetails:
+    type: entity
+    table: sites_products_details
+    indexes:
+        site_product_details__sites_idx:
+            columns:
+                - site_id
+    id:
+        siteProductDetailId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: site_product_detail_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        details:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        productUrl:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: product_url
+        htmlDescription:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+            column: html_description
+        similarityHash:
+            type: string
+            nullable: true
+            length: 64
+            options:
+                fixed: true
+            column: similarity_hash
+        added:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+        price:
+            type: decimal
+            nullable: true
+            precision: 15
+            scale: 2
+        productId:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: true
+            column: product_id
+    manyToOne:
+        site:
+            targetEntity: Sites
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                site_id:
+                    referencedColumnName: site_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

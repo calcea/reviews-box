@@ -184,5 +184,43 @@ class AclObjectIdentities
     {
         return $this->ancestor;
     }
-}
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $objectentity;
 
+
+    /**
+     * Add objectentity
+     *
+     * @param \Reviews\DefaultBundle\Entity\AclObjectIdentities $objectentity
+     *
+     * @return AclObjectIdentities
+     */
+    public function addObjectentity(\Reviews\DefaultBundle\Entity\AclObjectIdentities $objectentity)
+    {
+        $this->objectentity[] = $objectentity;
+
+        return $this;
+    }
+
+    /**
+     * Remove objectentity
+     *
+     * @param \Reviews\DefaultBundle\Entity\AclObjectIdentities $objectentity
+     */
+    public function removeObjectentity(\Reviews\DefaultBundle\Entity\AclObjectIdentities $objectentity)
+    {
+        $this->objectentity->removeElement($objectentity);
+    }
+
+    /**
+     * Get objectentity
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getObjectentity()
+    {
+        return $this->objectentity;
+    }
+}
