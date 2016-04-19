@@ -1,6 +1,7 @@
 Reviews\DefaultBundle\Entity\Products:
     type: entity
     table: products
+    repositoryClass: Reviews\DefaultBundle\Repositories\Database\Products
     indexes:
         class1_FK_idx:
             columns:
@@ -23,8 +24,7 @@ Reviews\DefaultBundle\Entity\Products:
                 fixed: true
             id: true
             column: product_id
-            generator:
-                strategy: IDENTITY
+
     fields:
         code:
             type: string
@@ -60,6 +60,16 @@ Reviews\DefaultBundle\Entity\Products:
                 default: '0'
             column: similarity_hash
     manyToOne:
+        manufacturer:
+            targetEntity: Manufacturers
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                manufacturer_id:
+                    referencedColumnName: manufacturer_id
+            orphanRemoval: false
         class1:
             targetEntity: Categories
             cascade: {  }
@@ -90,32 +100,4 @@ Reviews\DefaultBundle\Entity\Products:
                 class3:
                     referencedColumnName: category_id
             orphanRemoval: false
-        manufacturer:
-            targetEntity: Manufacturers
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                manufacturer_id:
-                    referencedColumnName: manufacturer_id
-            orphanRemoval: false
-    manyToMany:
-        site:
-            targetEntity: Sites
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: product
-            joinTable:
-                name: sites_products
-                joinColumns:
-                    -
-                        name: product_id
-                        referencedColumnName: product_id
-                inverseJoinColumns:
-                    -
-                        name: site_id
-                        referencedColumnName: site_id
-            orderBy: null
     lifecycleCallbacks: {  }

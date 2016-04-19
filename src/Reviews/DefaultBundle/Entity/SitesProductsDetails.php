@@ -255,3 +255,4 @@ class SitesProductsDetails
         return $this->site;
     }
 }
+

@@ -19,13 +19,4 @@ Reviews\DefaultBundle\Entity\Manufacturers:
             length: 100
             options:
                 fixed: false
-    manyToMany:
-        site:
-            targetEntity: Sites
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: manufacturer
-            inversedBy: null
-            joinTable: null
-            orderBy: null
     lifecycleCallbacks: {  }

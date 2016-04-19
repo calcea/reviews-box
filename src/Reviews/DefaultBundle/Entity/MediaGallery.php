@@ -197,3 +197,4 @@ class MediaGallery
         return $this->createdAt;
     }
 }
+

@@ -197,3 +197,4 @@ class MediaGalleryMedia
         return $this->media;
     }
 }
+

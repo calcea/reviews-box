@@ -1,0 +1,35 @@
+Reviews\DefaultBundle\Entity\SitesManufacturers:
+    type: entity
+    table: sites_manufacturers
+    indexes:
+        IDX_B760554EF6BD1646:
+            columns:
+                - site_id
+    id:
+        manufacturerId:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: true
+            id: true
+            column: manufacturer_id
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+    oneToOne:
+        site:
+            targetEntity: Sites
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                site_id:
+                    referencedColumnName: site_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

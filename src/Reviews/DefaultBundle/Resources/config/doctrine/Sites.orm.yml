@@ -25,30 +25,4 @@ Reviews\DefaultBundle\Entity\Sites:
             length: 100
             options:
                 fixed: false
-    manyToMany:
-        manufacturer:
-            targetEntity: Manufacturers
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: site
-            joinTable:
-                name: sites_manufacturers
-                joinColumns:
-                    -
-                        name: site_id
-                        referencedColumnName: site_id
-                inverseJoinColumns:
-                    -
-                        name: manufacturer_id
-                        referencedColumnName: manufacturer_id
-            orderBy: null
-        product:
-            targetEntity: Products
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: site
-            inversedBy: null
-            joinTable: null
-            orderBy: null
     lifecycleCallbacks: {  }

@@ -79,7 +79,6 @@ doctrine:
                     ApplicationSonataMediaBundle: ~
                     ReviewsDefaultBundle: ~
 
-
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"

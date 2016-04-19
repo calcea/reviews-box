@@ -8,7 +8,7 @@ namespace Reviews\DefaultBundle\Entity;
 class ProductsProperties
 {
     /**
-     * @var integer
+     * @var string
      */
     private $propertyId;
 
@@ -23,6 +23,11 @@ class ProductsProperties
     private $value;
 
     /**
+     * @var \Reviews\DefaultBundle\Entity\PropertiesCategories
+     */
+    private $propertyCategory;
+
+    /**
      * @var \Reviews\DefaultBundle\Entity\Products
      */
     private $product;
@@ -31,7 +36,7 @@ class ProductsProperties
     /**
      * Get propertyId
      *
-     * @return integer
+     * @return string
      */
     public function getPropertyId()
     {
@@ -87,35 +92,6 @@ class ProductsProperties
     }
 
     /**
-     * Set product
-     *
-     * @param \Reviews\DefaultBundle\Entity\Products $product
-     *
-     * @return ProductsProperties
-     */
-    public function setProduct(\Reviews\DefaultBundle\Entity\Products $product = null)
-    {
-        $this->product = $product;
-
-        return $this;
-    }
-
-    /**
-     * Get product
-     *
-     * @return \Reviews\DefaultBundle\Entity\Products
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
-    /**
-     * @var \Reviews\DefaultBundle\Entity\PropertiesCategories
-     */
-    private $propertyCategory;
-
-
-    /**
      * Set propertyCategory
      *
      * @param \Reviews\DefaultBundle\Entity\PropertiesCategories $propertyCategory
@@ -138,4 +114,29 @@ class ProductsProperties
     {
         return $this->propertyCategory;
     }
+
+    /**
+     * Set product
+     *
+     * @param \Reviews\DefaultBundle\Entity\Products $product
+     *
+     * @return ProductsProperties
+     */
+    public function setProduct(\Reviews\DefaultBundle\Entity\Products $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Reviews\DefaultBundle\Entity\Products
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
 }
+

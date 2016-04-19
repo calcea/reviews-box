@@ -43,6 +43,11 @@ class Products
     private $similarityHash = '0';
 
     /**
+     * @var \Reviews\DefaultBundle\Entity\Manufacturers
+     */
+    private $manufacturer;
+
+    /**
      * @var \Reviews\DefaultBundle\Entity\Categories
      */
     private $class1;
@@ -57,23 +62,6 @@ class Products
      */
     private $class3;
 
-    /**
-     * @var \Reviews\DefaultBundle\Entity\Manufacturers
-     */
-    private $manufacturer;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $site;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->site = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Get productId
@@ -230,6 +218,30 @@ class Products
     }
 
     /**
+     * Set manufacturer
+     *
+     * @param \Reviews\DefaultBundle\Entity\Manufacturers $manufacturer
+     *
+     * @return Products
+     */
+    public function setManufacturer(\Reviews\DefaultBundle\Entity\Manufacturers $manufacturer = null)
+    {
+        $this->manufacturer = $manufacturer;
+
+        return $this;
+    }
+
+    /**
+     * Get manufacturer
+     *
+     * @return \Reviews\DefaultBundle\Entity\Manufacturers
+     */
+    public function getManufacturer()
+    {
+        return $this->manufacturer;
+    }
+
+    /**
      * Set class1
      *
      * @param \Reviews\DefaultBundle\Entity\Categories $class1
@@ -301,62 +313,8 @@ class Products
         return $this->class3;
     }
 
-    /**
-     * Set manufacturer
-     *
-     * @param \Reviews\DefaultBundle\Entity\Manufacturers $manufacturer
-     *
-     * @return Products
-     */
-    public function setManufacturer(\Reviews\DefaultBundle\Entity\Manufacturers $manufacturer = null)
-    {
-        $this->manufacturer = $manufacturer;
-
-        return $this;
-    }
-
-    /**
-     * Get manufacturer
-     *
-     * @return \Reviews\DefaultBundle\Entity\Manufacturers
-     */
-    public function getManufacturer()
-    {
-        return $this->manufacturer;
-    }
-
-    /**
-     * Add site
-     *
-     * @param \Reviews\DefaultBundle\Entity\Sites $site
-     *
-     * @return Products
-     */
-    public function addSite(\Reviews\DefaultBundle\Entity\Sites $site)
-    {
-        $this->site[] = $site;
-
-        return $this;
-    }
-
-    /**
-     * Remove site
-     *
-     * @param \Reviews\DefaultBundle\Entity\Sites $site
-     */
-    public function removeSite(\Reviews\DefaultBundle\Entity\Sites $site)
-    {
-        $this->site->removeElement($site);
-    }
-
-    /**
-     * Get site
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getSite()
-    {
-        return $this->site;
+    public function setProductId($productId){
+        $this->productId = $productId;
     }
 }
 

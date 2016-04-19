@@ -41,7 +41,10 @@ class CalculateSimhash
         $fingerPrint = null;
         foreach ($data as $id => $item) {
             $fingerPrint = $this->simHashService->hash($this->extractor->extract($item['text']), SimHash::SIMHASH_64);
-            $item['sim_hash'] = $fingerPrint->getDecimal();
+            $binary = $fingerPrint->getBinary();
+            $gmp = \gmp_init($binary, 2);
+            $simHash = \gmp_strval($gmp);
+            $item['sim_hash'] = $simHash;
             $this->repository->replace($id, $item);
         }
     }

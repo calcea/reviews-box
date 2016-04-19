@@ -1,6 +1,7 @@
 Reviews\DefaultBundle\Entity\SitesProductsDetails:
     type: entity
     table: sites_products_details
+    repositoryClass: Reviews\DefaultBundle\Repositories\Database\SitesProductsDetails
     indexes:
         site_product_details__sites_idx:
             columns:

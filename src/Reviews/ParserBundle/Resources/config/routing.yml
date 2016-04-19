@@ -1,3 +1,7 @@
 reviews_parser_homepage:
     path:     parser/
     defaults: { _controller: ReviewsParserBundle:Default:index }
+
+reviews_parser_update_from_json:
+    path:     parser/json
+    defaults: { _controller: ReviewsParserBundle:Default:updateFromJson}

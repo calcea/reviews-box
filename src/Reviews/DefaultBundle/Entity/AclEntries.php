@@ -313,3 +313,4 @@ class AclEntries
         return $this->class;
     }
 }
+

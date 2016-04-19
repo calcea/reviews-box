@@ -18,4 +18,6 @@ abstract class AbstractRepository
     abstract public function replace($id, $item);
 
     abstract public function toArray();
+    
+    abstract public function exist($id);
 }

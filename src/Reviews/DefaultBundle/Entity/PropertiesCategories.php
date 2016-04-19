@@ -52,3 +52,4 @@ class PropertiesCategories
         return $this->name;
     }
 }
+

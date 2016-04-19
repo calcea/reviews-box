@@ -1,0 +1,200 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: george
+ * Date: 3/30/2016
+ * Time: 9:30 PM
+ */
+
+namespace Reviews\ParserBundle\Repositories;
+
+
+use Webmozart\Assert\Assert;
+
+class Manufacturers
+{
+    private $manufacturers = array(
+        'MATTEL' => '00acdfc6fb6ea61d65bfadac87782a56',
+        'ALLIED TELESIS' => '0160588e2aee80a47250d6a3c1f59c02',
+        'VANGUARD' => '01c2f2870f3cbe4359b861528a9fa59c',
+        'ZKTeco' => '01f9b9d4c3256f3050209bb92b0cc3f6',
+        'BACHMANN' => '046824744124156da01460b423781f31',
+        'GORENJE' => '061bf126932a05488bb52a404abbf092',
+        'AltX' => '06e3bfe9e308cf1493a7994ee3280fbf',
+        'LIFEPROOF' => '0ed751f8186339dad35ee79190204dfe',
+        'RAZER' => '11ad65f2f1bcdc6c45a3d64a0e15af9d',
+        'NINTENDO' => '13ec5db16e273d0faf25ff86e0322109',
+        'GARMIN' => '15db327cb32647246068ad1341c2208f',
+        'JINX' => '18acafcfc7d6bcc0f887e7ba8211a9c3',
+        'EMTEC' => '1e18639f88a3c9aebff8bbc070e38f10',
+        'NEXANS' => '20f62c387004aae57f3a71fed85d323f',
+        'MINIONS' => '21f3a173fb887129bb54d91e2f8eb42c',
+        'LOGITECH' => '226e60b2e4194a0b98c8a4a508bba3b6',
+        'THECUS' => '2419739e8eb9114392341cac2d2a3c48',
+        'BARKAN' => '24af21666e650bb3e9d23af0a284b68f',
+        'AOC' => '261cb5c565a9599e78ac41ecf00a6d85',
+        'ARCTIC' => '26f2e71fc97427a638c7aefedf47f07d',
+        'EPSON' => '2846ae095f568ce79ee8feb5ee4b5038',
+        'SPIRE' => '291975949338dc9867e0b2011f0247dd',
+        'XEROX' => '2c88cd3d32b25278b9e66b08b277a546',
+        'BIOSTAR' => '2dddac49c7dbb93393a7c13935af44e1',
+        'MAXELL' => '326bc3f6efd3b50cdb6e9e3a3d3a16a5',
+        'MSI' => '3392e29d1fd1ae121310e8a747200bd9',
+        'CREATIVE' => '3425d8c61c24f2905f6ecbda40b83d8b',
+        'V-MARK' => '36d047d7b159961999d7380a8229d438',
+        'EMED' => '37e4a6d6f65ebb0ba5a9d22258985ded',
+        'SWIFTPOINT' => '38171f6a2c4c1760eddfaaabc5e62913',
+        'ENERMAX' => '388fed42cca093fe18ee8797a22403fe',
+        'AMEUROP' => '392a6f836a35efa5c32763f359771921',
+        'ROWENTA' => '3b1d8fe5c43710a2d528a6033f98ec0e',
+        'HOTPOINT' => '3cbe8ee8cb63ed147b507381837bba89',
+        'TOSHIBA' => '3f0a0315f762bc24f94b9661c539c61f',
+        'OTHER' => '421b2a808c31f588221f0216b218b975',
+        'VECTOR' => '4299a7df3555191b08b3241bcaae10b3',
+        'PRINGO' => '43d354ea00531df01e8614019633c23b',
+        'HTC' => '43dff43eb22e2a6885f555d727838b11',
+        'IBM' => '4578021cf127706eb862eff419c33583',
+        'VERBATIM' => '46f98a01c4d414ff0b204e9b62676455',
+        'VIVID' => '49f73217732083f1c0a4613cab988d2b',
+        'TP-LINK' => '4a39ffc8f6d5892bfadd70c81e70a6fa',
+        'HITACHI' => '4c1a787f747cc25d70e976f576b1dd78',
+        'CERTO' => '4d3e2fb53fec61fd9561c75f7921cd96',
+        'TEAMGROUP' => '4d80b5e8800e88cea21d328eaf292abd',
+        'LLORENS' => '50009b68e2ff134cf972bfb1c2460428',
+        'INTEL' => '5013f59077d994bda811f8ac4ff0a7c8',
+        'CANDY' => '53261359c3a368a2e07c28d2d1f34cd1',
+        'HORIZON' => '545b96c53e29bd4d12394c34806dd92e',
+        'NETGEAR' => '5558095492ba4ab828589e1b3f95910c',
+        'A4TECH' => '55c8d42495ae7037c76c37ef0296c5d0',
+        'LENOVO' => '5a3b591eaafa28e14ffd551ff5288202',
+        'IMC' => '5d0e8978ef054fa06a9a8a34b1b4f7e4',
+        'KRUPS' => '5ea581a1f4cb24c139161fa39cb1fba3',
+        'CANON' => '613dc84eceb80cb2c1887b2dc915e82d',
+        'MAGIC BOX' => '616b1ea7c12a6b273eb9afc3ccfb011d',
+        'LEXIBOOK' => '63a5dc2c2b7a3d0b43728f561b644833',
+        'GOLDEN BEAR' => '648fafa386f675b6bb3ccb855127247a',
+        'MIO' => '649d21265eafadbf8152bb0acb6ec6ac',
+        'LACIE' => '66d37b94938ef4ab2ec5e5e37f42cd3e',
+        'HIKVISION' => '69331cee5ce722064f84918769a10d0b',
+        'KingJet' => '6a0695f275a594756a8aa00a82698a26',
+        'DRIFT' => '6f428f79260dfbf809e6e3409a7a9dba',
+        'GeIL' => '7502d64e64778f8271476eda2bcb67cb',
+        'MOULINEX' => '7690463880fe104ae69e41ba45b33c23',
+        'CORSAIR' => '77eabb46367959151bd59758bfb563ba',
+        'DELUX' => '7871832ff9b2a629d321c4255f0e0de2',
+        'GIGABYTE' => '7a785f76ad88b0381fbf355c8f44f417',
+        'PATRIOT' => '7e4c9a8db865ac761bbd437770d69469',
+        'WHIRLPOOL' => '80d9c770a6e97a7f6d2c77b5b60d4c8f',
+        'TARGUS' => '80e74c3d6b20a3ff2641f79dc082fa78',
+        'SONY' => '811200fcda087a6ef5d83876000f390e',
+        'SOPAR' => '821c5ddd44a57f45185e941cb09d5ce6',
+        'OPTEX ' => '84abbeb93cb491f9a68d437b69afe003',
+        'SAPPHIRE' => '84c9132d55a0e777692d75e0c9c7383c',
+        'ZALMAN' => '85a0ee42dfe1e208c7b614b21fb33985',
+        'HP' => '862f9bad23301625445fc8e78d1c8a03',
+        'MONDO' => '86e8212fa633e746c70d0c58a682e3de',
+        'OURSSON' => '90a6e77554fcc7f42521facc45e995b7',
+        'ELECTROLUX' => '91fd43ecea57e09372324abfd9ea5471',
+        'ADATA' => '959225083a1a152f243f06be70f83314',
+        'PNY' => '962770c9318a4ad6caaf1648c7cf24fa',
+        'SERIOUX' => '97dbdeac6f467457630097a2a59beffe',
+        'APPLE' => '996fa9e0229e11a4b4e81bed6a2fc149',
+        'VANORA' => '9abae6dd53d8d099375c54aa349e7b1f',
+        'AMD' => '9b678b2a15f910cb033725de2f45948c',
+        'SEAGATE' => '9bdea78b0abb8598d767d0a5f585f5f1',
+        'ACER' => '9de02d85a7ce51307ae4b75240f4a7bd',
+        'SYGIC' => 'a29f79c7b9368248bb102c6e918a7d71',
+        'SIMMTRONICS' => 'a353cb293aefe695e10d713484132db1',
+        'EIZO' => 'a3909df8890c2d4295abf8bfb4174923',
+        'SONOROUS' => 'a4796ee8a93e32732847e86ad4ed1237',
+        'NOD' => 'a4feebcfee688f0314872bf0451cb269',
+        'BITDEFENDER' => 'a72b01ced9a715165da75fcdd05d72e1',
+        'D-LINK' => 'a9945eef31d5d0ddc1942578ed3e29ae',
+        'HANSA' => 'aa7e5f448c771a16f3b86d2c043d6fe7',
+        'PLACEMATIX' => 'ada9285d994caa77bedc1a8e0b1b6aa9',
+        'CLUB 3D' => 'b030b45107d48739347a525c7e38df14',
+        'BEKO' => 'b0f171a6887e4b5cf9213a1ce1d3c379',
+        'ASROCK' => 'b150f2253e9e6172eaaf5e3b589b4656',
+        'AMAZONAS' => 'b34bfffe909da14108977361213f9592',
+        'GENIUS' => 'b43738f6ce06fd187da661bb32abbbbc',
+        'KME' => 'b462fcee393e05c2ce5c30d6a0a0e6b6',
+        'ZANUSSI' => 'b463266f16e343c607bbab3769af6421',
+        'DISNEY' => 'b5c6c1d2bd7f92c7d666ff58384d0895',
+        'LEXMARK' => 'b5d9dddf096321b0f0c347392953a70c',
+        'WD' => 'b890f918305ac7adeaf7e2eacd5ed02e',
+        'TESY' => 'b8a72f6646b74513cfeea187eff34d6d',
+        'KASPERSKY' => 'b9d7675ec822cfadbd5840ff9ed36c97',
+        'APC' => 'bbce43e239c27fcf18b08c5dcdeb927b',
+        'RAIDMAX' => 'bdd09ed0259d75f2e284c2fd9b2af839',
+        'MISFIT' => 'c06a3644103520c789b1165890986e2b',
+        'KINGMAX' => 'c1dba29e97aa8d6fc82dcdfc3104cc33',
+        'STEELSERIES' => 'c1f6fa06cdd6d57f61bf22601af89f39',
+        'SAMSUNG' => 'c2cad31edd8e355108f814793362a648',
+        'HEINNER' => 'c2dc268aef743286dce76416716a4139',
+        'E-BODA' => 'c37e4953b87c094272775974cb0985ec',
+        'PANASONIC' => 'c3f630cf77c53faf6415b554a67449a1',
+        'TITAN' => 'c460b7c6524bdb64c8fe312074149336',
+        'PALIT' => 'c558cbca9507af331bfb9ed1948a640c',
+        'LINKSYS' => 'c662212a342841a6ba99c90fe0b0a2f4',
+        'CHIEFTEC' => 'c831234b996f9dd90707dfc8b8e4b7d1',
+        'GOODRAM' => 'c8bc11fc3e016e4cf6bafc21bc5c0c3e',
+        'SILICON POWER' => 'c91b756aaf5b091cc1dc760bf1d96fc6',
+        'MomKi' => 'ce1d0c15485c4feb59662340d44269d3',
+        'CRUCIAL' => 'cec3786ba3a07bb7a47ea647e7cd83d5',
+        'U-GROW' => 'cf26ef0025ca1a33a272a4db486be291',
+        'INDESIT' => 'cf5ab6b971bd986f6ea1221cbefba810',
+        'TEFAL' => 'd58866514273514b918a2906f61c8915',
+        'OPTOMA' => 'd832c28c0e37e95723f12d0ee360c1ae',
+        'BENQ' => 'd858534d520a0afef11993dc1b064945',
+        'NUVITA' => 'd891044543d680b4d794c60a36b1bc68',
+        'LITEON' => 'd94859e2c569c1ff5eb362035f6e817a',
+        'BRITAX' => 'da1aecb9c93e3ac1d4c3ea932ace59c4',
+        'COOLER MASTER' => 'dbf862d465115fa1333bd5206135ff16',
+        'PHILIPS' => 'dd96fb2b6981c9160adac47c6413569d',
+        'BELKIN' => 'deb6db7877aeb19a6771ff04167ac500',
+        'ASUS' => 'e19af8b39ea11eff72a8b270afc4027c',
+        'AIRLIVE' => 'e3e572ec7ce7baca26ae6581fa065c23',
+        'SCHNEIDER' => 'e515c10aa5e9b064902f9882a5512893',
+        'KINGSTON' => 'e936ebc5c7cec8934359188913c50e41',
+        'UBIQUITI' => 'ebb5f3531682feeadc6f93298b25f9c5',
+        'LG' => 'ec3c9d7028008ca022f14558f4a25ab0',
+        'ECS' => 'ecd31487af8a76308f3fc41dbdbb6b20',
+        'ZELMER' => 'f7290b678dfb4a0a854a8e0915be7deb',
+        'Henry Hugglemonster' => 'f7d704a589831ce720bd647add688916',
+        'TRITON' => 'f847ed73e2931146757c90a69eed920e',
+        'GAINWARD' => 'f9cbf72597cce4f91715cfcb30c8b64a',
+        'MICROSOFT' => 'fba7b962d0ced198ceb3383c9480e29c',
+        'WORTH' => 'fbc72712f1a4bc438ab3954efdde13d1',
+        'ZOTAC' => 'fcf6c57c41eb813fba4345dccd5236f2',
+        'DELL' => 'ffb1dcf7d544fac6622ab5568012527e',
+        'CANYON' => 'e34cb4fef1ccdbec173ef8e0f69b722e',
+        'BOSCH' => '4a8afb1a23914194d68d9834e83a3dcb',
+        'HAMA' => '351447f79ac0aa25429cd055c395fcd2',
+        'ALLVIEW' => '02c282e4e6ee9bbec475c50533e81bf1',
+        'SANDISK' => '872ce570afa801ccfd71d3e699c1bdba',
+        'PIONEER' => 'd3a32a90c4e4283b9c56f9c8a56b4fbd',
+        'LEGO' => '9f6a07da689da74ebfa863616405a699',
+        'REMINGTON' => 'daa8501b2423f118fb89e96853fe4c12',
+    );
+
+    /**
+     * Returns the manufacturer id by product description
+     *
+     * @param $description
+     * @return bool
+     */
+    public function getManufacturerIdByProductDescription($description)
+    {
+        Assert::string($description);
+        $description = ' ' . strtoupper($description) . ' ';
+        $description = str_replace(',', ' ', $description);
+        foreach ($this->manufacturers as $name => $id) {
+            if (preg_match('/\s' . $name . '\s/', $description)) {
+                return $id;
+            }
+        }
+
+        return false;
+    }
+
+}

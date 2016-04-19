@@ -81,3 +81,4 @@ class Categories
         return $this->parentId;
     }
 }
+

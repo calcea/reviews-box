@@ -35,10 +35,15 @@ class UpdateDatabaseSimHash
     public function updateSimHash()
     {
         $productsDoctrineRepository = $this->doctrineContainer->getRepository("ReviewsDefaultBundle:Products");
+        $sitesProductsDoctrineRepository = $this->doctrineContainer->getRepository("ReviewsDefaultBundle:SitesProductsDetails");
         $products = $productsDoctrineRepository->findAll();
-        $repository = $this->getSimHashRepositoryByProducts($products);
-        $this->addSimHashFingerPrints($repository);
-        $this->updateProductsTable($products, $repository);
+        $sitesProducts = $sitesProductsDoctrineRepository->findAll();
+        $productsSimHashRepository = $this->getSimHashRepositoryByProducts($products);
+        $sitesProductsSimHashRepository = $this->getSimHashRepositoryBySitesProducts($sitesProducts);
+        $this->addSimHashFingerPrints($productsSimHashRepository);
+        $this->addSimHashFingerPrints($sitesProductsSimHashRepository);
+        $this->updateTable($products, $productsSimHashRepository);
+        $this->updateTable($sitesProducts, $sitesProductsSimHashRepository);
     }
 
     /**
@@ -60,6 +65,9 @@ class UpdateDatabaseSimHash
         $repository = new SimHashStrings();
         foreach ($products as $product) {
             /* @var $product \Reviews\DefaultBundle\Entity\Products */
+            if (empty($product->getDescription())) {
+                continue;
+            }
             $id = $product->getProductId();
             $name = $product->getName();
             $repository->add($id, $name);
@@ -70,13 +78,36 @@ class UpdateDatabaseSimHash
 
     /**
      * @param array $products
+     * @return SimHashStrings
+     */
+    protected function getSimHashRepositoryBySitesProducts(array $products)
+    {
+        $repository = new SimHashStrings();
+        foreach ($products as $product) {
+            /* @var $product \Reviews\DefaultBundle\Entity\SitesProductsDetails */
+            if (empty($product->getDetails())) {
+                continue;
+            }
+            $id = $product->getProductId();
+            $name = $product->getDetails();
+            $repository->add($id, $name);
+        }
+
+        return $repository;
+    }
+
+    /**
+     * @param array $products
      * @param AbstractRepository $repository
      */
-    protected function updateProductsTable(array $products, AbstractRepository $repository)
+    protected function updateTable(array $products, AbstractRepository $repository)
     {
         $entityManager = $this->doctrineContainer->getManager();
         foreach ($products as $product) {
             /* @var $product \Reviews\DefaultBundle\Entity\Products */
+            if (!$repository->exist($product->getProductId())) {
+                continue;
+            }
             $simHash = $repository->get($product->getProductId())['sim_hash'];
             $product->setSimilarityHash($simHash);
         }

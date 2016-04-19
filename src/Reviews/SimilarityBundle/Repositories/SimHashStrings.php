@@ -66,4 +66,8 @@ class SimHashStrings extends AbstractRepository
     {
         return $this->data;
     }
+
+    public function exist($id){
+        return (isset($this->data[$id])) ? true : false;
+    }
 }
