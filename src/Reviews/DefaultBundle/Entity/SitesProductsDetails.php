@@ -43,15 +43,14 @@ class SitesProductsDetails
     private $price;
 
     /**
-     * @var string
-     */
-    private $productId;
-
-    /**
      * @var \Reviews\DefaultBundle\Entity\Sites
      */
     private $site;
 
+    /**
+     * @var \Reviews\DefaultBundle\Entity\Products
+     */
+    private $product;
 
     /**
      * Get siteProductDetailId
@@ -253,6 +252,25 @@ class SitesProductsDetails
     public function getSite()
     {
         return $this->site;
+    }
+
+    /**
+     * @return Products
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * @param $product
+     * @return $this
+     */
+    public function setProduct($product)
+    {
+        $this->product = $product;
+
+        return $this;
     }
 }
 

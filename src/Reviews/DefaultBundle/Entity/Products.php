@@ -2,6 +2,8 @@
 
 namespace Reviews\DefaultBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Products
  */
@@ -62,6 +64,18 @@ class Products
      */
     private $class3;
 
+    /**
+     * @var ArrayCollection
+     */
+    private $productDetails;
+
+    /**
+     * Products constructor.
+     */
+    public function __construct()
+    {
+        $this->productDetails = new ArrayCollection();
+    }
 
     /**
      * Get productId
@@ -313,8 +327,41 @@ class Products
         return $this->class3;
     }
 
+    /**
+     * @param $productId
+     */
     public function setProductId($productId){
         $this->productId = $productId;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getProductDetails()
+    {
+        return $this->productDetails;
+    }
+
+    /**
+     * @param $productDetail
+     * @return $this
+     */
+    public function addProductDetail($productDetail)
+    {
+        $this->productDetails->add($productDetail);
+
+        return $this;
+    }
+
+    /**
+     * @param $productDetails
+     * @return $this
+     */
+    public function removeProductDetail($productDetails)
+    {
+        $this->productDetails->removeElement($productDetails);
+
+        return $this;
     }
 }
 

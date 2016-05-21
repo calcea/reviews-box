@@ -1,4 +1,13 @@
 services:
-#    reviews_default.example:
-#        class: Reviews\DefaultBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    sonata.block.service.categories:
+            class: Reviews\DefaultBundle\SonataBlocks\Service\Categories
+            arguments:
+                - sonata.block.service.categories
+                - "@templating"
+                - "@doctrine"
+            tags:
+                - { name: sonata.block }
+    products:
+            class: Reviews\DefaultBundle\Services\Products
+            arguments:
+                - '@doctrine'

@@ -1,56 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Videos Website Template | Home :: W3layouts{% endblock %}</title>
-        <link href="{{ asset('bundles/tutorialsbase/css/style.css') }}" rel="stylesheet" type="text/css"  media="all" />
-    {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+<head>
+    <meta charset="UTF-8"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,900,700italic,500italic'
+          rel='stylesheet' type='text/css'>
+    {% block stylesheet_libs %}
+        {% stylesheets filter='cssrewrite' output='compiled/css/libs.css'
+        '@bootstrap'
+        'libs/css/bootstrap.min.css'
+        'libs/css/animation.css'
+        'libs/css/chosen.css'
+        'libs/css/cloud-zoom.css'
+        'libs/css/flexslider.css'
+        'libs/css/fontello-codes.css'
+        'libs/css/fontello-embedded.css'
+        'libs/css/fontello-ie7-codes.css'
+        'libs/css/fontello-ie7.css'
+        'libs/css/fontello.css'
+        'libs/css/ie.css'
+        'libs/css/jquery-ui.min.css'
+        'libs/css/jquery.fancybox.css'
+        'libs/css/jquery.nouislider.min.css'
+        'libs/css/owl.carousel.css'
+        'libs/css/owl.theme.css'
+        'libs/css/owl.transitions.css'
+        'libs/css/perfect-scrollbar.css'
+        'libs/css/select.css'
+        'libs/css/settings-ie8.css'
+        'libs/css/settings.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+    {% block stylesheets %}
+        {% stylesheets filter='cssrewrite' output='compiled/css/style.css'
+        'css/style.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body>
-    {% block header %}
-        <div class="header">
-            <div class="wrap">
-                <!---start-logo---->
-                <div class="logo">
-                    <a href="index.html"><img src="{{ asset('bundles/tutorialsbase/images/logo.png') }}" title="logo" /></a>
-                </div>
-                <!---End-logo---->
-                <!---start-top-menu-search---->
-                <div class="top-menu">
-                    <div class="top-nav">
-                        <ul>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Videos</a></li>
-                            <li><a href="categories.html">Categories</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="search">
-                        <form>
-                            <input type="text" class="textbox" value="Search:" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                        this.value = 'Search';
-                                    }">
-                            <input type="submit" value=" " />
-                        </form>
-                    </div>
-                    <div class="clear"> </div>
-                </div>
-                <div class="clear"> </div>
-                <!---End-top-menu-search---->
-            </div>
-            <!---End-header---->
-        </div>
-        <div class="clear"> </div>
+<div class="container">
+
+    {% include "::header.html.twig" %}
+
+    {% block admin_bar %}
+
     {% endblock %}
-    {% block body %}
-    {% endblock %}
-    {% block fos_user_content %}
-    {% endblock %}
-    {% block javascripts %}
-    {% endblock %}
-    <div class="copy-right">
-        <p>Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+
+    <div class="row content">
+        <section class="main-content col-lg-9 col-md-9 col-sm-9 col-lg-push-3 col-md-push-3 col-sm-push-3">
+            {% block content %}{% endblock %}
+        </section>
+        {% include "::sidebar.html.twig" %}
     </div>
+
+    {% include "::footer.html.twig" %}
+
+    <div id="back-to-top">
+        <i class="icon-up-dir"></i>
+    </div>
+</div>
+{% block javascript_libs %}
+    {% javascripts  output='compiled/js/libs.js'
+    '@jquery'
+    '@jquery_ui'
+    'libs/js/modernizr.min.js'
+    'libs/js/jquery.raty.min.js'
+    'libs/js/perfect-scrollbar.min.js'
+    'libs/js/zoomsl-3.0.min.js'
+    'libs/js/jquery.fancybox.pack.js'
+    'libs/js/jquery.themepunch.plugins.min.js'
+    'libs/js/jquery.themepunch.revolution.min.js'
+    'libs/js/flexslider.min.js'
+    'libs/js/jquery.iosslider.min.js'
+    'libs/js/jquery.nouislider.min.js'
+    'libs/js/owl.carousel.min.js'
+    'libs/js/chosen.jquery.min.js'
+    'libs/js/bootstrap.min.js'
+    'libs/js/tinynav.min.js'
+    'libs/js/main-script.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+{% block javascripts %}{% endblock %}
 </body>
 </html>

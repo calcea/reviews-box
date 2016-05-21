@@ -1,0 +1,15 @@
+{% extends sonata_block.templates.block_base %}
+
+{% block block %}
+
+    <ul>
+        {% for category in categories %}
+            <li><a href="/products/category/{{ category.categoryId }}">
+                    {{ category.name }}
+                    <i class="icons icon-right-dir"></i>
+                </a>
+            </li>
+
+        {% endfor %}
+    </ul>
+{% endblock %}

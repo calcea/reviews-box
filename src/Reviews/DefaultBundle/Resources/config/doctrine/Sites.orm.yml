@@ -25,4 +25,8 @@ Reviews\DefaultBundle\Entity\Sites:
             length: 100
             options:
                 fixed: false
+    oneToMany:
+        siteProducts:
+            targetEntity: Reviews\DefaultBundle\Entity\SitesProductsDetails
+            mappedBy: site
     lifecycleCallbacks: {  }

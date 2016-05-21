@@ -1,0 +1,49 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div id="loginbox" class="mainbox page-content">
+    <p>{{ 'If you are already registered please login directly here'|trans }}</p>
+    <form action="{{ path("fos_user_security_check") }}" method="post">
+        <input type="hidden" name="_csrf_token" value="{{ fos_csrf_provider.generateCsrfToken('authenticate') }}"/>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="iconic-input">
+                    {#<label for="username">{{ 'security.login.username'|trans }}</label>#}
+                    <input type="text" id="username" name="_username"
+                           class="form-control"
+                           placeholder="{{ 'security.login.username'|trans }}"
+                           required="required"/>
+                    <i class="icons icon-user-3"></i>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="iconic-input">
+                    {#<label for="password">{{ 'security.login.password'|trans }}</label>#}
+                    <input type="password" placeholder="{{ 'security.login.password'|trans }}" class="form-control" id="password" name="_password" required="required"/>
+                    <i class="icons icon-lock"></i>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+        </div>
+        <br/><br/>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 align-left">
+                <input class="orange" type="submit" id="_submit" name="_submit"
+                       value="{{ 'security.login.submit'|trans }}"/>
+                {#<input type="submit" class="orange" value="Login">#}
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 align-right">
+                <small>
+                    <a class="align-right" href="{{ path('fos_user_change_password') }}">Forgot password?</a>
+                    <br>
+                    {#<a class="align-right" href="#">Forgot your password?</a>#}
+                    {#<a class="align-right" href="#">Forgot your username?</a>#}
+                    {#<br>#}
+                </small>
+            </div>
+        </div>
+    </form>
+</div>

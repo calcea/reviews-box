@@ -54,22 +54,15 @@ Reviews\DefaultBundle\Entity\SitesProductsDetails:
             nullable: true
             precision: 15
             scale: 2
-        productId:
-            type: string
-            nullable: false
-            length: 32
-            options:
-                fixed: true
-            column: product_id
     manyToOne:
         site:
-            targetEntity: Sites
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                site_id:
-                    referencedColumnName: site_id
-            orphanRemoval: false
+            targetEntity: Reviews\DefaultBundle\Entity\Sites
+            inversedBy: siteProducts
+            joinColumn:
+                referencedColumnName: site_id
+        product:
+            targetEntity: Reviews\DefaultBundle\Entity\Products
+            inversedBy: productDetails
+            joinColumn:
+                referencedColumnName: product_id
     lifecycleCallbacks: {  }

@@ -59,6 +59,10 @@ Reviews\DefaultBundle\Entity\Products:
                 unsigned: false
                 default: '0'
             column: similarity_hash
+    oneToMany:
+        productDetails:
+            targetEntity: Reviews\DefaultBundle\Entity\SitesProductsDetails
+            mappedBy: product
     manyToOne:
         manufacturer:
             targetEntity: Manufacturers

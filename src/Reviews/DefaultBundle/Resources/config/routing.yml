@@ -4,3 +4,6 @@ reviews_default_homepage:
 reviews_add_Product:
     path:     /add-product
     defaults: { _controller: ReviewsDefaultBundle:Default:addProduct}
+reviews_all_products:
+    path: /products/{page}/{category}
+    defaults: { _controller: ReviewsDefaultBundle:Default:index, page: 1, category: 0}

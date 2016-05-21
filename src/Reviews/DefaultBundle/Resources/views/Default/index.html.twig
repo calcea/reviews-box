@@ -1,1 +1,1154 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+
+{% block content %}
+<section class="slider">
+    <div class="tp-banner-container">
+        <div class="tp-banner">
+            <ul>
+                <!-- SLIDE  -->
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="1500">
+                    <!-- MAIN IMAGE -->
+                    <img src="/img/slide1.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top"
+                         data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="60"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><h2><strong>Lorem Ipsum Dolor</strong></h2>
+                    </div>
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="140"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><h3>All the power in your hands!</h3>
+                    </div>
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="250"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><span>From <span class="price">$960.00</span></span>
+                    </div>
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="300"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><a class="button big red" href="#">Buy Now</a>
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="/img/slide3.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
+                         data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="60"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><h2><strong>The New Studio<br>Original Headphones</strong></h2>
+                    </div>
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="190"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><h3>Lorem ipsum dolor</h3>
+                    </div>
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="300"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><span>Only <span class="price">$399.00</span></span>
+                    </div>
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="347"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><a class="button big red" href="#">Shop Now</a>
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="/img/slide2.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
+                         data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="60"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><h2>The New <strong>Laptop</strong></h2>
+                    </div>
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="140"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><h3>All the power in your hands!</h3>
+                    </div>
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="250"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><span>From <span class="price">$990.00</span></span>
+                    </div>
+                    <div class="tp-caption skewfromrightshort fadeout"
+                         data-x="40"
+                         data-y="300"
+                         data-speed="500"
+                         data-start="1200"
+                         data-easing="Power4.easeOut"><a class="button big red" href="#">Buy Now</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- Featured Products -->
+<div class="products-row row">
+
+    <!-- Carousel Heading -->
+    <div class="col-lg-12 col-md-12 col-sm-12">
+
+        <div class="carousel-heading">
+            <h4>Featured Products</h4>
+
+            <div class="carousel-arrows">
+                <i class="icons icon-left-dir"></i>
+                <i class="icons icon-right-dir"></i>
+            </div>
+        </div>
+
+    </div>
+    <!-- /Carousel Heading -->
+
+    <!-- Carousel -->
+    <div class="carousel owl-carousel-wrap col-lg-12 col-md-12 col-sm-12">
+
+        <div class="owl-carousel" data-max-items="3">
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample1.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <span class="product-tag">Sale</span>
+                        <img src="/img/products/sample2.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample3.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample1.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample2.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample3.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+        </div>
+    </div>
+    <!-- /Carousel -->
+
+</div>
+<!-- /Featured Products -->
+
+
+<!-- New Collection -->
+<div class="products-row row">
+
+    <!-- Carousel Heading -->
+    <div class="col-lg-12 col-md-12 col-sm-12">
+
+        <div class="carousel-heading">
+            <h4>New Collection</h4>
+
+            <div class="carousel-arrows">
+                <i class="icons icon-left-dir"></i>
+                <i class="icons icon-right-dir"></i>
+            </div>
+        </div>
+
+    </div>
+    <!-- /Carousel Heading -->
+
+    <!-- Carousel -->
+    <div class="carousel owl-carousel-wrap col-lg-12 col-md-12 col-sm-12">
+
+        <div class="owl-carousel" data-max-items="3">
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <span class="product-tag">Sale</span>
+                        <img src="/img/products/sample4.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample5.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample6.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample4.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample5.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample6.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+        </div>
+    </div>
+    <!-- /Carousel -->
+
+</div>
+<!-- /New Collection -->
+
+
+<!-- Random Products -->
+<div class="products-row row">
+
+    <!-- Carousel Heading -->
+    <div class="col-lg-12 col-md-12 col-sm-12">
+
+        <div class="carousel-heading">
+            <h4>Random Products</h4>
+
+            <div class="carousel-arrows">
+                <i class="icons icon-left-dir"></i>
+                <i class="icons icon-right-dir"></i>
+            </div>
+        </div>
+
+    </div>
+    <!-- /Carousel Heading -->
+
+    <!-- Carousel -->
+    <div class="carousel owl-carousel-wrap col-lg-12 col-md-12 col-sm-12">
+
+        <div class="owl-carousel" data-max-items="3">
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample7.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample8.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample9.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample7.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample8.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+            <!-- Slide -->
+            <div>
+                <!-- Carousel Item -->
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="/img/products/sample9.jpg" alt="Product1">
+                        <a href="products_page_v1.html" class="product-hover">
+                            <i class="icons icon-eye-1"></i> Quick View
+                        </a>
+                    </div>
+
+                    <div class="product-info">
+                        <h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+                        <span class="price">$281.00</span>
+
+                        <div class="rating readonly-rating" data-score="4"></div>
+                    </div>
+
+                    <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+                    </div>
+
+                </div>
+                <!-- /Carousel Item -->
+            </div>
+            <!-- /Slide -->
+
+
+        </div>
+    </div>
+    <!-- /Carousel -->
+
+</div>
+<!-- /Random Products -->
+
+
+<!-- Product Brands -->
+<div class="products-row row">
+
+    <!-- Carousel Heading -->
+    <div class="col-lg-12 col-md-12 col-sm-12">
+
+        <div class="carousel-heading">
+            <h4>Product Brands</h4>
+
+            <div class="carousel-arrows">
+                <i class="icons icon-left-dir"></i>
+                <i class="icons icon-right-dir"></i>
+            </div>
+        </div>
+
+    </div>
+    <!-- /Carousel Heading -->
+
+    <!-- Carousel -->
+    <div class="carousel owl-carousel-wrap col-lg-12 col-md-12 col-sm-12">
+
+        <div class="owl-carousel" data-max-items="5">
+
+            <!-- Slide -->
+            <div>
+                <div class="product">
+                    <a href="#"><img src="/img/brands/sample.jpg" alt="Brand1"></a>
+                </div>
+            </div>
+            <!-- /Slide -->
+
+            <!-- Slide -->
+            <div>
+                <div class="product">
+                    <a href="#"><img src="/img/brands/sample.jpg" alt="Brand1"></a>
+                </div>
+            </div>
+            <!-- /Slide -->
+
+            <!-- Slide -->
+            <div>
+                <div class="product">
+                    <a href="#"><img src="/img/brands/sample.jpg" alt="Brand1"></a>
+                </div>
+            </div>
+            <!-- /Slide -->
+
+            <!-- Slide -->
+            <div>
+                <div class="product">
+                    <a href="#"><img src="/img/brands/sample.jpg" alt="Brand1"></a>
+                </div>
+            </div>
+            <!-- /Slide -->
+
+            <!-- Slide -->
+            <div>
+                <div class="product">
+                    <a href="#"><img src="/img/brands/sample.jpg" alt="Brand1"></a>
+                </div>
+            </div>
+            <!-- /Slide -->
+
+            <!-- Slide -->
+            <div>
+                <div class="product">
+                    <a href="#"><img src="/img/brands/sample.jpg" alt="Brand1"></a>
+                </div>
+            </div>
+            <!-- /Slide -->
+
+            <!-- Slide -->
+            <div>
+                <div class="product">
+                    <a href="#"><img src="/img/brands/sample.jpg" alt="Brand1"></a>
+                </div>
+            </div>
+            <!-- /Slide -->
+
+            <!-- Slide -->
+            <div>
+                <div class="product">
+                    <a href="#"><img src="/img/brands/sample.jpg" alt="Brand1"></a>
+                </div>
+            </div>
+            <!-- /Slide -->
+
+            <!-- Slide -->
+            <div>
+                <div class="product">
+                    <a href="#"><img src="/img/brands/sample.jpg" alt="Brand1"></a>
+                </div>
+            </div>
+            <!-- /Slide -->
+
+            <!-- Slide -->
+            <div>
+                <div class="product">
+                    <a href="#"><img src="/img/brands/sample.jpg" alt="Brand1"></a>
+                </div>
+            </div>
+            <!-- /Slide -->
+
+        </div>
+
+    </div>
+    <!-- /Carousel -->
+
+</div>
+<!-- /Product Brands -->
+
+<!-- /Main Content -->
+{% endblock content %}

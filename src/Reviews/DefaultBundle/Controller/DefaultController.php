@@ -15,6 +15,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+
 //        $source = new DataArray();
 //        $source->addDocument('spam', 'Some spam document');
 //        $source->addDocument('spam', 'Another spam document');

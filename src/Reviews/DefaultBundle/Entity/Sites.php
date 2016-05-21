@@ -2,6 +2,8 @@
 
 namespace Reviews\DefaultBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Sites
  */
@@ -22,6 +24,18 @@ class Sites
      */
     private $name;
 
+    /**
+     * @var ArrayCollection
+     */
+    private $siteProducts;
+
+    /**
+     * Sites constructor.
+     */
+    public function __construct()
+    {
+        $this->siteProducts = new ArrayCollection();
+    }
 
     /**
      * Get siteId
@@ -79,6 +93,36 @@ class Sites
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getSiteProducts()
+    {
+        return $this->siteProducts;
+    }
+
+    /**
+     * @param  SitesProductsDetails $productDetails
+     * @return $this
+     */
+    public function addSiteProduct(SitesProductsDetails $productDetails)
+    {
+        $this->siteProducts->add($productDetails);
+
+        return $this;
+    }
+
+    /**
+     * @param $product
+     * @return $this
+     */
+    public function removeSiteProduct($product)
+    {
+        $this->siteProducts->removeElement($product);
+
+        return $this;
     }
 }
 

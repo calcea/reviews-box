@@ -2,16 +2,15 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource:  @ApplicationSonataUserBundle/Resources/config/admin.xml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: ro
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -36,19 +35,35 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+            fos_csrf_provider: "@form.csrf_provider"
     form:
             resources:
-                # other files
-                - 'SonataMediaBundle:Form:media_widgets.html.twig'
-
+                - 'SonataCoreBundle:Form:datepicker.html.twig'
+                - 'FrameworkExtensionBundle:Form:fields.html.twig'
 # Assetic Configuration
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ UserBundle, AdminOverrideBundle]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
+        jsqueeze: ~
+    assets:
+        bootstrap:
+            inputs:
+               - libs/css/bootstrap.css
+        jquery_ui_style:
+            inputs:
+               - libs/css/jquery-ui.min.css
+        jquery:
+            inputs:
+                - libs/js/jquery-1.11.0.min.js
+        jquery_ui:
+            inputs:
+                - libs/js/jquery-ui.min.js
+
         #closure:
         #    jar: "%kernel.root_dir%/Resources/java/compiler.jar"
         #yui_css:
@@ -64,229 +79,75 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
-        types:
-            json: Sonata\Doctrine\Types\JsonType
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #     path:     "%database_path%"
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        entity_managers:
-            default:
-                mappings:
-                    ApplicationSonataUserBundle: ~
-                    SonataUserBundle: ~
-                    FOSUserBundle: ~
-                    SonataMediaBundle: ~
-                    ApplicationSonataMediaBundle: ~
-                    ReviewsDefaultBundle: ~
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
-    spool:     { type: memory }
+      transport: smtp
+      host:      mailtrap.io
+      username:  d7f4302a44f825
+      password:  5b02ff14e6bdaf
+      auth_mode: cram-md5
+      port: 2525
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: UserBundle\Entity\User
+
+# Sonata Admin Configuration
+sonata_admin:
+    title:                  'BookLand'
+    options:
+        pager_links: 10
+        html5_validate: false
+    persist_filters: true
+    security:
+        handler: sonata.admin.security.handler.role
+    templates:
+        # default global templates
+        user_block: AdminOverrideBundle:Block:block_user.html.twig
+        layout:     AdminOverrideBundle:Block:standard_layout.html.twig
+        ajax:       SonataAdminBundle::ajax_layout.html.twig
+
+        # default actions templates, should extend a global templates
+        list:    SonataAdminBundle:CRUD:list.html.twig
+        show:    SonataAdminBundle:CRUD:show.html.twig
+        edit:    SonataAdminBundle:CRUD:edit.html.twig
+    dashboard:
+        blocks:
+            - { position: left, type: sonata.admin.block.admin_list }
+
+
 sonata_block:
     default_contexts: [cms]
     blocks:
-        sonata.user.block.menu:    # used to display the menu in profile pages
-        sonata.user.block.account: # used to display menu option (login option)
-        sonata.block.service.text: # used to if you plan to use Sonata user routes
-        # Enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
-            contexts:   [admin]
-sonata_user:
-    security_acl: true
-    manager_type: orm # can be orm or mongodb
-#    profile:
-#        # Profile show page is a dashboard as in SonataAdminBundle
-#        dashboard:
-#            blocks:
-#                - { position: left, type: sonata.block.service.text, settings: { content: "<h2>Welcome!</h2> This is a sample user profile dashboard, feel free to override it in the configuration! Want to make this text dynamic? For instance display the user's name? Create a dedicated block and edit the configuration!"} }
-#        menu:
-#            - { route: 'sonata_user_profile_show', label: 'sonata_profile_title', domain: 'SonataUserBundle'}
-#            - { route: 'sonata_user_profile_edit', label: 'link_edit_profile', domain: 'SonataUserBundle'}
-#            - { route: 'sonata_user_profile_edit_authentication', label: 'link_edit_authentication', domain: 'SonataUserBundle'}
-#        form:
-#            type: tutorials_user_edit_profile
-sonata_media:
-    # if you don't use default namespace configuration
-    class:
-        media:              Application\Sonata\MediaBundle\Entity\Media
-        gallery:            Application\Sonata\MediaBundle\Entity\Gallery
-        gallery_has_media:  Application\Sonata\MediaBundle\Entity\GalleryHasMedia
-    default_context: default
-    db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr
-    contexts:
-        default:  # the default context is mandatory
-            download:
-                strategy: sonata.media.security.superadmin_strategy
-                mode: http
-            providers:
-                - sonata.media.provider.dailymotion
-                - sonata.media.provider.youtube
-                - sonata.media.provider.image
-                - sonata.media.provider.file
-            formats:
-                small: { width: 100 , quality: 70}
-                big:   { width: 500 , quality: 70}
+            contexts: [admin]
+        sonata.block.service.categories: ~
 
-        tv:
-            download:
-                strategy: sonata.media.security.superadmin_strategy
-                mode: http
-            providers:
-                - sonata.media.provider.dailymotion
-                - sonata.media.provider.youtube
-#                - sonata.media.provider.video
 
-            formats:
-                cinema:     { width: 1850 , quality: 768}
-                grandmatv:  { width: 640 , quality: 480}
-        engine:
-            providers:
-                - sonata.media.provider.image
+liip_imagine:
+    resolvers:
+        defaults:
+            web_path: ~
 
-            formats:
-                preview:   { width: 100, quality: 100}
-                small:     { width: 200, quality: 100}
-                large:     { width: 600, quality: 100}
-        news:
-            download:
-                strategy: sonata.media.security.superadmin_strategy
-                mode: http
-            providers:
-                - sonata.media.provider.dailymotion
-                - sonata.media.provider.youtube
-                - sonata.media.provider.image
-                - sonata.media.provider.file
+    filter_sets:
+        cache: ~
 
-            formats:
-                small: { width: 150 , quality: 95}
-                big:   { width: 500 , quality: 90}
-    cdn:
-        server:
-            path: /uploads/media # http://media.sonata-project.org/
-        panther:
-            path:       http://domain.pantherportal.com/uploads/media
-            site_id:
-            password:
-            username:
-
-        fallback:
-            master:     sonata.media.cdn.panther
-            fallback:   sonata.media.cdn.server
-
-    filesystem:
-        local:
-            directory:  %kernel.root_dir%/../web/uploads/media
-            create:     false    
-        ftp:
-            directory:
-            host:
-            username:
-            password:
-            port:     21
-            passive:  false
-            create:   false
-            mode:     2 # this is the FTP_BINARY constant. see: http://php.net/manual/en/ftp.constants.php
-
-        s3:
-            bucket:
-            accessKey:
-            secretKey:
-            create:         false
-            region:         s3.amazonaws.com # change if not using US Standard region
-            storage:        standard # can be one of: standard or reduced
-            acl:            public # can be one of: public, private, open, auth_read, owner_read, owner_full_control
-            encryption:     aes256 # can be aes256 or not set
-            cache_control:  max-age=86400 # or any other
-            meta:
-                key1:       value1 #any amount of metas(sent as x-amz-meta-key1 = value1)
-
-        mogilefs:
-            hosts:      []
-            domain:
-
-        replicate:
-            master: sonata.media.adapter.filesystem.s3
-            slave: sonata.media.adapter.filesystem.local
-
-        rackspace:
-           url:
-           secret:
-             username:
-             apiKey:
-           region:
-           containerName: media
-           create_container: false
-
-        openstack:
-           url:
-           secret:
-             username:
-             password:
-           region:
-           containerName: media
-           create_container: false
-    providers:
-        file:
-            service:    sonata.media.provider.file
-            resizer:    false
-            filesystem: sonata.media.filesystem.local
-            cdn:        sonata.media.cdn.server
-            generator:  sonata.media.generator.default
-            thumbnail:  sonata.media.thumbnail.format
-            allowed_extensions: ['pdf', 'txt', 'rtf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pttx', 'odt', 'odg', 'odp', 'ods', 'odc', 'odf', 'odb', 'csv', 'xml']
-            allowed_mime_types: ['application/pdf', 'application/x-pdf', 'application/rtf', 'text/html', 'text/rtf', 'text/plain']
-
-        image:
-            service:    sonata.media.provider.image
-            resizer:    sonata.media.resizer.simple # sonata.media.resizer.square
-            filesystem: sonata.media.filesystem.local
-            cdn:        sonata.media.cdn.server
-            generator:  sonata.media.generator.default
-            thumbnail:  sonata.media.thumbnail.format
-            allowed_extensions: ['jpg', 'png', 'jpeg']
-            allowed_mime_types: ['image/pjpeg', 'image/jpeg', 'image/png', 'image/x-png']
-
-        youtube:
-            service:    sonata.media.provider.youtube
-            resizer:    sonata.media.resizer.simple
-            filesystem: sonata.media.filesystem.local
-            cdn:        sonata.media.cdn.server
-            generator:  sonata.media.generator.default
-            thumbnail:  sonata.media.thumbnail.format
-            html5: false
-
-        dailymotion:
-            service:    sonata.media.provider.dailymotion
-            resizer:    sonata.media.resizer.simple
-            filesystem: sonata.media.filesystem.local
-            cdn:        sonata.media.cdn.server
-            generator:  sonata.media.generator.default
-            thumbnail:  sonata.media.thumbnail.format
-    buzz:
-        connector:  sonata.media.buzz.connector.file_get_contents # sonata.media.buzz.connector.curl
-fos_user:
-    db_driver:      orm # can be orm or odm
-    firewall_name:  main
-    user_class:     Application\Sonata\UserBundle\Entity\User
-    group:
-        group_class:   Application\Sonata\UserBundle\Entity\Group
-        group_manager: sonata.user.orm.group_manager 
-#    profile:
-#        # Authentication Form
-#        form:
-#            type:               fos_user_profile
-#            handler:            fos_user.profile.form.handler.default
-#            name:               fos_user_profile_form
-#            validation_groups:  [Profile]
-#    registration:
-#        form:
-#            type: tutorials_user_registration
-#    resetting:
-#        form:
-#            type: tutorials_user_resetting
-    service:
-        user_manager: sonata.user.orm.user_manager 
+        # Below will be defined our image styles.
+        avatar_profile_edit:
+            filters:
+                thumbnail: { size: [200, 200], mode: outbound }
+        admin_show_avatar:
+                    filters:
+                        thumbnail: { size: [45, 45], mode: outbound }
