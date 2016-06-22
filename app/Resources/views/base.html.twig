@@ -62,11 +62,28 @@
     <div id="back-to-top">
         <i class="icon-up-dir"></i>
     </div>
+    <div class="add-product-modal">
+        <div class="inputs">
+            <input class="url-input" type="text" placeholder="Adaugati url-ul produsului">
+            <div>
+                <button class="submit-url">Adauga</button>
+            </div>
+        </div>
+        <div class="loader">
+            <div class="add-product-loader">
+            </div>
+            <img src="{{ asset('img/blue-spinner.gif') }}">
+        </div>
+        <div class="similar-products-wrapper"></div>
+    </div>
+
 </div>
 {% block javascript_libs %}
     {% javascripts  output='compiled/js/libs.js'
     '@jquery'
     '@jquery_ui'
+    'libs/js/underscore.js'
+    'libs/js/backbone.js'
     'libs/js/modernizr.min.js'
     'libs/js/jquery.raty.min.js'
     'libs/js/perfect-scrollbar.min.js'
@@ -81,7 +98,12 @@
     'libs/js/chosen.jquery.min.js'
     'libs/js/bootstrap.min.js'
     'libs/js/tinynav.min.js'
-    'libs/js/main-script.js' %}
+    'libs/js/main-script.js'
+    '@ReviewsDefaultBundle/Resources/public/js/models/AddProductModel.js'
+    '@ReviewsDefaultBundle/Resources/public/js/templates/AddProductTemplate.js'
+    '@ReviewsDefaultBundle/Resources/public/js/views/AddProductView.js'
+    '@ReviewsDefaultBundle/Resources/public/js/services/AddProductService.js'
+    %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
 {% endblock %}

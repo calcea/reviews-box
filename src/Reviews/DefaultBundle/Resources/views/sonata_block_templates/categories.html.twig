@@ -4,7 +4,7 @@
 
     <ul>
         {% for category in categories %}
-            <li><a href="/products/category/{{ category.categoryId }}">
+            <li><a href="{{ path('reviews_all_products', {'category': category.categoryId, slugName: category.name| sonata_slugify }) }}">
                     {{ category.name }}
                     <i class="icons icon-right-dir"></i>
                 </a>

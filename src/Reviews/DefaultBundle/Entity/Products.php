@@ -69,12 +69,32 @@ class Products
      */
     private $productDetails;
 
+
+    /**
+     * @var ArrayCollection
+     */
+    private $images;
+
+
+    /**
+     * @var ArrayCollection
+     */
+    private $properties;
+
+    /**
+     * @var ArrayCollection
+     */
+    private $reviews;
+
     /**
      * Products constructor.
      */
     public function __construct()
     {
         $this->productDetails = new ArrayCollection();
+        $this->images = new ArrayCollection();
+        $this->properties = new ArrayCollection();
+        $this->reviews = new ArrayCollection();
     }
 
     /**
@@ -362,6 +382,127 @@ class Products
         $this->productDetails->removeElement($productDetails);
 
         return $this;
+    }
+
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param $image
+     * @return $this
+     */
+    public function addImage($image)
+    {
+        $this->images->add($image);
+
+        return $this;
+    }
+
+    /**
+     * @param $image
+     * @return $this
+     */
+    public function removeImage($image)
+    {
+        $this->images->removeElement($image);
+
+        return $this;
+    }
+
+
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getProperties()
+    {
+        return $this->properties;
+    }
+
+    /**
+     * @param $property
+     * @return $this
+     */
+    public function addProperty($property)
+    {
+        $this->properties->add($property);
+
+        return $this;
+    }
+
+    /**
+     * @param $property
+     * @return $this
+     */
+    public function removeProperty($property)
+    {
+        $this->properties->removeElement($property);
+
+        return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getReviews()
+    {
+        return $this->reviews;
+    }
+
+    /**
+     * @param $review
+     * @return $this
+     */
+    public function addReview($review)
+    {
+        $this->reviews->add($review);
+
+        return $this;
+    }
+
+    /**
+     * @param $review
+     * @return $this
+     */
+    public function removeReview($review)
+    {
+        $this->reviews->removeElement($review);
+
+        return $this;
+    }
+
+    public function toArray(){
+        $images = [];
+        foreach ($this->images->toArray() as $image) {
+            $images[] = $image->toArray();
+        }
+        if(empty($images)){
+            $images = [[
+                'url_thumbnail_picture' => '/img/product_default.jpg',
+                'url_overlay_picture' => '/img/product_default.jpg'
+            ]];
+        }
+        return [
+            'product_id' => $this->productId,
+            'name' => $this->name,
+            'description' => $this->description,
+            'images' => $images
+        ];
+    }
+
+    public function __toString()
+    {
+        if(!is_null($this->name)){
+            return $this->name;
+        }
+
+        return '';
     }
 }
 

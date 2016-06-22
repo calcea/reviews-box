@@ -2,8 +2,10 @@
 
 namespace UserBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Reviews\DefaultBundle\Entity\Reviews;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 
@@ -48,12 +50,16 @@ class User extends BaseUser
      */
     protected $avatar;
 
+
+    protected $reviews;
+
     /**
      * User constructor.
      */
     public function __construct()
     {
         parent::__construct();
+        $this->reviews = new ArrayCollection();
     }
 
     /**
@@ -151,6 +157,56 @@ class User extends BaseUser
         return $this;
     }
 
+
+
+    /**
+     * @param Badge $review
+     * @param bool $updateRelation
+     * @return $this
+     */
+    public function removeReview(Reviews $review, $updateRelation = true)
+    {
+        $this->reviews->removeElement($review);
+        if($updateRelation){
+            $review->removeUser($this, false);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param Badge $review
+     * @param bool $updateRelation
+     * @return $this
+     */
+    public function addReview(Reviews $review, $updateRelation = true)
+    {
+        $this->reviews[] = $review;
+        if($updateRelation){
+            $review->addUser($this, false);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getReviews()
+    {
+        return $this->reviews;
+    }
+
+    /**
+     * @param ArrayCollection $reviews
+     * @return $this
+     */
+    public function setReviews($reviews)
+    {
+        $this->reviews = $reviews;
+
+        return $this;
+    }
 
 }
 

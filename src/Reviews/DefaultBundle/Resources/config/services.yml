@@ -11,3 +11,23 @@ services:
             class: Reviews\DefaultBundle\Services\Products
             arguments:
                 - '@doctrine'
+    products_admin:
+            class: Reviews\DefaultBundle\Admin\ProductsAdmin
+            arguments:
+              - ~
+              - Reviews\DefaultBundle\Entity\Products
+              - ~
+            tags:
+              - { name: sonata.admin, manager_type: orm, label: "Products", group: "Products" }
+            calls:
+              - [setTranslationDomain, [admin]]
+              - [addChild, [@review_admin]]
+
+    review_admin:
+            class: Reviews\DefaultBundle\Admin\ReviewsAdmin
+            arguments:
+                - ~
+                - Reviews\DefaultBundle\Entity\Reviews
+                - ~
+            tags:
+              - { name: sonata.admin, manager_type: orm, label: "Reviews", group: "Reviews", show_in_dashboard: false }

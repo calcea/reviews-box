@@ -63,6 +63,15 @@ Reviews\DefaultBundle\Entity\Products:
         productDetails:
             targetEntity: Reviews\DefaultBundle\Entity\SitesProductsDetails
             mappedBy: product
+        images:
+            targetEntity: Reviews\DefaultBundle\Entity\ProductImages
+            mappedBy: products
+        properties:
+            targetEntity: Reviews\DefaultBundle\Entity\Properties
+            mappedBy: products
+        reviews:
+            targetEntity: Reviews\DefaultBundle\Entity\Reviews
+            mappedBy: products
     manyToOne:
         manufacturer:
             targetEntity: Manufacturers

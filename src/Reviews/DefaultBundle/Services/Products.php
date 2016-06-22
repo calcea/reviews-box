@@ -10,6 +10,7 @@ namespace Reviews\DefaultBundle\Services;
 
 
 use Doctrine\Bundle\DoctrineBundle\Registry;
+use Webmozart\Assert\Assert;
 
 class Products
 {
@@ -24,6 +25,12 @@ class Products
 
     public function getPaginated($page = 1, $filters = array(), $orders = array())
     {
-        return $this->productsRepository->findAll();
+        return $this->productsRepository->getProductsPaginated($page, $filters, $orders);
+    }
+
+    public function getDetailsById($id)
+    {
+        Assert::string($id);
+        return $this->productsRepository->find($id);
     }
 }

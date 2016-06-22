@@ -16,7 +16,6 @@ class Unknown extends AbstractSite
 
     protected $details = array();
 
-
     /**
      * Parse page content and returns the product details
      * @return mixed

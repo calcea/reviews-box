@@ -1,0 +1,41 @@
+#CREATE TABLE IF NOT EXISTS "product_properties" (
+#	"property_id" INT NOT NULL DEFAULT NULL,
+#	"product_id" VARCHAR(32) NOT NULL DEFAULT NULL,
+#	"name" NVARCHAR(200) NULL DEFAULT NULL,
+#	"value" NVARCHAR(500) NULL DEFAULT NULL,
+#	"property_hash_id" CHAR(32) NULL DEFAULT NULL,
+#	PRIMARY KEY ("property_id")
+#);
+
+Reviews\DefaultBundle\Entity\Properties:
+    type: entity
+    table: properties
+    id:
+        property_id:
+            type: integer
+            nullable: false
+    fields:
+        product_id:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: true
+            column: product_id
+
+        name:
+            type: string
+            nullable: true
+        value:
+            type: string
+            nullable: true
+        property_hash_id:
+            type: string
+            nullable: true
+    manyToOne:
+        products:
+            targetEntity: Reviews\DefaultBundle\Entity\Products
+            inversedBy: properties
+            joinColumn:
+                name: product_id
+                referencedColumnName: product_id

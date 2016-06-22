@@ -2,8 +2,11 @@ reviews_default_homepage:
     path:     /
     defaults: { _controller: ReviewsDefaultBundle:Default:index }
 reviews_add_Product:
-    path:     /add-product
-    defaults: { _controller: ReviewsDefaultBundle:Default:addProduct}
+    path:     /products/add-product
+    defaults: { _controller: ReviewsDefaultBundle:Products:addProduct}
 reviews_all_products:
-    path: /products/{page}/{category}
-    defaults: { _controller: ReviewsDefaultBundle:Default:index, page: 1, category: 0}
+    path: /products/{slugName}/{category}/{page}
+    defaults: { _controller: ReviewsDefaultBundle:Products:index, category: 0, page: 1}
+products_show:
+    path: /product/{slugName}/{id}
+    defaults: { _controller: ReviewsDefaultBundle:Products:show}

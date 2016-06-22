@@ -9,11 +9,14 @@
 namespace Reviews\DefaultBundle\Repositories\Database;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 class Products extends EntityRepository
 {
 
     const DEFAULT_LIMIT = 3;
+
+    const RECORDS_PER_PAGE = 15;
 
     public function findSimilarities($fingerPrint, $limit = 3, $threshold = 90)
     {
@@ -33,5 +36,38 @@ class Products extends EntityRepository
 
         $result = $statement->fetchAll();
         return $result;
+    }
+
+    /**
+     * Returns the products filtered and paginated
+     *
+     * @param int $page
+     * @param array $filters
+     * @param array $orders
+     * @return array
+     */
+    public function getProductsPaginated($page = 1, $filters = array(), $orders = array())
+    {
+        $query = $this->createQueryBuilder('products')
+            ->select('products')
+            ->setFirstResult($page - 1)
+            ->setMaxResults(self::RECORDS_PER_PAGE);
+        $query->orderBy('products.name');
+        if (isset($filters['category']) && !empty($filters['category'])) {
+            $query->where('products.class1 = :category');
+            $query->setParameter('category', $filters['category']);
+        }
+
+        $paginator = new Paginator($query);
+        $totalPages = count($paginator);
+
+
+        return array(
+            'page' => $page,
+            'total_pages' => $totalPages,
+            'total_records' => $totalPages * self::RECORDS_PER_PAGE,
+            'records_per_page' => self::RECORDS_PER_PAGE,
+            'products' => $paginator
+        );
     }
 }

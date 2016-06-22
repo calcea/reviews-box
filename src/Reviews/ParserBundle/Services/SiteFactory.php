@@ -34,9 +34,6 @@ class SiteFactory
                 return new Cel(self::getContent($url));
             default:
                 return new Unknown(self::getContent($url));
-                /**
-                 * TODO de aruncat o exceptie pentru a afisa o eroare user frendly
-                 */
                 break;
         }
 

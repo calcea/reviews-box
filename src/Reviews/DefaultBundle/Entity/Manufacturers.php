@@ -51,5 +51,14 @@ class Manufacturers
     {
         return $this->name;
     }
+
+    public function __toString()
+    {
+        if(!is_null($this->name)){
+            return $this->name;
+        }
+
+        return '';
+    }
 }
 

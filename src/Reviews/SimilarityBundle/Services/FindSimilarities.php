@@ -20,8 +20,9 @@ class FindSimilarities
     private $text = '';
     private $threshold;
     private $doctrine = null;
+    private $numberOfProducts = null;
 
-    public function __construct(Registry $doctrineManager, $text, $threshold = 80)
+    public function __construct(Registry $doctrineManager, $text, $threshold = 80, $limit = 3)
     {
         Assert::string($text, 'The given parameter is not string');
         Assert::greaterThan($threshold, 0);
@@ -29,6 +30,7 @@ class FindSimilarities
         $this->text = $text;
         $this->threshold = $threshold;
         $this->doctrine = $doctrineManager;
+        $this->numberOfProducts = $limit;
     }
 
     public function getSimilarProducts()
@@ -40,14 +42,24 @@ class FindSimilarities
         $products = array_merge($productsSimilarities, $sitesProductsSimilarities);
         usort($products, array($this, 'sortArray'));
 
-        return $products;
+        return $this->mapProductsWithEntity($products);
     }
 
+
+    private function mapProductsWithEntity(array $products)
+    {
+        $data = [];
+        $productRepository = $this->doctrine->getRepository('ReviewsDefaultBundle:Products');
+        foreach ($products as $product) {
+            $data[] = $productRepository->find($product['product_id']);
+        }
+        return $data;
+    }
 
     private function getFromProductsTable($fingerPrint)
     {
         $productsRepository = $this->doctrine->getRepository('ReviewsDefaultBundle:Products');
-        $productsSimilarities = $productsRepository->findSimilarities($fingerPrint);
+        $productsSimilarities = $productsRepository->findSimilarities($fingerPrint, $this->numberOfProducts);
 
         return $productsSimilarities;
     }
@@ -55,7 +67,7 @@ class FindSimilarities
     private function getFromSitesProductsTable($fingerPrint)
     {
         $sitesProductsRepository = $this->doctrine->getRepository('ReviewsDefaultBundle:SitesProductsDetails');
-        $sitesProductsSimilarities = $sitesProductsRepository->findSimilarities($fingerPrint);
+        $sitesProductsSimilarities = $sitesProductsRepository->findSimilarities($fingerPrint, $this->numberOfProducts);
         return $sitesProductsSimilarities;
     }
 

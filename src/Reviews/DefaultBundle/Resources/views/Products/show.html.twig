@@ -1,0 +1,274 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <div id="product-single">
+
+        <!-- Product -->
+        <div class="product-single">
+
+            <div class="row">
+
+                <!-- Product Images Carousel -->
+                <div class="col-lg-5 col-md-5 col-sm-5 product-single-image">
+
+                    <div id="product-slider">
+                        <ul class="slides">
+                            <li>
+                                <img class="cloud-zoom"
+                                     src="{{ (product.images is empty)? '/img/product_default.jpg' :  product.images[0].getUrlOverlayPicture() }}"
+                                     data-large="{{ (product.images is empty)? '/img/product_default.jpg' :  product.images[0].getUrlOverlayPicture() }}"
+                                     alt=""/>
+                                <a class="fullscreen-button"
+                                   href="{{ (product.images is empty)? '/img/product_default.jpg' :  product.images[0].getUrlOverlayPicture() }}">
+                                    <div class="product-fullscreen">
+                                        <i class="icons icon-resize-full-1"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="product-carousel">
+                        <ul class="slides">
+                            {% for image in product.images %}
+
+                                <li>
+                                    <a class="fancybox" rel="product-images"
+                                       href="{{ image.getUrlOverlayPicture() }}"></a>
+                                    <img src="{{ image.getUrlThumbnailPicture() }}"
+                                         data-large="{{ image.getUrlOverlayPicture() }}" alt=""/>
+                                </li>
+
+                            {% endfor %}
+
+                        </ul>
+                        {% if product.images is not empty %}
+                            <div class="product-arrows">
+                                <div class="left-arrow">
+                                    <i class="icons icon-left-dir"></i>
+                                </div>
+                                <div class="right-arrow">
+                                    <i class="icons icon-right-dir"></i>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- /Product Images Carousel -->
+
+
+                <div class="col-lg-7 col-md-7 col-sm-7 product-single-info">
+
+                    <h2>{{ product.name }}</h2>
+
+                    <div class="rating-box">
+                        <div class="rating readonly-rating" data-score="4"></div>
+                        <span>3 Review(s)</span>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>Producator</td>
+                            <td><a href="#">{{ product.manufacturer.name }}</a></td>
+                        </tr>
+                        <tr>
+                            <td>Cod produs</td>
+                            <td>{{ product.code }}</td>
+                        </tr>
+                    </table>
+
+
+                    <div class="product-actions">
+                        <span class="add-to-favorites">
+                            <span class="action-wrapper">
+                                <i class="icons icon-heart-empty"></i>
+                                <span class="action-name">Adauga in wishlist</span>
+                            </span>
+                        </span>
+                        <span class="add-to-compare">
+                            <span class="action-wrapper">
+                                <i class="icons icon-docs"></i>
+                                <span class="action-name">Add to compare</span>
+                            </span>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Product -->
+
+
+        <!-- Product Tabs -->
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <div class="tabs">
+
+                    <div class="tab-heading">
+                        <a href="#tab1" class="button big">Descriere</a>
+                        <a href="#tab2" class="button big">Reviews</a>
+                    </div>
+
+                    <div class="page-content tab-content">
+
+                        <div id="tab1">
+                            <p> {{ product.description }} </p>
+
+                            {% if product.properties is not empty %}
+                                <p><strong>Specificatii:</strong></p>
+                            {% endif %}
+                            <ul>
+                                {% for property in product.properties %}
+                                    <li><i class="icons icon-right-dir"></i> {{ property.getName() }}
+                                        : {{ property.getValue() }}</li>
+                                {% endfor %}
+                            </ul>
+
+
+                            <p class="tags home-green"><strong>Tags:</strong> <a href="#" class="tag-item">digital
+                                    camera</a>
+                                <a href="#" class="tag-item">lorem</a>
+                                <a href="#" class="tag-item">gps</a></p>
+                        </div>
+
+                        <div id="tab2">
+
+                            <div class="row">
+
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="category-results">
+                                        <p>Results 1-6 of 6</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="pagination">
+                                        <a href="#">
+                                            <div class="previous"><i class="icons icon-left-dir"></i></div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="page-button">1</div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="page-button">2</div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="page-button">3</div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="next"><i class="icons icon-right-dir"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <h3>Scrie un review</h3>
+
+                            <textarea id="review-textarea"></textarea>
+
+                            <p>Dati un scor produsului. Va rugam selectati scorul intre 0 (slab) si 5 stele
+                                (foarte bun)</p>
+
+                            <div class="rating-box">
+                                Rating:
+                                <div class="rating rate" data-score="3"></div>
+                            </div>
+                            <div class="char-counter">
+                                <label>Caractere scrise</label>
+                                <input data-target="#review-textarea" type="text">
+                            </div>
+                            <br>
+                            <input type="submit" class="dark-blue big" value="Submit a review">
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /Product Tabs -->
+
+    </div>
+
+
+    <!-- New Collection -->
+    <div class="products-row row">
+
+        <!-- Carousel Heading -->
+        <div class="col-lg-12 col-md-12 col-sm-12">
+
+            <div class="carousel-heading">
+                <h4>Produse ce te-ar putea interesa:</h4>
+
+                <div class="carousel-arrows">
+                    <i class="icons icon-left-dir"></i>
+                    <i class="icons icon-right-dir"></i>
+                </div>
+            </div>
+
+        </div>
+        <!-- /Carousel Heading -->
+
+        <!-- Carousel -->
+        <div class="carousel owl-carousel-wrap col-lg-12 col-md-12 col-sm-12">
+
+            <div class="owl-carousel" data-max-items="3">
+
+                {% for relatedProduct in relatedProducts %}
+                    <!-- Slide -->
+                    <div>
+                        <!-- Carousel Item -->
+                        <div class="product">
+
+                            <div class="product-image">
+                                <img src="{{ (relatedProduct.images is empty)? '/img/product_default.jpg' :  relatedProduct.images[0].getUrlThumbnailPicture() }}"
+                                     alt="Product1">
+                                <a href="{{ path('products_show', {id: relatedProduct.productId, slugName: relatedProduct.name|sonata_slugify}) }}"
+                                   class="product-hover">
+                                    <i class="icons icon-eye-1"></i> Vizualizare
+                                </a>
+                            </div>
+
+                            <div class="product-info">
+                                <h5>
+                                    <a href="{{ path('products_show', {id: relatedProduct.productId, slugName: relatedProduct.name|sonata_slugify}) }}">{{ relatedProduct.name }}</a>
+                                </h5>
+
+                                <div class="rating readonly-rating" data-score="4"></div>
+                            </div>
+
+                            <div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+                                                        <a href="{{ path('products_show', {id: relatedProduct.productId, slugName: relatedProduct.name|sonata_slugify}) }}">
+                                                            <i class="icons icon-basket-2"></i>
+                                                            <span class="action-name">Vizualizare</span>
+                                                        </a>
+													</span>
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Adauga in wishlist</span>
+													</span>
+												</span>
+                            </div>
+
+                        </div>
+                        <!-- /Carousel Item -->
+                    </div>
+                {% endfor %}
+
+                <!-- /Slide -->
+            </div>
+            <!-- /Carousel -->
+
+        </div>
+    </div>
+    <!-- /New Collection -->
+{% endblock %}

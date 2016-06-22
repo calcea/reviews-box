@@ -1,7 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <div id="loginbox" class="mainbox page-content">
-    <p>{{ 'If you are already registered please login directly here'|trans }}</p>
+    <p>{{ 'Daca esti deja inregistrat te rugam sa te autentifici aici'|trans }}</p>
     <form action="{{ path("fos_user_security_check") }}" method="post">
         <input type="hidden" name="_csrf_token" value="{{ fos_csrf_provider.generateCsrfToken('authenticate') }}"/>
         <div class="row">

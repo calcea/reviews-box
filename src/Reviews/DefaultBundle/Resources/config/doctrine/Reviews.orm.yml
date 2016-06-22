@@ -1,0 +1,27 @@
+Reviews\DefaultBundle\Entity\Reviews:
+    type: entity
+    table: reviews
+    id:
+        review_id:
+            type: integer
+            nullable: false
+    fields:
+        review:
+            type: text
+            nullable: true
+        rating:
+            type: integer
+            nullable: true
+    manyToOne:
+        product:
+            targetEntity: Reviews\DefaultBundle\Entity\Products
+            inversedBy: reviews
+            joinColumn:
+                name: product_id
+                referencedColumnName: product_id
+        user:
+            targetEntity: UserBundle\Entity\User
+            inversedBy: reviews
+            joinColumn:
+                name: user_id
+                referencedColumnName: id

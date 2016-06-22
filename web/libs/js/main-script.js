@@ -21,7 +21,7 @@ $(document).ready(function(){
 	
 	
 	/* Quick View */
-	quickViewModal($('a.product-hover'));
+	//quickViewModal($('a.product-hover'));
 	
 	
 	
@@ -172,7 +172,7 @@ $(document).ready(function(){
 	// Read Only
 	$('.rating.readonly-rating').raty({ 
 		readOnly: true,
-		path:'js/img',
+		path:'/img',
 		score: function() {
 			return $(this).attr('data-score');
 		}
@@ -180,7 +180,7 @@ $(document).ready(function(){
 	 
 	// Rate
 	$('.rating.rate').raty({ 
-		path:'js/img',
+		path:'/img',
 		score: function() {
 			return $(this).attr('data-score');
 		}
@@ -260,8 +260,6 @@ $(document).ready(function(){
 	
 	/* Single Product Page */
 	function singleProduct(){
-	
-		
 		/* Product Images Carousel */
 		$('#product-carousel').flexslider({
 			animation: "slide",
@@ -726,10 +724,10 @@ $(document).ready(function(){
 				
 				
 				/* Rating Box */
-				$('#quick-view-modal .rating.readonly-rating').raty({ readOnly: true, path:'js/img',score: function() {
+				$('#quick-view-modal .rating.readonly-rating').raty({ readOnly: true, path:'/img',score: function() {
 					return $(this).attr('data-score');
 				}});
-				$('#quick-view-modal .rating.rate').raty({ path:'js/img',score: function() {
+				$('#quick-view-modal .rating.rate').raty({ path:'/img',score: function() {
 					return $(this).attr('data-score');
 				}});
 				
@@ -1015,7 +1013,7 @@ $(document).ready(function(){
 			
 		});
 		
-	}
+	};
 	
 	
 });

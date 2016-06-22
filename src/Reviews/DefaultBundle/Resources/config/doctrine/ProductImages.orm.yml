@@ -1,0 +1,49 @@
+Reviews\DefaultBundle\Entity\ProductImages:
+    type: entity
+    table: product_images
+    id:
+        picture_id:
+            type: string
+            length: 32
+            nullable: false
+    fields:
+        product_id:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: true
+                collation: ''
+            column: product_id
+
+        filename:
+            type: string
+            nullable: true
+        status:
+            type: smallint
+            nullable: true
+        original_url:
+            type: string
+            nullable: true
+        last_date_modified:
+            type: datetime
+            nullable: true
+        url_overlay_picture:
+            type: string
+            nullable: false
+        url_thumbnail_picture:
+            type: string
+            nullable: false
+        main_picture:
+            type: smallint
+            nullable: true
+        product_code:
+            type: string
+            nullable: true
+    manyToOne:
+        products:
+            targetEntity: Reviews\DefaultBundle\Entity\Products
+            inversedBy: images
+            joinColumn:
+                name: product_id
+                referencedColumnName: product_id

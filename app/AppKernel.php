@@ -35,6 +35,8 @@ class AppKernel extends Kernel
             new Reviews\DefaultBundle\ReviewsDefaultBundle(),
             new Reviews\PredictBundle\ReviewsPredictBundle(),
             new Reviews\SimilarityBundle\ReviewsSimilarityBundle(),
+            new Devtime\BackboneBundle\DevtimeBackboneBundle(),
+            new Sensio\Bundle\BuzzBundle\SensioBuzzBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

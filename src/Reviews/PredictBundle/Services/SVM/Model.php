@@ -73,7 +73,7 @@ class Model
     }
 
     /**
-     * Returns data with the model is trained
+     * Returns an array with products for trainig the model
      * @return array
      */
     protected function getTrainData()
@@ -118,7 +118,7 @@ class Model
     }
 
     /**
-     * Return data source to train model
+     * Return data source for training the model
      * @return DataArray
      */
     protected function getDataSource()

@@ -1,1 +1,124 @@
 {% extends '::base.html.twig' %}
+
+{% block content %}
+
+
+    <div class='row'>
+
+        <div class='col-lg-12 col-md-12 col-sm-12'>
+            <div class='category-heading'>
+                <select class='chosen-select'>
+                    <option>Select manufacturer</option>
+                    <option>Product name</option>
+                    <option>Product name</option>
+                    <option>Product name</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class='col-lg-6 col-md-6 col-sm-6'>
+            <div class='category-results'>
+                <p>Rezultate {{ pagination.currentResults - pagination.recordsPerPage + 1 }}
+                    din {{ pagination.totalRecords }}</p>
+            </div>
+        </div>
+
+        {% set params = app.request.attributes.get('_route_params') %}
+        <div class='col-lg-6 col-md-6 col-sm-6'>
+            <div class='pagination'>
+                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.previous  } ) }}'>
+                    <div class='previous'><i class='icons icon-left-dir'></i></div>
+                </a>
+                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page1  } ) }}'>
+                    <div class='page-button {% if pagination.active == pagination.page1 %} {{ ' active' }} {% endif %}  '>{{ pagination.page1 }}</div>
+                </a>
+                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page2  } ) }}'>
+                    <div class='page-button {% if pagination.active == pagination.page2 %} {{ ' active' }} {% endif %}'>{{ pagination.page2 }}</div>
+                </a>
+                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page3 } ) }}'>
+                    <div class='page-button {% if pagination.active == pagination.page3 %} {{ ' active' }} {% endif %} '>{{ pagination.page3 }}</div>
+                </a>
+                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.next  } ) }}'>
+                    <div class='next'><i class='icons icon-right-dir'></i></div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class='row'>
+
+        {% for product in products.products %}
+
+            <!-- Product Item -->
+            <div class='col-lg-4 col-md-4 col-sm-4 product'>
+
+                <div class='product-image'>
+                    <img src='{{ (product.images is empty)? '/img/product_default.jpg' :  product.images[0].getUrlOverlayPicture() }}' alt='Product1'>
+                    <a href='{{ path('products_show', {id: product.productId, slugName: product.name|sonata_slugify}) }}' class='product-hover'>
+                        <i class='icons icon-eye-1'></i> Vizualizare
+                    </a>
+                </div>
+
+                <div class='product-info'>
+                    <h5>
+                        <a href='{{ path('products_show', {id: product.productId, slugName: product.name|sonata_slugify}) }}'>{{ product.name }}</a>
+                    </h5>
+
+                    <div class='rating readonly-rating' data-score='4'></div>
+                </div>
+
+                <div class='product-actions'>
+						<span class='add-to-cart'>
+                            <span class='action-wrapper'>
+                    <a href='{{ path('products_show', {id: product.productId, slugName: product.name|sonata_slugify}) }}'>
+                                <i class='icons icon-basket-2'></i>
+                                <span class='action-name'>Vizualizare</span>
+                    </a>
+                            </span>
+                        </span>
+                    <span class='add-to-favorites'>
+                        <span class='action-wrapper'>
+                            <i class='icons icon-heart-empty'></i>
+                            <span class='action-name'>Adauga in wishlist</span>
+                        </span>
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- Product Item -->
+        {% endfor %}
+
+        <div class='col-lg-6 col-md-6 col-sm-6'>
+            <div class='category-results'>
+                <p>Rezultate {{ pagination.currentResults - pagination.recordsPerPage + 1 }}
+                    din {{ pagination.totalRecords }}</p>
+            </div>
+        </div>
+
+        <div class='col-lg-6 col-md-6 col-sm-6'>
+            <div class='pagination'>
+                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.previous  } ) }}'>
+                    <div class='previous'><i class='icons icon-left-dir'></i></div>
+                </a>
+                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page1  } ) }}'>
+                    <div class='page-button {% if pagination.active == pagination.page1 %} {{ ' active' }} {% endif %}  '>{{ pagination.page1 }}</div>
+                </a>
+                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page2  } ) }}'>
+                    <div class='page-button {% if pagination.active == pagination.page2 %} {{ ' active' }} {% endif %}'>{{ pagination.page2 }}</div>
+                </a>
+                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page3 } ) }}'>
+                    <div class='page-button {% if pagination.active == pagination.page3 %} {{ ' active' }} {% endif %} '>{{ pagination.page3 }}</div>
+                </a>
+                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.next  } ) }}'>
+                    <div class='next'><i class='icons icon-right-dir'></i></div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

@@ -31,7 +31,9 @@
         "tga/simhash-php": "^2.0",
         "cocur/slugify": "^1.4",
         "webmozart/assert": "~1.0",
-        "sonata-project/doctrine-extensions": "^1.0"
+        "sonata-project/doctrine-extensions": "^1.0",
+        "devtime/backbone-bundle": "dev-master",
+        "sensio/buzz-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
