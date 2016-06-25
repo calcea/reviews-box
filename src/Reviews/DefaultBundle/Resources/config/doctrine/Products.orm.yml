@@ -79,7 +79,7 @@ Reviews\DefaultBundle\Entity\Products:
     manyToOne:
         manufacturer:
             targetEntity: Manufacturers
-            cascade: {  }
+            cascade: ["persist"]
             fetch: LAZY
             mappedBy: null
             inversedBy: null
