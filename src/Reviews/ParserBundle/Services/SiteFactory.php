@@ -27,13 +27,13 @@ class SiteFactory
     {
         switch (self::getHostFromUrl($url)) {
             case Emag::HOSTNAME:
-                return new Emag(self::getContent($url));
+                return new Emag(self::getContent($url), $url);
             case PcGarage::HOSTNAME:
-                return new PcGarage(self::getContent($url));
+                return new PcGarage(self::getContent($url), $url);
             case Cel::HOSTNAME:
-                return new Cel(self::getContent($url));
+                return new Cel(self::getContent($url), $url);
             default:
-                return new Unknown(self::getContent($url));
+                return new Unknown(self::getContent($url), $url);
                 break;
         }
 

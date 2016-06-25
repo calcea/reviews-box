@@ -11,6 +11,11 @@ services:
             class: Reviews\DefaultBundle\Services\Products
             arguments:
                 - '@doctrine'
+    reviews:
+            class: Reviews\DefaultBundle\Services\Reviews
+            arguments:
+                - '@doctrine'
+                - '@security.context'
     products_admin:
             class: Reviews\DefaultBundle\Admin\ProductsAdmin
             arguments:

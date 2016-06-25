@@ -200,6 +200,9 @@ class Products
      */
     public function getAdded()
     {
+        if (empty($this->added)) {
+            return $this->added = new \DateTime();
+        }
         return $this->added;
     }
 
@@ -350,7 +353,8 @@ class Products
     /**
      * @param $productId
      */
-    public function setProductId($productId){
+    public function setProductId($productId)
+    {
         $this->productId = $productId;
     }
 
@@ -411,10 +415,9 @@ class Products
     public function removeImage($image)
     {
         $this->images->removeElement($image);
-
+        $image->setProduct(null);
         return $this;
     }
-
 
 
     /**
@@ -440,10 +443,10 @@ class Products
      * @param $property
      * @return $this
      */
-    public function removeProperty($property)
+    public function removeProperty(Properties $property)
     {
         $this->properties->removeElement($property);
-
+        $property->setProduct(null);
         return $this;
     }
 
@@ -477,16 +480,19 @@ class Products
         return $this;
     }
 
-    public function toArray(){
+    public function toArray()
+    {
         $images = [];
         foreach ($this->images->toArray() as $image) {
             $images[] = $image->toArray();
         }
-        if(empty($images)){
-            $images = [[
-                'url_thumbnail_picture' => '/img/product_default.jpg',
-                'url_overlay_picture' => '/img/product_default.jpg'
-            ]];
+        if (empty($images)) {
+            $images = [
+                [
+                    'url_thumbnail_picture' => '/img/product_default.jpg',
+                    'url_overlay_picture' => '/img/product_default.jpg'
+                ]
+            ];
         }
         return [
             'product_id' => $this->productId,
@@ -498,11 +504,46 @@ class Products
 
     public function __toString()
     {
-        if(!is_null($this->name)){
+        if (!is_null($this->name)) {
             return $this->name;
         }
 
         return '';
+    }
+
+    public function removeAllProperties()
+    {
+        $this->properties->clear();
+    }
+
+    public function removeAllImages()
+    {
+        $this->images->clear();
+    }
+
+    public function getAverageRating()
+    {
+        $ratings = [
+            1 => 0,
+            2 => 0,
+            3 => 0,
+            4 => 0,
+            5 => 0,
+        ];
+        foreach ($this->reviews->toArray() as $review) {
+            /**
+             * @var $review Reviews
+             */
+            $ratings[$review->getRating()] += 1;
+        }
+        $ratingsSum = 0;
+        foreach ($ratings as $key => $rating) {
+            $ratingsSum += $key * $rating;
+        }
+        if($ratingsSum == 0){
+            return 0;
+        }
+        return $ratingsSum / array_sum($ratings);
     }
 }
 

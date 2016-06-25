@@ -48,10 +48,15 @@ class FindSimilarities
 
     private function mapProductsWithEntity(array $products)
     {
+        $productIds = [];
         $data = [];
         $productRepository = $this->doctrine->getRepository('ReviewsDefaultBundle:Products');
         foreach ($products as $product) {
-            $data[] = $productRepository->find($product['product_id']);
+            if(in_array($product['product_id'], $productIds)){
+                continue;
+            }
+            $data[$product['product_id']] = $productRepository->find($product['product_id']);
+            $productIds[] = $product['product_id'];
         }
         return $data;
     }
@@ -84,7 +89,7 @@ class FindSimilarities
         return 0;
     }
 
-    private function getFingerPrint()
+    public function getFingerPrint()
     {
         $repository = new SimHashStrings();
         $simhashCalculator = new CalculateSimhash($repository, new TextExtractor());

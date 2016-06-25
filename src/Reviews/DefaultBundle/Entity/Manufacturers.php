@@ -60,5 +60,9 @@ class Manufacturers
 
         return '';
     }
+
+    public function setManufacturerId($id){
+        $this->manufacturerId = $id;
+    }
 }
 

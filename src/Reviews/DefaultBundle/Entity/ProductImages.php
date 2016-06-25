@@ -18,10 +18,6 @@ class ProductImages
      */
     private $picture_id;
 
-    /**
-     * @var string
-     */
-    private $product_id;
 
     /**
      * @var string
@@ -74,19 +70,6 @@ class ProductImages
     private $product;
 
     /**
-     * @var ArrayCollection
-     */
-    private $products;
-
-    /**
-     * Lesson constructor.
-     */
-    public function __construct()
-    {
-        $this->products = new ArrayCollection();
-    }
-
-    /**
      * @return string
      */
     public function getPictureId()
@@ -100,22 +83,6 @@ class ProductImages
     public function setPictureId($picture_id)
     {
         $this->picture_id = $picture_id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getProductId()
-    {
-        return $this->product_id;
-    }
-
-    /**
-     * @param string $product_id
-     */
-    public function setProductId($product_id)
-    {
-        $this->product_id = $product_id;
     }
 
     /**
@@ -262,35 +229,12 @@ class ProductImages
         $this->chapter = $chapter;
     }
 
-
-    /**
-     * @return ArrayCollection
-     */
-    public function getProducts()
-    {
-        return $this->products;
+    public function getProduct(){
+        return $this->product;
     }
 
-    /**
-     * @param $question
-     * @return $this
-     */
-    public function addProduct($product)
-    {
-        $this->products->add($product);
-
-        return $this;
-    }
-
-    /**
-     * @param $product
-     * @return $this
-     */
-    public function removeProduct($product)
-    {
-        $this->products->removeElement($product);
-
-        return $this;
+    public function setProduct(Products $product){
+        $this->product = $product;
     }
 
     public function toArray(){

@@ -63,12 +63,20 @@
         <i class="icon-up-dir"></i>
     </div>
     <div class="add-product-modal">
+        <p class="info"> Va rugam adaugati url-ul catre pagina cu detaliile produsului. Dupa adaugare, aplicatia va afisa produse similare
+            cu produsul dumneavoastra. Daca gasiti produsul in lista afisata, este suficient sa alegeti produsul iar apoi veti fi redirectat
+            in pagina produsului. In caz contrar, puteti apasa butonul <span>'Nu gasesc produsul'</span> iar acesta va fi adaugat in platforma.
+        </p>
         <div class="inputs">
             <input class="url-input" type="text" placeholder="Adaugati url-ul produsului">
-            <div>
-                <button class="submit-url">Adauga</button>
+            <div class="add-product-button">
+                <button class="submit-url btn-warning">Adauga</button>
+            </div>
+            <div class="not-found">
+                <button class="not-found-url btn-info">Nu gasesc produsul</button>
             </div>
         </div>
+        <div class="error-message"></div>
         <div class="loader">
             <div class="add-product-loader">
             </div>

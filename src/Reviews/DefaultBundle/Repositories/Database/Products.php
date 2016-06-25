@@ -70,4 +70,27 @@ class Products extends EntityRepository
             'products' => $paginator
         );
     }
+
+    public function getMostAppreciated()
+    {
+        $query = $this->createQueryBuilder('products')
+            ->select('products')
+            ->addSelect('SUM(reviews.rating) as rate')
+            ->leftJoin('products.reviews', 'reviews')
+            ->groupBy('products')
+            ->orderBy('rate', 'desc')
+            ->setMaxResults(self::RECORDS_PER_PAGE);
+
+        return $query->getQuery()->getResult();
+
+    }
+
+    public function getNewest(){
+        $query = $this->createQueryBuilder('products')
+            ->select('products')
+            ->orderBy('products.added', 'desc')
+            ->setMaxResults(self::RECORDS_PER_PAGE);
+        return $query->getQuery()->getResult();
+    }
+
 }

@@ -62,16 +62,20 @@ Reviews\DefaultBundle\Entity\Products:
     oneToMany:
         productDetails:
             targetEntity: Reviews\DefaultBundle\Entity\SitesProductsDetails
+            cascade: ["persist"]
             mappedBy: product
         images:
             targetEntity: Reviews\DefaultBundle\Entity\ProductImages
-            mappedBy: products
+            mappedBy: product
+            cascade: ["persist", "remove"]
         properties:
             targetEntity: Reviews\DefaultBundle\Entity\Properties
-            mappedBy: products
+            mappedBy: product
+            cascade: ["persist", "remove"]
         reviews:
             targetEntity: Reviews\DefaultBundle\Entity\Reviews
-            mappedBy: products
+            mappedBy: product
+            cascade: ["persist", "remove"]
     manyToOne:
         manufacturer:
             targetEntity: Manufacturers

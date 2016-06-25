@@ -2263,7 +2263,7 @@ input[type="checkbox"]:checked + label.color-checkbox {
 
 .product {
     margin-bottom: 30px;
-    height: 340px;
+    height: 400px;
 }
 
 .product-info {
@@ -2342,7 +2342,7 @@ a.product-hover {
     top: 110px;
     left: 0;
     right: 0;
-    width: 160px;
+    width: 165px;
     margin: 0 auto;
     cursor: pointer;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -3139,7 +3139,7 @@ a.button {
     text-transform: uppercase;
     color: #fff;
     cursor: pointer;
-    display: inline-block;
+    /*display: inline-block;*/
     height: 40px;
 }
 
@@ -5000,6 +5000,7 @@ input[type="checkbox"]:checked + label:before {
 
 .add-product-modal{
     display: none;
+    z-index: 2000;
 }
 .url-input{
     width: 90%;
@@ -5014,6 +5015,7 @@ input[type="checkbox"]:checked + label:before {
     opacity: 0.1;
     text-align: center;
     left: 0;
+    z-index: 10000;
 }
 
 .loader{
@@ -5022,4 +5024,39 @@ input[type="checkbox"]:checked + label:before {
 
 .loader img{
     margin-left: 40%;
+}
+.add-product-button{
+    width: 200px;
+    margin: 10px auto;
+}
+.not-found{
+    width: 200px;
+    float: right;
+    margin-top: -36px;
+    display: none;
+}
+
+.tab-content table{
+    width: 780px !important;
+}
+
+.ui-dialog{
+    z-index: 9999 !important;
+}
+
+.info{
+    color: #7FCCEE;
+}
+
+.info span{
+    color:blue;
+}
+.error-message{
+    font-size: 25px;
+    color: red;
+    margin-top: 40px;
+}
+
+#logo img{
+    height: 100px;
 }

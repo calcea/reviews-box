@@ -14,15 +14,9 @@ Reviews\DefaultBundle\Entity\Properties:
         property_id:
             type: integer
             nullable: false
+            generator:
+                strategy: IDENTITY
     fields:
-        product_id:
-            type: string
-            nullable: false
-            length: 32
-            options:
-                fixed: true
-            column: product_id
-
         name:
             type: string
             nullable: true
@@ -33,9 +27,10 @@ Reviews\DefaultBundle\Entity\Properties:
             type: string
             nullable: true
     manyToOne:
-        products:
+        product:
             targetEntity: Reviews\DefaultBundle\Entity\Products
             inversedBy: properties
             joinColumn:
                 name: product_id
                 referencedColumnName: product_id
+            cascade: ["persist"]

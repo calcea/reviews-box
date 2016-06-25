@@ -40,9 +40,21 @@ class Reviews
     private $rating;
 
     /**
+     * @var \DateTime
+     */
+    private $added;
+
+    /**
      * @var User
      */
     private $user;
+
+    public function __construct()
+    {
+        if($this->added){
+            $this->added = new \DateTime();
+        }
+    }
 
     /**
      * @return Products
@@ -131,6 +143,14 @@ class Reviews
         }
 
         return '';
+    }
+
+    public function setAdded(\DateTime $added){
+        $this->added = $added;
+    }
+
+    public function getAdded(){
+        return $this->added;
     }
 
 }

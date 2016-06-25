@@ -16,7 +16,8 @@ AddProductService.prototype.init = function () {
 AddProductService.prototype.bindActions = function () {
     var _this = this;
     var events = {
-        'add-product': 'addProduct'
+        'add-product': 'addProduct',
+        'save-product': 'saveProduct'
     };
 
     function registerListener(evtName, callbackName) {
@@ -40,10 +41,28 @@ AddProductService.prototype.bindActions = function () {
 
 AddProductService.prototype.addProduct = function (data) {
     var _this = this;
-    this.model.postProduct(data, function(ajaxResponse){
+    this.model.postProduct(data, function (ajaxResponse) {
+        if (typeof ajaxResponse.response.error !== "undefined" && ajaxResponse.response.error == 1) {
+            _this.view.showErrorResponse(ajaxResponse.response)
+            return;
+        }
         _this.view.renderProducts(ajaxResponse);
-    }, function(ajaxResponse){
-       _this.view.showErrorResponse(ajaxResponse);
+    }, function (ajaxResponse) {
+        _this.view.showErrorResponse(ajaxResponse);
+    });
+};
+
+
+AddProductService.prototype.saveProduct = function (data) {
+    var _this = this;
+    this.model.saveProduct(data, function (ajaxResponse) {
+        if (ajaxResponse.error == 1) {
+            _this.view.saveProductError(ajaxResponse);
+            return;
+        }
+        _this.view.saveProductSuccess(ajaxResponse);
+    }, function (ajaxResponse) {
+        _this.view.saveProductError(ajaxResponse);
     });
 };
 

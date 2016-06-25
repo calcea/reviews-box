@@ -5,6 +5,8 @@ Reviews\DefaultBundle\Entity\Reviews:
         review_id:
             type: integer
             nullable: false
+            generator:
+                strategy: IDENTITY
     fields:
         review:
             type: text
@@ -12,6 +14,11 @@ Reviews\DefaultBundle\Entity\Reviews:
         rating:
             type: integer
             nullable: true
+        added:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
     manyToOne:
         product:
             targetEntity: Reviews\DefaultBundle\Entity\Products

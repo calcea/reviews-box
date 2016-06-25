@@ -40,13 +40,17 @@ abstract class AbstractSite
      * AbstractSite constructor.
      * @param $url
      */
-    public function __construct($pageContent)
+    public function __construct($pageContent, $url='')
     {
+        $this->url = $url;
         $this->crawler = new Crawler($pageContent);
         $this->validatePage();
         $this->parse();
     }
 
+    protected function getMd5(){
+        return md5(microtime() . rand(99, 999999) . rand(999999, 99999999). rand(99999999, 99999999 + rand(1, 2016)) . '12321412441254353');
+    }
 
     /**
      * Parse page content and returns the product details

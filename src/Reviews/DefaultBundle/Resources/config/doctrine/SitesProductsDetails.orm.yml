@@ -65,4 +65,9 @@ Reviews\DefaultBundle\Entity\SitesProductsDetails:
             inversedBy: productDetails
             joinColumn:
                 referencedColumnName: product_id
+        user:
+            targetEntity: UserBundle\Entity\User
+            inversedBy: products
+            joinColumn:
+                referencedColumnName: id
     lifecycleCallbacks: {  }

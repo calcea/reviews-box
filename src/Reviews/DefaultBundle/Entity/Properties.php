@@ -9,17 +9,14 @@
 namespace Reviews\DefaultBundle\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 class Properties
 {
     /**
      * @var string
      */
     private $property_id;
-
-    /**
-     * @var string
-     */
-    private $product_id;
 
     /**
      * @var string
@@ -41,18 +38,6 @@ class Properties
      */
     private $product;
 
-    /**
-     * @var ArrayCollection
-     */
-    private $products;
-
-    /**
-     * Lesson constructor.
-     */
-    public function __construct()
-    {
-        $this->products = new ArrayCollection();
-    }
 
     /**
      * @return string
@@ -148,35 +133,5 @@ class Properties
     public function setProductId($product_id)
     {
         $this->product_id = $product_id;
-    }
-
-    /**
-     * @return ArrayCollection
-     */
-    public function getProducts()
-    {
-        return $this->products;
-    }
-
-    /**
-     * @param $question
-     * @return $this
-     */
-    public function addProduct($product)
-    {
-        $this->products->add($product);
-
-        return $this;
-    }
-
-    /**
-     * @param $product
-     * @return $this
-     */
-    public function removeProduct($product)
-    {
-        $this->products->removeElement($product);
-
-        return $this;
     }
 }

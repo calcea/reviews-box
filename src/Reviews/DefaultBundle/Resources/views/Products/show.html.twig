@@ -61,8 +61,8 @@
                     <h2>{{ product.name }}</h2>
 
                     <div class="rating-box">
-                        <div class="rating readonly-rating" data-score="4"></div>
-                        <span>3 Review(s)</span>
+                        <div class="rating readonly-rating" data-score="{{ product.getAverageRating() }}"></div>
+                        <span>{{ product.getReviews().count() }} Review-uri</span>
                     </div>
                     <table>
                         <tr>
@@ -112,7 +112,7 @@
                     <div class="page-content tab-content">
 
                         <div id="tab1">
-                            <p> {{ product.description }} </p>
+                            <p> {{ product.description | raw}} </p>
 
                             {% if product.properties is not empty %}
                                 <p><strong>Specificatii:</strong></p>
@@ -124,48 +124,27 @@
                                 {% endfor %}
                             </ul>
 
-
-                            <p class="tags home-green"><strong>Tags:</strong> <a href="#" class="tag-item">digital
-                                    camera</a>
-                                <a href="#" class="tag-item">lorem</a>
-                                <a href="#" class="tag-item">gps</a></p>
                         </div>
 
                         <div id="tab2">
 
-                            <div class="row">
-
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="category-results">
-                                        <p>Results 1-6 of 6</p>
+                            <ul class="comments">
+                                {% for review in product.getReviews() %}
+                                    <li>
+                                        <p><strong>{{ review.user.username }}</strong></p>
+                                        <span class="date">{{ review.added | date('Y-m-d H:i:s') }}</span>
+                                    <div class="rating-box">
+                                        <div class="rating readonly-rating" data-score="{{ review.rating }}"></div>
                                     </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="pagination">
-                                        <a href="#">
-                                            <div class="previous"><i class="icons icon-left-dir"></i></div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="page-button">1</div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="page-button">2</div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="page-button">3</div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="next"><i class="icons icon-right-dir"></i></div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-
+                                    <br>
+                                    <p>{{ review.review }}</p>
+                                    </li>
+                                {% endfor %}
+                            </ul>
                             <h3>Scrie un review</h3>
+                        <form class="review-form" action="{{ path("save_review", {'id': product.productId }) }}">
 
-                            <textarea id="review-textarea"></textarea>
+                            <textarea id="review-textarea" name="review"></textarea>
 
                             <p>Dati un scor produsului. Va rugam selectati scorul intre 0 (slab) si 5 stele
                                 (foarte bun)</p>
@@ -179,7 +158,8 @@
                                 <input data-target="#review-textarea" type="text">
                             </div>
                             <br>
-                            <input type="submit" class="dark-blue big" value="Submit a review">
+                            <input type="submit" class="dark-blue big" value="Adauga review">
+                        </form>
 
 
                         </div>
@@ -239,7 +219,7 @@
                                     <a href="{{ path('products_show', {id: relatedProduct.productId, slugName: relatedProduct.name|sonata_slugify}) }}">{{ relatedProduct.name }}</a>
                                 </h5>
 
-                                <div class="rating readonly-rating" data-score="4"></div>
+                                <div class="rating readonly-rating" data-score="{{ relatedProduct.getAverageRating() }}"></div>
                             </div>
 
                             <div class="product-actions">
@@ -270,5 +250,14 @@
 
         </div>
     </div>
+
     <!-- /New Collection -->
+{% endblock %}
+{% block javascripts %}
+    {% javascripts  output='compiled/js/scripts.js'
+        '@ReviewsDefaultBundle/Resources/public/js/views/ProductPage.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
 {% endblock %}

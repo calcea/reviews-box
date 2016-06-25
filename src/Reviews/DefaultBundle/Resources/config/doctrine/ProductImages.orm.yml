@@ -7,15 +7,6 @@ Reviews\DefaultBundle\Entity\ProductImages:
             length: 32
             nullable: false
     fields:
-        product_id:
-            type: string
-            nullable: false
-            length: 32
-            options:
-                fixed: true
-                collation: ''
-            column: product_id
-
         filename:
             type: string
             nullable: true
@@ -41,9 +32,10 @@ Reviews\DefaultBundle\Entity\ProductImages:
             type: string
             nullable: true
     manyToOne:
-        products:
+        product:
             targetEntity: Reviews\DefaultBundle\Entity\Products
             inversedBy: images
             joinColumn:
                 name: product_id
                 referencedColumnName: product_id
+            cascade: ["persist", "remove"]

@@ -15,7 +15,10 @@ UserBundle\Entity\User:
         avatarUrl:
             type: string
             nullable: true
-    manyToMany:
+    oneToMany:
         reviews:
             targetEntity: Reviews\DefaultBundle\Entity\Reviews
-            mappedBy: users
+            mappedBy: user
+        products:
+            targetEntity: Reviews\DefaultBundle\Entity\SitesProductsDetails
+            mappedBy: user

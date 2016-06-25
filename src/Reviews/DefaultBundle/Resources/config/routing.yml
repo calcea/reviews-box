@@ -4,9 +4,15 @@ reviews_default_homepage:
 reviews_add_Product:
     path:     /products/add-product
     defaults: { _controller: ReviewsDefaultBundle:Products:addProduct}
-reviews_all_products:
-    path: /products/{slugName}/{category}/{page}
-    defaults: { _controller: ReviewsDefaultBundle:Products:index, category: 0, page: 1}
+add_new_product:
+    path: /products/save-product
+    defaults: { _controller: ReviewsDefaultBundle:Products:addNewProduct}
+save_review:
+    path: /product/save-review/{id}
+    defaults: { _controller: ReviewsDefaultBundle:Products:saveReview}
 products_show:
     path: /product/{slugName}/{id}
     defaults: { _controller: ReviewsDefaultBundle:Products:show}
+reviews_all_products:
+    path: /products/{slugName}/{category}/{page}
+    defaults: { _controller: ReviewsDefaultBundle:Products:index, category: 0, page: 1}

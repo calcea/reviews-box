@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Reviews\DefaultBundle\Entity\Reviews;
+use Reviews\DefaultBundle\Entity\SitesProductsDetails;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 
@@ -53,6 +54,8 @@ class User extends BaseUser
 
     protected $reviews;
 
+    protected $products;
+
     /**
      * User constructor.
      */
@@ -60,6 +63,7 @@ class User extends BaseUser
     {
         parent::__construct();
         $this->reviews = new ArrayCollection();
+        $this->products = new ArrayCollection();
     }
 
     /**
@@ -204,6 +208,52 @@ class User extends BaseUser
     public function setReviews($reviews)
     {
         $this->reviews = $reviews;
+
+        return $this;
+    }
+
+    /**
+     * @param Badge $review
+     * @param bool $updateRelation
+     * @return $this
+     */
+    public function removeProduct(SitesProductsDetails $product, $updateRelation = true)
+    {
+        $this->products->removeElement($product);
+
+        return $this;
+    }
+
+    /**
+     * @param Badge $review
+     * @param bool $updateRelation
+     * @return $this
+     */
+    public function addProduct(SitesProductsDetails $product, $updateRelation = true)
+    {
+        $this->products[] = $product;
+        if($updateRelation){
+            $product->addUser($this, false);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
+    /**
+     * @param ArrayCollection $products
+     * @return $this
+     */
+    public function setProducts($products)
+    {
+        $this->products = $products;
 
         return $this;
     }

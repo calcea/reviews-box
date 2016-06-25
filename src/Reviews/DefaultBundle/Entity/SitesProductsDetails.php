@@ -2,6 +2,8 @@
 
 namespace Reviews\DefaultBundle\Entity;
 
+use UserBundle\Entity\User;
+
 /**
  * SitesProductsDetails
  */
@@ -51,6 +53,11 @@ class SitesProductsDetails
      * @var \Reviews\DefaultBundle\Entity\Products
      */
     private $product;
+
+    /**
+     * @var User
+     */
+    private $user;
 
     /**
      * Get siteProductDetailId
@@ -207,30 +214,6 @@ class SitesProductsDetails
     }
 
     /**
-     * Set productId
-     *
-     * @param string $productId
-     *
-     * @return SitesProductsDetails
-     */
-    public function setProductId($productId)
-    {
-        $this->productId = $productId;
-
-        return $this;
-    }
-
-    /**
-     * Get productId
-     *
-     * @return string
-     */
-    public function getProductId()
-    {
-        return $this->productId;
-    }
-
-    /**
      * Set site
      *
      * @param \Reviews\DefaultBundle\Entity\Sites $site
@@ -272,5 +255,22 @@ class SitesProductsDetails
 
         return $this;
     }
+
+    /**
+     * @param User $user
+     */
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
 }
 
