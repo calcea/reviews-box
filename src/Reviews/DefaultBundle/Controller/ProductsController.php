@@ -190,7 +190,8 @@ class ProductsController extends Controller
             'active' => $currentPage,
             'currentResults' => $currentPage == $totalPages ? $records : $recordsPerPage * $currentPage,
             'totalRecords' => $records,
-            'recordsPerPage' => $recordsPerPage
+            'recordsPerPage' => $recordsPerPage,
+            'totalPages' => (int)($totalPages / $recordsPerPage) + 1
         ];
     }
 

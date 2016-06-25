@@ -10,7 +10,9 @@
 
                 <nav id="top-navigation" class="col-lg-7 col-md-7 col-sm-7">
                     <ul class="pull-left">
-                        <li><a href="{{ path('fos_user_profile_edit') }}">{{ 'My Account'|trans }}</a></li>
+                        {% if app.user %}
+                            <li><a href="{{ path('fos_user_profile_edit') }}">{{ 'My Account'|trans }}</a></li>
+                        {% endif %}
                         <li><a href="text_page.html">{{ 'About Us'|trans }}</a></li>
                         <li><a href="contact.html">{{ 'Contact'|trans }}</a></li>
                     </ul>
@@ -18,8 +20,9 @@
 
                 <nav class="col-lg-5 col-md-5 col-sm-5">
                     <ul class="pull-right">
-                        <li class="purple"><a href="#"><i class="icons icon-user-3"></i> Login</a>
+                        <li class="purple"><a href="{{ path('fos_user_security_login') }}"><i class="icons icon-user-3"></i> Login</a>
                             <ul id="login-dropdown" class="box-dropdown">
+                                {% if not app.user %}
                                 <li>
                                     <div class="box-wrapper">
 
@@ -30,6 +33,17 @@
                                         <a class="button pull-right" href="{{ path('fos_user_registration_register') }}">{{ 'Create an account'|trans }}</a>
                                     </div>
                                 </li>
+                                {% else %}
+                                    <li>
+                                        <div class="box-wrapper">
+                                            <div>Bine ai venit {{ app.user.username }}</div>
+                                            <br>
+                                            <div>
+                                                <a class="button" href="{{ path('fos_user_security_logout') }}">Logout</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endif %}
                             </ul>
                         </li>
                         <li><a href="{{ path('fos_user_registration_register') }}"><i class="icons icon-lock"></i> {{ 'Create an account'|trans }}</a></li>
@@ -48,91 +62,17 @@
             <div class="row">
 
                 <div id="logo" class="col-lg-4 col-md-4 col-sm-4">
-                    <a href="{{ path('reviews_default_homepage') }}"><img src="/img/logo5.png" alt="Logo"></a>
+                    <a href="{{ path('reviews_default_homepage') }}"><img src="/img/logo6.png" alt="Logo"></a>
                 </div>
-
-                <nav id="middle-navigation" class="col-lg-8 col-md-8 col-sm-8">
-                    <ul class="pull-right">
-                        <li class="blue">
-                            <a href="/products/my-products"><i class="icons icon-docs"></i>0 Items</a>
-                        </li>
-                        <li class="red">
-                            <a href="/products/wishlist"><i class="icons icon-heart-empty"></i>2 Items</a>
-                            <ul id="cart-dropdown" class="box-dropdown parent-arrow">
-                                <li>
-                                    <div class="box-wrapper parent-border">
-                                        <p>Recently added item(s)</p>
-
-                                        <table class="cart-table">
-                                            <tr>
-                                                <td><img src="img/products/sample1.jpg" alt="product"></td>
-                                                <td>
-                                                    <h6>Lorem ipsum dolor</h6>
-
-                                                    <p>Product code PSBJ3</p>
-                                                </td>
-                                                <td>
-                                                    <span class="quantity"><span class="light">1 x</span> $79.00</span>
-                                                    <a href="#" class="parent-color">Remove</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/products/sample1.jpg" alt="product"></td>
-                                                <td>
-                                                    <h6>Lorem ipsum dolor</h6>
-
-                                                    <p>Product code PSBJ3</p>
-                                                </td>
-                                                <td>
-                                                    <span class="quantity"><span class="light">1 x</span> $79.00</span>
-                                                    <a href="#" class="parent-color">Remove</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/products/sample1.jpg" alt="product"></td>
-                                                <td>
-                                                    <h6>Lorem ipsum dolor</h6>
-
-                                                    <p>Product code PSBJ3</p>
-                                                </td>
-                                                <td>
-                                                    <span class="quantity"><span class="light">1 x</span> $79.00</span>
-                                                    <a href="#" class="parent-color">Remove</a>
-                                                </td>
-                                            </tr>
-                                        </table>
-
-                                        <br class="clearfix">
-                                    </div>
-
-                                    <div class="footer">
-                                        <table class="checkout-table pull-right">
-                                            <tr>
-                                                <td class="align-right">Tax:</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="align-right">Discount:</td>
-                                                <td>$37.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="align-right"><strong>Total:</strong></td>
-                                                <td><strong class="parent-color">$999.00</strong></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-
-                                    <div class="box-wrapper no-border">
-                                        <a class="button pull-right parent-background" href="#">Checkout</a>
-                                        <a class="button pull-right" href="order_info.html">View Cart</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-
-                        </li>
-                    </ul>
-                </nav>
+                {% if app.user %}
+                    <nav id="middle-navigation" class="col-lg-8 col-md-8 col-sm-8">
+                        <ul class="pull-right">
+                            <li class="blue">
+                                <a href="/products/my-products"><i class="icons icon-docs"></i>Produsele mele</a>
+                            </li>
+                        </ul>
+                    </nav>
+                {% endif %}
 
             </div>
 
@@ -144,8 +84,8 @@
         <nav id="main-navigation" class="style1">
             <ul>
 
-                <li class="home-green current-item">
-                    <a>
+                <li class="home-green">
+                    <a href="{{ path('reviews_default_homepage') }}">
                         <i class="icons icon-shop-1"></i>
                         <span class="nav-caption">Acasa</span>
                     </a>
