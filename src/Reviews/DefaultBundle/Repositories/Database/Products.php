@@ -77,7 +77,7 @@ class Products extends EntityRepository
             ->select('products')
             ->addSelect('SUM(reviews.rating) as rate')
             ->leftJoin('products.reviews', 'reviews')
-            ->groupBy('products')
+            ->groupBy('products.productId')
             ->orderBy('rate', 'desc')
             ->setMaxResults(self::RECORDS_PER_PAGE);
 
