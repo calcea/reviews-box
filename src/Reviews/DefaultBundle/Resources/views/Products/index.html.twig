@@ -73,17 +73,17 @@
 						<span class='add-to-cart'>
                             <span class='action-wrapper'>
                     <a href='{{ path('products_show', {id: product.productId, slugName: product.name|sonata_slugify}) }}'>
-                                <i class='icons icon-basket-2'></i>
+                                <i class='icons icon-eye-1'></i>
                                 <span class='action-name'>Vizualizare</span>
                     </a>
                             </span>
                         </span>
-                    <span class='add-to-favorites'>
-                        <span class='action-wrapper'>
-                            <i class='icons icon-heart-empty'></i>
-                            <span class='action-name'>Adauga in wishlist</span>
-                        </span>
-                    </span>
+                    {#<span class='add-to-favorites'>#}
+                        {#<span class='action-wrapper'>#}
+                            {#<i class='icons icon-heart-empty'></i>#}
+                            {#<span class='action-name'>Adauga in wishlist</span>#}
+                        {#</span>#}
+                    {#</span>#}
                 </div>
 
             </div>

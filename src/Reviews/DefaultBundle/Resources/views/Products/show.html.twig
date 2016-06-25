@@ -81,18 +81,18 @@
 
 
                     <div class="product-actions">
-                        <span class="add-to-favorites">
-                            <span class="action-wrapper">
-                                <i class="icons icon-heart-empty"></i>
-                                <span class="action-name">Adauga in wishlist</span>
-                            </span>
-                        </span>
-                        <span class="add-to-compare">
-                            <span class="action-wrapper">
-                                <i class="icons icon-docs"></i>
-                                <span class="action-name">Add to compare</span>
-                            </span>
-                        </span>
+                        {#<span class="add-to-favorites">#}
+                            {#<span class="action-wrapper">#}
+                                {#<i class="icons icon-heart-empty"></i>#}
+                                {#<span class="action-name">Adauga in wishlist</span>#}
+                            {#</span>#}
+                        {#</span>#}
+                        {#<span class="add-to-compare">#}
+                            {#<span class="action-wrapper">#}
+                                {#<i class="icons icon-docs"></i>#}
+                                {#<span class="action-name">Add to compare</span>#}
+                            {#</span>#}
+                        {#</span>#}
 
                     </div>
                 </div>
@@ -220,7 +220,7 @@
 
                             <div class="product-info">
                                 <h5>
-                                    <a href="{{ path('products_show', {id: relatedProduct.productId, slugName: relatedProduct.name|sonata_slugify}) }}">{{ relatedProduct.name }}</a>
+                                    <a href="{{ path('products_show', {id: relatedProduct.productId, slugName: relatedProduct.name|sonata_slugify}) }}">{{ relatedProduct.name|truncate(55,true) }}</a>
                                 </h5>
 
                                 <div class="rating readonly-rating" data-score="{{ relatedProduct.getAverageRating() }}"></div>
@@ -230,17 +230,17 @@
 												<span class="add-to-cart">
 													<span class="action-wrapper">
                                                         <a href="{{ path('products_show', {id: relatedProduct.productId, slugName: relatedProduct.name|sonata_slugify}) }}">
-                                                            <i class="icons icon-basket-2"></i>
+                                                            <i class="icons icon-eye-1"></i>
                                                             <span class="action-name">Vizualizare</span>
                                                         </a>
 													</span>
 												</span>
-												<span class="add-to-favorites">
-													<span class="action-wrapper">
-														<i class="icons icon-heart-empty"></i>
-														<span class="action-name">Adauga in wishlist</span>
-													</span>
-												</span>
+												{#<span class="add-to-favorites">#}
+													{#<span class="action-wrapper">#}
+														{#<i class="icons icon-heart-empty"></i>#}
+														{#<span class="action-name">Adauga in wishlist</span>#}
+													{#</span>#}
+												{#</span>#}
                             </div>
 
                         </div>
