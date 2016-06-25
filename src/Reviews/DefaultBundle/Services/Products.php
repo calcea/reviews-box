@@ -16,6 +16,7 @@ use Reviews\DefaultBundle\Entity\Sites;
 use Reviews\DefaultBundle\Entity\SitesProductsDetails;
 use Reviews\ParserBundle\Repositories\Manufacturers;
 use Reviews\SimilarityBundle\Services\FindSimilarities;
+use Symfony\Component\Security\Core\SecurityContext;
 use Webmozart\Assert\Assert;
 
 class Products
@@ -23,8 +24,11 @@ class Products
     private $doctrine;
     private $productsRepository = null;
 
-    public function __construct(Registry $doctrine)
+    private $user = null;
+
+    public function __construct(Registry $doctrine, SecurityContext $context)
     {
+        $this->user = $context->getToken()->getUser();
         $this->doctrine = $doctrine;
         $this->productsRepository = $doctrine->getRepository('ReviewsDefaultBundle:Products');
     }
@@ -87,6 +91,7 @@ class Products
         $siteProduct->setDetails($data['title']);
         $siteProduct->setProductUrl($data['url']);
         $siteProduct->setAdded(new \DateTime());
+        $siteProduct->setUser($this->user);
         $this->doctrine->getManager()->persist($siteProduct);
         $this->doctrine->getManager()->flush();
     }
@@ -192,5 +197,9 @@ class Products
 
     public function getRandomProducts($page = 1){
         return $this->productsRepository->getRandomProducts($page);
+    }
+
+    public function getMyProducts($page = 1){
+        return $this->productsRepository->getMyProducts($this->user, $page);
     }
 }

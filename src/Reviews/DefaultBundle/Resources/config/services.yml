@@ -11,6 +11,7 @@ services:
             class: Reviews\DefaultBundle\Services\Products
             arguments:
                 - '@doctrine'
+                - '@security.context'
     reviews:
             class: Reviews\DefaultBundle\Services\Reviews
             arguments:

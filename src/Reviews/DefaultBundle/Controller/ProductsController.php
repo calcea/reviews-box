@@ -32,6 +32,7 @@ class ProductsController extends Controller
         if (!empty($category)) {
             $filters['category'] = $category;
         }
+        $filters['search'] = $request->get('search', '');
         $products = $service->getPaginated($page, $filters);
         return $this->render('ReviewsDefaultBundle:Products:index.html.twig',
             array('products' => $products, 'pagination' => $this->getPagination($products)));
@@ -204,5 +205,12 @@ class ProductsController extends Controller
         $url = $this->get('router')->generate('products_show',
             array('id' => $id, 'slugName' => $slugify->slugify($product->getName())));
         return $this->redirect($url);
+    }
+
+    public function myProductsAction(Request $request, $page = 1){
+        $service = $this->get('products');
+        $products = $service->getMyProducts($page);
+        return $this->render('ReviewsDefaultBundle:Products:my-products.html.twig',
+            array('products' => $products, 'pagination' => $this->getPagination($products)));
     }
 }

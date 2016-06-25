@@ -10,6 +10,7 @@ namespace Reviews\DefaultBundle\Repositories\Database;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+use UserBundle\Entity\User;
 
 class Products extends EntityRepository
 {
@@ -58,6 +59,12 @@ class Products extends EntityRepository
             $query->setParameter('category', $filters['category']);
         }
 
+        if(isset($filters['search']) && !empty($filters['search'])){
+            $query->where("products.name like :search");
+            $query->orWhere("products.code like :search");
+            $query->setParameter('search', '%' . $filters['search'] .'%');
+        }
+
         $paginator = new Paginator($query);
         $totalPages = count($paginator);
 
@@ -100,6 +107,25 @@ class Products extends EntityRepository
             ->setMaxResults(self::RECORDS_PER_PAGE);
 
         return $query->getQuery()->getResult();
+    }
+
+    public function getMyProducts(User $user, $page = 1){
+        $query = $this->createQueryBuilder('products')
+            ->select('products')
+            ->innerJoin('products.productDetails', 'pd')
+            ->where('pd.user = :user')
+            ->orderBy('products.name')
+            ->setParameter('user', $user);
+        $paginator = new Paginator($query);
+        $totalPages = count($paginator);
+
+        return array(
+            'page' => $page,
+            'total_pages' => $totalPages,
+            'total_records' => $totalPages * self::RECORDS_PER_PAGE,
+            'records_per_page' => self::RECORDS_PER_PAGE,
+            'products' => $paginator
+        );
     }
 
 }

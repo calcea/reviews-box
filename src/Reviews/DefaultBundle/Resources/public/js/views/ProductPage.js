@@ -17,7 +17,7 @@ var ProductPage = Backbone.View.extend({
         this.removeTextFromParagraphs();
     },
     removeTextFromParagraphs: function () {
-        $('p, td').each(function (el) {
+        $('p, td').not('.search-column-1, .search-column-2').each(function (el) {
             var text = $(this).text();
             if(text.trim().length <= 2 && $(this).find('img').length == 0){
                 $(this).text('');

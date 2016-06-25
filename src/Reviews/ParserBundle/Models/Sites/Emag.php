@@ -123,8 +123,9 @@ class Emag extends AbstractSite
 
     protected function getDescription()
     {
-        if ($this->crawler->filter('.description-content')) {
+        if ($this->crawler->filter('.description-content')->count() > 0) {
             return $this->crawler->filter('.description-content')->html();
         }
+        return '';
     }
 }
