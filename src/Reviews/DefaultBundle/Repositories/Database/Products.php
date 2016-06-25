@@ -93,4 +93,13 @@ class Products extends EntityRepository
         return $query->getQuery()->getResult();
     }
 
+    public function getRandomProducts($page){
+        $query = $this->createQueryBuilder('products')
+            ->select('products')
+            ->setFirstResult($page - 1)
+            ->setMaxResults(self::RECORDS_PER_PAGE);
+
+        return $query->getQuery()->getResult();
+    }
+
 }

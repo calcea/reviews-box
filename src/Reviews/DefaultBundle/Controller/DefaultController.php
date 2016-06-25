@@ -20,7 +20,7 @@ class DefaultController extends Controller
         return $this->render('ReviewsDefaultBundle:Default:index.html.twig',
             array(
                 'mostAppreciated' => $service->getMostAppreciated(),
-                'randomProducts' => $service->getPaginated($randomPage)['products'],
+                'randomProducts' => $service->getRandomProducts($randomPage),
                 'newestProducts' => $service->getNewest()
             )
         );

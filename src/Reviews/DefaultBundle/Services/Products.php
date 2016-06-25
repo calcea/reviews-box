@@ -189,4 +189,8 @@ class Products
     public function getNewest(){
         return $this->productsRepository->getNewest();
     }
+
+    public function getRandomProducts($page = 1){
+        return $this->productsRepository->getRandomProducts($page);
+    }
 }
