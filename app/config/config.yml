@@ -106,7 +106,7 @@ fos_user:
 
 # Sonata Admin Configuration
 sonata_admin:
-    title:                  'BookLand'
+    title:                  'Reviews Box'
     options:
         pager_links: 10
         html5_validate: false

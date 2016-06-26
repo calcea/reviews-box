@@ -5,30 +5,33 @@
 
     <div class='row'>
 
-        {#<div class='col-lg-12 col-md-12 col-sm-12'>#}
-            {#<div class='category-heading'>#}
-                {#<select class='chosen-select'>#}
-                    {#<option>Select manufacturer</option>#}
-                    {#<option>Product name</option>#}
-                    {#<option>Product name</option>#}
-                    {#<option>Product name</option>#}
-                {#</select>#}
+        <div class='col-lg-12 col-md-12 col-sm-12'>
+            <div class='category-heading'>
+                <form class="products-filters" action="" method="get">
+                    <select name="order-by" class='chosen-select'>
+                        <option value="">Ordoneaza dupa..</option>
+                        <option value="name-asc" {{ (optionSelected == 'name-asc') ? 'selected' : "" }}>Nume ascendent</option>
+                        <option value="name-desc" {{ (optionSelected == 'name-desc') ? 'selected' : "" }}>Nume descendent</option>
+                        <option value="appreciated-desc" {{ (optionSelected == 'appreciated-desc') ? 'selected' : "" }}>Cele mai apreciate</option>
+                        <option value="appreciated-asc" {{ (optionSelected == 'appreciated-asc') ? 'selected' : "" }}>Cele mai putin apreciate</option>
+                    </select>
+                </form>
 
-            {#</div>#}
-        {#</div>#}
+            </div>
+        </div>
 
         {#<div class='col-lg-6 col-md-6 col-sm-6'>#}
-            {#<div class='category-results'>#}
-                {#<p>Rezultate {{ pagination.currentResults - pagination.recordsPerPage + 1 }}#}
-                    {#din {{ pagination.totalRecords }}</p>#}
-            {#</div>#}
+        {#<div class='category-results'>#}
+        {#<p>Rezultate {{ pagination.currentResults - pagination.recordsPerPage + 1 }}#}
+        {#din {{ pagination.totalRecords }}</p>#}
+        {#</div>#}
         {#</div>#}
 
         {% set params = app.request.attributes.get('_route_params') %}
         {% if pagination.totalPages > 1 %}
             <div class='col-lg-12 col-md-6 col-sm-6'>
                 <div class='pagination'>
-                    {% if pagination.totalPages > 1  or pagination.currentRecords == 0%}
+                    {% if pagination.totalPages > 1  or pagination.currentRecords == 0 %}
                         <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.previous  } ) }}'>
                             <div class='previous'><i class='icons icon-left-dir'></i></div>
                         </a>
@@ -48,7 +51,7 @@
                             <div class='page-button {% if pagination.active == pagination.page3 %} {{ ' active' }} {% endif %} '>{{ pagination.page3 }}</div>
                         </a>
                     {% endif %}
-                    {% if pagination.next <= pagination.totalPages or pagination.currentRecords == 0  %}
+                    {% if pagination.next <= pagination.totalPages or pagination.currentRecords == 0 %}
                         <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.next  } ) }}'>
                             <div class='next'><i class='icons icon-right-dir'></i></div>
                         </a>
@@ -70,8 +73,10 @@
             <div class='col-lg-4 col-md-4 col-sm-4 product'>
 
                 <div class='product-image'>
-                    <img src='{{ (product.images is empty)? '/img/product_default.jpg' :  product.images[0].getUrlOverlayPicture() }}' alt='Product1'>
-                    <a href='{{ path('products_show', {id: product.productId, slugName: product.name|sonata_slugify}) }}' class='product-hover'>
+                    <img src='{{ (product.images is empty)? '/img/product_default.jpg' :  product.images[0].getUrlOverlayPicture() }}'
+                         alt='Product1'>
+                    <a href='{{ path('products_show', {id: product.productId, slugName: product.name|sonata_slugify}) }}'
+                       class='product-hover'>
                         <i class='icons icon-eye-1'></i> Vizualizare
                     </a>
                 </div>
@@ -88,16 +93,16 @@
 						<span class='add-to-cart'>
                             <span class='action-wrapper'>
                     <a href='{{ path('products_show', {id: product.productId, slugName: product.name|sonata_slugify}) }}'>
-                                <i class='icons icon-eye-1'></i>
-                                <span class='action-name'>Vizualizare</span>
+                        <i class='icons icon-eye-1'></i>
+                        <span class='action-name'>Vizualizare</span>
                     </a>
                             </span>
                         </span>
                     {#<span class='add-to-favorites'>#}
-                        {#<span class='action-wrapper'>#}
-                            {#<i class='icons icon-heart-empty'></i>#}
-                            {#<span class='action-name'>Adauga in wishlist</span>#}
-                        {#</span>#}
+                    {#<span class='action-wrapper'>#}
+                    {#<i class='icons icon-heart-empty'></i>#}
+                    {#<span class='action-name'>Adauga in wishlist</span>#}
+                    {#</span>#}
                     {#</span>#}
                 </div>
 
@@ -110,7 +115,7 @@
         {% if pagination.totalPages > 1 %}
             <div class='col-lg-12 col-md-6 col-sm-6'>
                 <div class='pagination'>
-                    {% if pagination.totalPages > 1  or pagination.currentRecords == 0%}
+                    {% if pagination.totalPages > 1  or pagination.currentRecords == 0 %}
                         <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.previous  } ) }}'>
                             <div class='previous'><i class='icons icon-left-dir'></i></div>
                         </a>
@@ -130,7 +135,7 @@
                             <div class='page-button {% if pagination.active == pagination.page3 %} {{ ' active' }} {% endif %} '>{{ pagination.page3 }}</div>
                         </a>
                     {% endif %}
-                    {% if pagination.next <= pagination.totalPages or pagination.currentRecords == 0  %}
+                    {% if pagination.next <= pagination.totalPages or pagination.currentRecords == 0 %}
                         <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.next  } ) }}'>
                             <div class='next'><i class='icons icon-right-dir'></i></div>
                         </a>

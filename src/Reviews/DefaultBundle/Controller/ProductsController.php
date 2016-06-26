@@ -32,10 +32,11 @@ class ProductsController extends Controller
         if (!empty($category)) {
             $filters['category'] = $category;
         }
+        $order = $request->get('order-by', '');
         $filters['search'] = $request->get('search', '');
-        $products = $service->getPaginated($page, $filters);
+        $products = $service->getPaginated($page, $filters, $order);
         return $this->render('ReviewsDefaultBundle:Products:index.html.twig',
-            array('products' => $products, 'pagination' => $this->getPagination($products)));
+            array('products' => $products, 'pagination' => $this->getPagination($products), 'optionSelected' => $order));
     }
 
 

@@ -53,7 +53,11 @@ class Products extends EntityRepository
             ->select('products')
             ->setFirstResult(($page-1) * self::RECORDS_PER_PAGE)
             ->setMaxResults(self::RECORDS_PER_PAGE);
-        $query->orderBy('products.name');
+        if(!empty($orders)){
+            $query->orderBy('products.' . $orders['field'], $orders['direction']);
+        }else{
+            $query->orderBy('products.name');
+        }
         if (isset($filters['category']) && !empty($filters['category'])) {
             $query->where('products.class1 = :category');
             $query->setParameter('category', $filters['category']);

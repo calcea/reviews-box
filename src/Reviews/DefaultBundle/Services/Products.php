@@ -33,9 +33,27 @@ class Products
         $this->productsRepository = $doctrine->getRepository('ReviewsDefaultBundle:Products');
     }
 
-    public function getPaginated($page = 1, $filters = array(), $orders = array())
+    public function getPaginated($page = 1, $filters = array(), $orders = '')
     {
+        if(!empty($orders)){
+            $orders = $this->prepareOrder($orders);
+        }
         return $this->productsRepository->getProductsPaginated($page, $filters, $orders);
+    }
+
+    private function prepareOrder($order){
+        $result = [
+            'field' => 'name',
+            'direction' => 'asc'
+        ];
+        $components = explode('-',$order);
+        if($components[0] == 'appreciated'){
+            $components[0] = 'rating';
+        }
+        $result['field'] = $components[0];
+        $result['direction'] = $components[1];
+
+        return $result;
     }
 
     public function getDetailsById($id)
