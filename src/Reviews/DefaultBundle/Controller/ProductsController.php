@@ -136,7 +136,6 @@ class ProductsController extends Controller
             $response['error'] = 1;
             $response['code'] = 103;
         } catch (\Exception $e) {
-            throw $e;
             $response['error'] = 1;
             $response['code'] = 104;
         }
@@ -192,7 +191,8 @@ class ProductsController extends Controller
             'currentResults' => $currentPage == $totalPages ? $records : $recordsPerPage * $currentPage,
             'totalRecords' => $records,
             'recordsPerPage' => $recordsPerPage,
-            'totalPages' => (int)($totalPages / $recordsPerPage) + 1
+            'totalPages' => $totalPages,
+            'currentRecords' => $products['products']->getIterator()->count()
         ];
     }
 

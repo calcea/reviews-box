@@ -13,7 +13,7 @@
                         {% if app.user %}
                             <li><a href="{{ path('fos_user_profile_edit') }}">{{ 'My Account'|trans }}</a></li>
                         {% endif %}
-                        <li><a href="text_page.html">{{ 'About Us'|trans }}</a></li>
+                        <li><a href="{{ path('reviews_about_us_page') }}">{{ 'About Us'|trans }}</a></li>
                         <li><a href="{{ path('reviews_contact_page') }}">{{ 'Contact'|trans }}</a></li>
                     </ul>
                 </nav>

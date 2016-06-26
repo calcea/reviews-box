@@ -4,6 +4,12 @@ reviews_default_homepage:
 reviews_contact_page:
     path: /contact
     defaults: { _controller: ReviewsDefaultBundle:Default:contact }
+reviews_about_us_page:
+    path: /about-us
+    defaults: { _controller: ReviewsDefaultBundle:Default:aboutUs}
+reviews_instructions_page:
+    path: /instructions
+    defaults: { _controller: ReviewsDefaultBundle:Default:instructions}
 reviews_add_Product:
     path:     /products/add-product
     defaults: { _controller: ReviewsDefaultBundle:Products:addProduct}

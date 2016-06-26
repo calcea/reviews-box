@@ -25,30 +25,45 @@
         {#</div>#}
 
         {% set params = app.request.attributes.get('_route_params') %}
-        <div class='col-lg-12 col-md-6 col-sm-6'>
-            <div class='pagination'>
-                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.previous  } ) }}'>
-                    <div class='previous'><i class='icons icon-left-dir'></i></div>
-                </a>
-                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page1  } ) }}'>
-                    <div class='page-button {% if pagination.active == pagination.page1 %} {{ ' active' }} {% endif %}  '>{{ pagination.page1 }}</div>
-                </a>
-                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page2  } ) }}'>
-                    <div class='page-button {% if pagination.active == pagination.page2 %} {{ ' active' }} {% endif %}'>{{ pagination.page2 }}</div>
-                </a>
-                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page3 } ) }}'>
-                    <div class='page-button {% if pagination.active == pagination.page3 %} {{ ' active' }} {% endif %} '>{{ pagination.page3 }}</div>
-                </a>
-                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.next  } ) }}'>
-                    <div class='next'><i class='icons icon-right-dir'></i></div>
-                </a>
+        {% if pagination.totalPages > 1 %}
+            <div class='col-lg-12 col-md-6 col-sm-6'>
+                <div class='pagination'>
+                    {% if pagination.totalPages > 1  or pagination.currentRecords == 0%}
+                        <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.previous  } ) }}'>
+                            <div class='previous'><i class='icons icon-left-dir'></i></div>
+                        </a>
+                    {% endif %}
+                    {% if pagination.page1 <= pagination.totalPages  or pagination.currentRecords == 0 %}
+                        <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page1  } ) }}'>
+                            <div class='page-button {% if pagination.active == pagination.page1 %} {{ ' active' }} {% endif %}  '>{{ pagination.page1 }}</div>
+                        </a>
+                    {% endif %}
+                    {% if pagination.page2 <= pagination.totalPages or pagination.currentRecords == 0 %}
+                        <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page2  } ) }}'>
+                            <div class='page-button {% if pagination.active == pagination.page2 %} {{ ' active' }} {% endif %}'>{{ pagination.page2 }}</div>
+                        </a>
+                    {% endif %}
+                    {% if pagination.page3 <= pagination.totalPages or pagination.currentRecords == 0 %}
+                        <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page3 } ) }}'>
+                            <div class='page-button {% if pagination.active == pagination.page3 %} {{ ' active' }} {% endif %} '>{{ pagination.page3 }}</div>
+                        </a>
+                    {% endif %}
+                    {% if pagination.next <= pagination.totalPages or pagination.currentRecords == 0  %}
+                        <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.next  } ) }}'>
+                            <div class='next'><i class='icons icon-right-dir'></i></div>
+                        </a>
+                    {% endif %}
+                </div>
             </div>
-        </div>
+        {% endif %}
 
     </div>
 
     <div class='row'>
 
+        {% if pagination.currentRecords == 0 %}
+            <div>Nu exista produse.</div>
+        {% endif %}
         {% for product in products.products %}
 
             <!-- Product Item -->
@@ -92,25 +107,37 @@
         {% endfor %}
 
 
-        <div class='col-lg-12 col-md-6 col-sm-6'>
-            <div class='pagination'>
-                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.previous  } ) }}'>
-                    <div class='previous'><i class='icons icon-left-dir'></i></div>
-                </a>
-                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page1  } ) }}'>
-                    <div class='page-button {% if pagination.active == pagination.page1 %} {{ ' active' }} {% endif %}  '>{{ pagination.page1 }}</div>
-                </a>
-                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page2  } ) }}'>
-                    <div class='page-button {% if pagination.active == pagination.page2 %} {{ ' active' }} {% endif %}'>{{ pagination.page2 }}</div>
-                </a>
-                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page3 } ) }}'>
-                    <div class='page-button {% if pagination.active == pagination.page3 %} {{ ' active' }} {% endif %} '>{{ pagination.page3 }}</div>
-                </a>
-                <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.next  } ) }}'>
-                    <div class='next'><i class='icons icon-right-dir'></i></div>
-                </a>
+        {% if pagination.totalPages > 1 %}
+            <div class='col-lg-12 col-md-6 col-sm-6'>
+                <div class='pagination'>
+                    {% if pagination.totalPages > 1  or pagination.currentRecords == 0%}
+                        <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.previous  } ) }}'>
+                            <div class='previous'><i class='icons icon-left-dir'></i></div>
+                        </a>
+                    {% endif %}
+                    {% if pagination.page1 <= pagination.totalPages  or pagination.currentRecords == 0 %}
+                        <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page1  } ) }}'>
+                            <div class='page-button {% if pagination.active == pagination.page1 %} {{ ' active' }} {% endif %}  '>{{ pagination.page1 }}</div>
+                        </a>
+                    {% endif %}
+                    {% if pagination.page2 <= pagination.totalPages or pagination.currentRecords == 0 %}
+                        <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page2  } ) }}'>
+                            <div class='page-button {% if pagination.active == pagination.page2 %} {{ ' active' }} {% endif %}'>{{ pagination.page2 }}</div>
+                        </a>
+                    {% endif %}
+                    {% if pagination.page3 <= pagination.totalPages or pagination.currentRecords == 0 %}
+                        <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.page3 } ) }}'>
+                            <div class='page-button {% if pagination.active == pagination.page3 %} {{ ' active' }} {% endif %} '>{{ pagination.page3 }}</div>
+                        </a>
+                    {% endif %}
+                    {% if pagination.next <= pagination.totalPages or pagination.currentRecords == 0  %}
+                        <a href='{{ path(app.request.attributes.get('_route'), {'category': params.category, 'slugName': params.slugName , 'page': pagination.next  } ) }}'>
+                            <div class='next'><i class='icons icon-right-dir'></i></div>
+                        </a>
+                    {% endif %}
+                </div>
             </div>
-        </div>
+        {% endif %}
 
     </div>
 

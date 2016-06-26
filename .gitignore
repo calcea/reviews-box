@@ -12,4 +12,5 @@
 /build/
 /vendor/
 /bin/
+/src/Reviews/PredictBundle/Resources/data/classifier-models/
 /composer.phar

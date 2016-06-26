@@ -51,7 +51,7 @@ class Products extends EntityRepository
     {
         $query = $this->createQueryBuilder('products')
             ->select('products')
-            ->setFirstResult($page - 1)
+            ->setFirstResult(($page-1) * self::RECORDS_PER_PAGE)
             ->setMaxResults(self::RECORDS_PER_PAGE);
         $query->orderBy('products.name');
         if (isset($filters['category']) && !empty($filters['category'])) {
@@ -66,8 +66,7 @@ class Products extends EntityRepository
         }
 
         $paginator = new Paginator($query);
-        $totalPages = count($paginator);
-
+        $totalPages = (int)(count($paginator) / self::RECORDS_PER_PAGE) + 1;
 
         return array(
             'page' => $page,

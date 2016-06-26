@@ -28,8 +28,8 @@ class SiteFactory
         switch (self::getHostFromUrl($url)) {
             case Emag::HOSTNAME:
                 return new Emag(self::getContent($url), $url);
-            case PcGarage::HOSTNAME:
-                return new PcGarage(self::getContent($url), $url);
+//            case PcGarage::HOSTNAME:
+//                return new PcGarage(self::getContent($url), $url);
             case Cel::HOSTNAME:
                 return new Cel(self::getContent($url), $url);
             default:

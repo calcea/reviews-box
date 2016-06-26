@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <p> Pentru a putea adăuga un produs în platformă, trebuie sa fiți autentificat. După
+        autentificare, este afișat în meniu, un buton pentru a putea adăuga produse.</p>
+    <p>După accesarea butonului, vă este afișată o fereastră unde trebuie să adăugați url-ul către
+        pagina produsului pe care doriți să îl adăugați.</p>
+
+    <p>La apăsarea butonului <b>Cauta</b>, dacă url-ul introdus este valid, aplicația face un request către server și
+        așteaptă
+        să întoarcă produse similare cu produsul introdus de către dumneavoastră. Dacă găsiți materialul introdus
+        printre
+        cele similare întoarse de aplicație, este suficient să îl alegeți din listă și apoi puteți adăuga review-uri.
+        În caz contrar, pentru a adăuga produsul în platformă, trebuie să apăsați butonul <b>Nu gasesc produsul</b> iar
+        aplicația salvează produsul în baza de date și veți fi redirectat către pagina cu detaliile produsului.</p>
+    <br>
+
+    <p>Pentru a adăuga produse, aplicația recunoaște doar următoarele site-uri:</p>
+
+    <ul class="sites">
+        <li>
+            <a href="http://www.emag.ro">
+                <span>Emag</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://www.cel.ro">
+                <span>Cel</span>
+            </a>
+        </li>
+    </ul>
+
+    <br>
+    <p>Aplicația își propune ca pe viitor să suporte mult mai multe site-uri. Pentru a afla când și ce site-uri sunt suportate, vă rugăm consultați această pagină periodic. Vă mulțumim!</p>
+
+{% endblock %}
