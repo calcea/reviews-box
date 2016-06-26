@@ -26,4 +26,8 @@ class DefaultController extends Controller
         );
     }
 
+    public function contactAction(){
+        return $this->render('ReviewsDefaultBundle:Default:contact.html.twig');
+    }
+
 }

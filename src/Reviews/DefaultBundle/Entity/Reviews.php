@@ -51,7 +51,7 @@ class Reviews
 
     public function __construct()
     {
-        if($this->added){
+        if ($this->added) {
             $this->added = new \DateTime();
         }
     }
@@ -138,19 +138,25 @@ class Reviews
 
     public function __toString()
     {
-        if(!is_null($this->user) && !is_null($this->product)){
-            return $this->user->getUsername().' -> '.$this->product->getName();
+        if (!is_null($this->user) && !is_null($this->product)) {
+            return $this->user->getUsername() . ' -> ' . $this->product->getName();
         }
 
         return '';
     }
 
-    public function setAdded(\DateTime $added){
+    public function setAdded(\DateTime $added)
+    {
         $this->added = $added;
     }
 
-    public function getAdded(){
+    public function getAdded()
+    {
         return $this->added;
     }
 
+    public function prePersistEvent()
+    {
+
+    }
 }

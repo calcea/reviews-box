@@ -54,7 +54,7 @@ class Products
             $product->setName($dataToUpdate['title']);
         }
         if (isset($dataToUpdate['properties'])) {
-            $product->removeAllProperties();
+            $this->removeAllProperties($product);
             foreach ($dataToUpdate['properties'] as $property) {
                 $obj = new Properties();
                 $obj->setName($property['name']);
@@ -64,7 +64,7 @@ class Products
             }
         }
         if (isset($dataToUpdate['images'])) {
-            $product->removeAllImages();
+            $this->removeAllImages($product);
             foreach ($dataToUpdate['images'] as $image) {
                 $obj = new ProductImages();
                 $obj->setUrlOverlayPicture($image['overlay_url']);
@@ -181,25 +181,43 @@ class Products
         return $manufacturer[0];
     }
 
-    public function getMostAppreciated(){
-        $products = $this->productsRepository->getMostAppreciated();
-        $data = array();
-        foreach ($products as $product) {
-            $data[] = $product[0];
-        }
-
-        return $data;
+    public function getMostAppreciated()
+    {
+        return $this->productsRepository->getMostAppreciated();
     }
 
-    public function getNewest(){
+    public function getNewest()
+    {
         return $this->productsRepository->getNewest();
     }
 
-    public function getRandomProducts($page = 1){
+    public function getRandomProducts($page = 1)
+    {
         return $this->productsRepository->getRandomProducts($page);
     }
 
-    public function getMyProducts($page = 1){
+    public function getMyProducts($page = 1)
+    {
         return $this->productsRepository->getMyProducts($this->user, $page);
+    }
+
+    private function removeAllImages(\Reviews\DefaultBundle\Entity\Products $product)
+    {
+        $em = $this->doctrine->getManager();
+        foreach ($product->getImages()->toArray() as $item) {
+            $em->remove($item);
+        }
+        $product->removeAllImages();
+        $em->flush();
+    }
+
+    private function removeAllProperties(\Reviews\DefaultBundle\Entity\Products $product)
+    {
+        $em = $this->doctrine->getManager();
+        foreach ($product->getProperties()->toArray() as $item) {
+            $em->remove($item);
+        }
+        $product->removeAllProperties();
+        $em->flush();
     }
 }

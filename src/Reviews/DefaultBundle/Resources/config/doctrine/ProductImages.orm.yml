@@ -38,4 +38,4 @@ Reviews\DefaultBundle\Entity\ProductImages:
             joinColumn:
                 name: product_id
                 referencedColumnName: product_id
-            cascade: ["persist", "remove"]
+#            cascade: ["persist", "remove"]

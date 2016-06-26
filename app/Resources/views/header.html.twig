@@ -14,7 +14,7 @@
                             <li><a href="{{ path('fos_user_profile_edit') }}">{{ 'My Account'|trans }}</a></li>
                         {% endif %}
                         <li><a href="text_page.html">{{ 'About Us'|trans }}</a></li>
-                        <li><a href="contact.html">{{ 'Contact'|trans }}</a></li>
+                        <li><a href="{{ path('reviews_contact_page') }}">{{ 'Contact'|trans }}</a></li>
                     </ul>
                 </nav>
 
@@ -125,10 +125,10 @@
                     </li>
                 {% endif %}
                 <li class="purple">
-                    <a href="contact.html">
+                    <a href="{{ path('reviews_contact_page') }}">
                         <i class="icons icon-location-7"></i>
                         <span class="nav-caption">Contact</span>
-                        <span class="nav-description">Store Locations</span>
+                        <span class="nav-description">Informatii contact</span>
                     </a>
                 </li>
 

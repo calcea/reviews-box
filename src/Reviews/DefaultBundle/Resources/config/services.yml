@@ -37,3 +37,7 @@ services:
                 - ~
             tags:
               - { name: sonata.admin, manager_type: orm, label: "Reviews", group: "Reviews", show_in_dashboard: false }
+    defaultbundle.reviews_event:
+            class: Reviews\DefaultBundle\EventSubscriber\Reviews
+            tags:
+              - { name: doctrine.event_subscriber, connection: default }

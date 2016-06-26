@@ -33,4 +33,4 @@ Reviews\DefaultBundle\Entity\Properties:
             joinColumn:
                 name: product_id
                 referencedColumnName: product_id
-            cascade: ["persist"]
+#            cascade: ["persist"]

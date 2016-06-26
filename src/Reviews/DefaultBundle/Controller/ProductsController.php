@@ -136,6 +136,7 @@ class ProductsController extends Controller
             $response['error'] = 1;
             $response['code'] = 103;
         } catch (\Exception $e) {
+            throw $e;
             $response['error'] = 1;
             $response['code'] = 104;
         }

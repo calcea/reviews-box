@@ -90,12 +90,12 @@ class Model
             if (empty($this->getProductDescription($product))) {
                 continue;
             }
-            if (!empty(trim($product->getDescription())) && preg_match('/\s/', trim($product->getDescription()))) {
-                $trainData[] = array(
-                    'category' => $product->getClass1()->getCategoryId(),
-                    'description' => trim($product->getDescription())
-                );
-            }
+//            if (!empty(trim($product->getDescription())) && preg_match('/\s/', trim($product->getDescription()))) {
+//                $trainData[] = array(
+//                    'category' => $product->getClass1()->getCategoryId(),
+//                    'description' => trim($product->getDescription())
+//                );
+//            }
             if (!empty(trim($product->getName())) && preg_match('/\s/', trim($product->getName()))) {
                 $trainData[] = array(
                     'category' => $product->getClass1()->getCategoryId(),
@@ -137,7 +137,8 @@ class Model
      */
     protected function getModelDirectory()
     {
-        return realpath(sprintf(Configs::getSVMParams()['directory'], __DIR__ . '/../..')) . '/';
+        $directory = realpath( __DIR__ . '/../..');
+        return $directory . Configs::getSVMParams()['directory'] ;
     }
 
     /**

@@ -15,6 +15,14 @@ Reviews\DefaultBundle\Entity\Products:
         manufacturers_FK_idx:
             columns:
                 - manufacturer_id
+        products_similarity:
+            columns: [similarity_hash]
+        products_name:
+            columns: [name]
+        products_class1:
+            columns: [class1]
+        products_rating:
+            columns: [rating]
     id:
         productId:
             type: string
@@ -59,10 +67,17 @@ Reviews\DefaultBundle\Entity\Products:
                 unsigned: false
                 default: '0'
             column: similarity_hash
+        rating:
+            type: decimal
+            nullable: true
+            options:
+                unsigned: true
+                default: '0'
+            column: rating
     oneToMany:
         productDetails:
             targetEntity: Reviews\DefaultBundle\Entity\SitesProductsDetails
-            cascade: ["persist"]
+            cascade: ["persist", "remove"]
             mappedBy: product
         images:
             targetEntity: Reviews\DefaultBundle\Entity\ProductImages

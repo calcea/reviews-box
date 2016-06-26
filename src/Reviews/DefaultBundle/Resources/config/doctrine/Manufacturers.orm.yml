@@ -10,8 +10,6 @@ Reviews\DefaultBundle\Entity\Manufacturers:
                 fixed: true
             id: true
             column: manufacturer_id
-            generator:
-                strategy: IDENTITY
     fields:
         name:
             type: string

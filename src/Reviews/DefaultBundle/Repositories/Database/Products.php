@@ -82,10 +82,7 @@ class Products extends EntityRepository
     {
         $query = $this->createQueryBuilder('products')
             ->select('products')
-            ->addSelect('SUM(reviews.rating) as rate')
-            ->leftJoin('products.reviews', 'reviews')
-            ->groupBy('products.productId')
-            ->orderBy('rate', 'desc')
+            ->orderBy('products.rating', 'desc')
             ->setMaxResults(self::RECORDS_PER_PAGE);
 
         return $query->getQuery()->getResult();

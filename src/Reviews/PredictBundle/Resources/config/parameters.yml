@@ -1,5 +1,5 @@
 SVM:
-    directory: "%s/Resources/data/classifier-models/"
+    directory: "/Resources/data/classifier-models/"
     filename: "model-svm.svm"
 
 Bayes:

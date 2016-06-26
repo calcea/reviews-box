@@ -7,6 +7,9 @@ Reviews\DefaultBundle\Entity\Reviews:
             nullable: false
             generator:
                 strategy: IDENTITY
+    indexes:
+        reviews_rating:
+            columns: [rating]
     fields:
         review:
             type: text

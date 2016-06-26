@@ -134,7 +134,7 @@
 
                             <ul class="comments">
                                 {% for review in product.getReviews() %}
-                                    <li>
+                                        <li>
                                         <p><strong>{{ review.user.username }}</strong></p>
                                         <span class="date">{{ review.added | date('Y-m-d H:i:s') }}</span>
                                     <div class="rating-box">
@@ -145,26 +145,28 @@
                                     </li>
                                 {% endfor %}
                             </ul>
-                            <h3>Scrie un review</h3>
-                        <form class="review-form" action="{{ path("save_review", {'id': product.productId }) }}">
+                            {% if app.user %}
+                                <h3>Scrie un review</h3>
+                                <form class="review-form"
+                                      action="{{ path("save_review", {'id': product.productId }) }}">
 
-                            <textarea id="review-textarea" name="review"></textarea>
+                                    <textarea id="review-textarea" name="review"></textarea>
 
-                            <p>Dati un scor produsului. Va rugam selectati scorul intre 0 (slab) si 5 stele
-                                (foarte bun)</p>
+                                    <p>Dati un scor produsului. Va rugam selectati scorul intre 0 (slab) si 5 stele
+                                        (foarte bun)</p>
 
-                            <div class="rating-box">
-                                Rating:
-                                <div class="rating rate" data-score="3"></div>
-                            </div>
-                            <div class="char-counter">
-                                <label>Caractere scrise</label>
-                                <input data-target="#review-textarea" type="text">
-                            </div>
-                            <br>
-                            <input type="submit" class="dark-blue big" value="Adauga review">
-                        </form>
-
+                                    <div class="rating-box">
+                                        Rating:
+                                        <div class="rating rate" data-score="3"></div>
+                                    </div>
+                                    <div class="char-counter">
+                                        <label>Caractere scrise</label>
+                                        <input data-target="#review-textarea" type="text">
+                                    </div>
+                                    <br>
+                                    <input type="submit" class="dark-blue big" value="Adauga review">
+                                </form>
+                            {% endif %}
 
                         </div>
 

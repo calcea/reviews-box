@@ -86,6 +86,8 @@ class Products
      */
     private $reviews;
 
+    private $rating;
+
     /**
      * Products constructor.
      */
@@ -545,5 +547,23 @@ class Products
         }
         return $ratingsSum / array_sum($ratings);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * @param mixed $rating
+     */
+    public function setRating($rating)
+    {
+        $this->rating = $rating;
+    }
+
+
 }
 
