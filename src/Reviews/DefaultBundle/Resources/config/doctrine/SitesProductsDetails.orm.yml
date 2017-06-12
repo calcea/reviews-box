@@ -46,9 +46,8 @@ Reviews\DefaultBundle\Entity\SitesProductsDetails:
             column: similarity_hash
         added:
             type: datetime
-            nullable: false
-            options:
-                default: CURRENT_TIMESTAMP
+            nullable: true
+
         price:
             type: decimal
             nullable: true

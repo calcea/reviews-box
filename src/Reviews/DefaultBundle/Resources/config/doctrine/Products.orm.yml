@@ -55,8 +55,6 @@ Reviews\DefaultBundle\Entity\Products:
         added:
             type: datetime
             nullable: false
-            options:
-                default: CURRENT_TIMESTAMP
         deleted:
             type: boolean
             nullable: false

@@ -20,8 +20,7 @@ Reviews\DefaultBundle\Entity\Reviews:
         added:
             type: datetime
             nullable: false
-            options:
-                default: CURRENT_TIMESTAMP
+
     manyToOne:
         product:
             targetEntity: Reviews\DefaultBundle\Entity\Products

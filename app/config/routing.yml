@@ -14,9 +14,9 @@ reviews_parser:
     resource: "@ReviewsParserBundle/Resources/config/routing.yml"
     prefix:   /
 
-#admin_override:
-#    resource: "@AdminOverrideBundle/Resources/config/routing.yml"
-#    prefix:   /
+admin_override:
+    resource: "@AdminOverrideBundle/Resources/config/routing.yml"
+    prefix:   /
 
 framework_extension:
     resource: "@FrameworkExtensionBundle/Resources/config/routing.yml"
@@ -26,14 +26,14 @@ user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
 
-#admin_area:
-#    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
-#    prefix: /admin
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
 
-#_sonata_admin:
-#  resource: .
-#  type: sonata_admin
-#  prefix: /admin
+_sonata_admin:
+  resource: .
+  type: sonata_admin
+  prefix: /admin
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
